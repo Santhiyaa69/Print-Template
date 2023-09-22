@@ -1,0 +1,258 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  border_style:
+    thickness: 0.1
+  margins:
+    top: 5
+    right: 5
+    bottom: 5
+    left: 5
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{orgInfo.name | replace(from="'", to= "")}}'
+              style:
+                font_size: 14
+                bold: true
+        {%if branchInfo.address.address%}        
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: '{{branchInfo.address.address | replace(from="'", to= "")}}'
+              style:
+                font_size: 10
+        {%endif%}
+        {%if branchInfo.address.city%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: '{{branchInfo.address.city | replace(from="'", to= "")}} - {{branchInfo.address.pincode | default(value="1")}}'
+              style:
+                font_size: 10
+        {%endif%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value:  'SCHEDULED DRUG REPORT '
+              style:
+                font_size: 11
+                bold: true
+        - type: Text
+          alignment: Center
+          padding: 1
+          contents:
+            - value: '{{date | date(format="%d-%m-%Y")}}'
+              style:
+                font_size: 10
+                bold: true
+    - type: BlankLine
+    - type: LinearLayout
+      elements:
+        - type: TableLayout
+          widths: [80,20]
+          text_style:
+            font_size: 9
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+          rows:
+          {% for rec in records %}
+            - columns:
+              - type: TableLayout
+                widths: [25,35,40]
+                cell_decorator:
+                  type: SimpleCellDecorator
+                rows:
+                - columns:
+                  {%if rec.voucherNo%}
+                  - type: Text
+                    padding: 1
+                    contents:
+                      - value: 'Bill No:'
+                        style:
+                          bold: true
+                      - value: '{{rec.voucherNo}}'
+                  {%endif%}
+                  - type: LinearLayout
+                    elements:
+                      {%if rec.doctor.displayName%}
+                      - type: Text
+                        padding: 1
+                        contents:
+                          - value: 'Doctor:'
+                            style:
+                              bold: true
+                          - value: '{{rec.doctor.displayName | replace(from="'", to= "")}}'
+                      {%endif%}
+                      {%if rec.doctor.licenseNo%}
+                      - type: Text
+                        padding: 1
+                        contents:
+                          - value: 'LIC.No:'
+                            style:
+                              bold: true
+                          - value: '{{rec.doctor.licenseNo}}'
+                      {%endif%}
+                  - type: LinearLayout
+                    elements:
+                      {%if rec.patient%}
+                      - type: Text
+                        padding: 1
+                        contents:
+                          - value: 'Patient: '
+                            style:
+                              bold: true
+                          - value: '{{rec.patient | replace(from="'", to= "")}}'
+                      {%endif%}
+                      {%if rec.address.address%}
+                      - type: Text
+                        padding:
+                          left: 1
+                        contents:
+                          - value: '{{rec.address.address | replace(from="'", to= "")}}'
+                      {% endif %}
+                      {%if rec.address.city%}
+                      - type: Text
+                        padding:
+                          left: 1
+                          bottom: 1
+                        contents:
+                          - value: '{{rec.address.city | replace(from="'", to= "")}} - {{rec.address.pincode | default(value="1")}}'
+                      {% endif %}
+              -  type: TableLayout
+                 widths: [100]
+                 rows:
+                   - columns:
+                     - type: Text
+                       padding:
+                         top: 1
+                       alignment: Center
+                       contents:
+                         - value: 'SIGNATURE'
+                           style:
+                             bold: true
+                   - columns:
+                     - type: PaddedElement
+                       padding:
+                        left: 10
+                        right: 10
+                       element:
+                         type: BlankLine
+        - type: TableLayout
+          widths: [80,20]
+          text_style:
+            font_size: 9
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+          rows:
+            - columns:
+              - type: LinearLayout
+                elements:
+                  - type: TableLayout
+                    widths: [7,40,18,12,12,10]
+                    text_style:
+                      font_size: 9
+                      bold: true
+                    cell_decorator:
+                      type: SimpleCellDecorator
+                      inner: true
+                      outer: true
+                    rows:
+                      - columns:
+                        - type: Text
+                          padding: 1
+                          alignment: Center
+                          contents:
+                            - value: Sl.No
+                        - type: Text
+                          padding: 1
+                          contents:
+                            - value: 'Inventory'
+                        - type: Text
+                          padding: 1
+                          contents:
+                            - value: 'Manufacturer'
+                        - type: Text
+                          padding: 1
+                          alignment: Center
+                          contents:
+                            - value: 'Expiry'
+                        - type: Text
+                          padding: 1
+                          alignment: Center
+                          contents:
+                            - value: 'Batch'
+                        - type: Text
+                          padding: 1
+                          alignment: Center
+                          contents:
+                            - value: 'Qty'
+                  - type: TableLayout
+                    widths: [7,40,18,12,12,10]
+                    text_style:
+                      font_size: 9
+                    cell_decorator:
+                      type: SimpleCellDecorator
+                      inner: true
+                      {# skip_horizontal: true #}
+                    rows:
+                    {% for item in rec.invTrns %}
+                    - columns:
+                      - type: Text
+                        padding: 1
+                        contents:
+                          - value: '{{loop.index}}'
+                      - type: Text
+                        padding: 1
+                        contents:
+                          - value: '{{item.inventoryInfo.displayName | replace(from="'", to= "")}}'
+                      - type: Text
+                        padding: 1
+                        contents:
+                        {% if item.inventoryInfo.manufacturerName%}
+                          - value: '{{item.inventoryInfo.manufacturerName | replace(from="'", to= "")}}'
+                        {% else %}
+                          - value: ''
+                        {% endif %}
+                      - type: Text
+                        padding: 1
+                        alignment: Center
+                        contents:
+                        {% if item.batchInfo.expiry%}
+                          - value: '{{item.batchInfo.expiry | date(format="%d-%m-%Y")}}'
+                        {% else %}
+                          - value: ''
+                        {% endif %}
+                      - type: Text
+                        padding: 1
+                        alignment: Center
+                        contents:
+                        {% if item.batchInfo.batchNo%}
+                          - value: '{{item.batchInfo.batchNo}}'
+                        {% else %}
+                          - value: ''
+                        {% endif %}
+                      - type: Text
+                        padding: 1
+                        alignment: Center
+                        contents:
+                          - value: '{{item.qty}}'
+                    {% endfor %}
+          {% endfor %}
+        - type: BlankLine

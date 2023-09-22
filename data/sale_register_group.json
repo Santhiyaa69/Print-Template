@@ -1,0 +1,53 @@
+{
+    "title": "Sale Register",
+    "orgInfo": {
+        "name": "VELAVAN MEDICAL"
+    },
+    "branchInfo": {
+        "displayName": "DP",
+        "phone": "044-4555555X",
+        "gstNo": "33AANFV6837B1Z2w",
+        "licNo": "",
+        "address": {
+            "address": "#115/8, DEVARPURAM ROAD",
+            "city": "",
+            "pincode": "",
+            "state": "TN",
+            "country": ""
+        }, 
+        "mobileNos": [
+            "9988776655",
+            "7689012345"
+        ],
+        "email": "dpbranch@gmail.com"
+    },
+    "branch": "dpbranch",
+    "fromDate": "2022-10-01",
+    "toDate": "2022-10-03",
+    "paymentMode": "All",
+    "customer": "",
+    "paymentAccounts": "",
+    "group": "branch",
+    "records": [
+        {
+            "amount": 3318,
+            "branchName": "DP ROAD BRANCH",
+            "particulars": "2021-12-01",
+            "branchId": "5f21a97ac22242871ccdfdc7",
+            "cashAmount": 3318,
+            "bankAmount": 0,
+            "eftAmount": 0,
+            "creditAmount": 0
+        }
+       
+       
+    ],
+    "balance": {
+        "billAmount": 3318.0,
+        "cashAmount": 3318.0,
+        "eftAmount": 0.0,
+        "bankAmount": 0.0,
+        "creditAmount": 0.0
+    },
+    "detailMode": true
+}

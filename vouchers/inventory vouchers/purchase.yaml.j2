@@ -1,0 +1,614 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  border_style:
+    thickness: 0.1
+  margins:
+    top: 1
+    right: 5
+    bottom: 5
+    left: 5
+  header:
+    type: TableLayout
+    widths: [34, 33, 33]
+    text_style:
+      font_size: 8
+    rows:
+    - columns:
+      - type: Text
+        alignment: Left
+        padding:
+          top: 3
+          left: 6
+        contents:
+          - value: 'ORIGINAL COPY'
+      - type: Text
+        alignment: Center
+        padding:
+          top: 3
+        contents:
+          - value: 'TAX INVOICE'
+      - type: Text
+        alignment: Right
+        padding:
+          top: 3
+          right: 6
+        contents:
+          - value: '{{voucherInfo.voucherName |upper}} INVOICE'
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: Text
+          alignment: Center
+          padding:
+            top: 1
+          contents:
+            - value: '{{orgInfo.name}}'
+              style:
+                font_size: 15
+                bold: true
+        {%if branchInfo.address.address%}        
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: '{{branchInfo.address.address}}'
+              style:
+                font_size: 10
+        {%endif%}
+        {%if branchInfo.address.city%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: '{{branchInfo.address.city}} - {{branchInfo.address.pincode | default(value="1")}}'
+              style:
+                font_size: 10
+        {%endif%}
+        {%if branchInfo.phone%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'Phone: {{branchInfo.phone}}'
+              style:
+                font_size: 10        
+        {%endif%}
+        {%if branchInfo.mobileNos and branchInfo.mobileNos | length > 0%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'Mobile: {{branchInfo.mobileNos | join(sep=", ")}}'
+              style:
+                font_size: 10
+        {%endif%}
+        {%if branchInfo.email%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'Email: {{branchInfo.email}}'
+              style:
+                font_size: 10
+        {%endif%}
+        {%if branchInfo.gstNo%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'GSTIN: {{branchInfo.gstNo}}'
+              style:
+                font_size: 10
+        {%endif%}                
+        {%if branchInfo.licNo%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'LIC: {{branchInfo.licNo}}'
+              style:
+                font_size: 10
+        {%endif%}                
+        - type: PaddedElement
+          padding:
+            top: 1
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [65,35]
+          padding:
+            horizontal: 1
+          text_style: 
+            font_size: 9
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+          rows:
+            - columns:
+              {%if partyInfo%}
+              - type: TableLayout
+                widths: [100]
+                padding:
+                  horizontal: 2
+                  vertical: 1
+                text_style:
+                  line_spacing: 1.1
+                rows:
+                  - columns:
+                    - type: LinearLayout
+                      elements:
+                      - type: Text
+                        padding:
+                          top: 1
+                        contents:
+                          - value: 'From'
+                            style:
+                              bold: true                            
+                      - type: Text
+                        contents: 
+                          - value: '{{partyInfo.name}}'
+                      {%if partyInfo.address.address%}
+                      - type: Text
+                        contents: 
+                          - value: '{{partyInfo.address.address}}'
+                      {%endif%}
+                      {% if partyInfo.address.city or partyInfo.address.pincode or partyInfo.address.state or partyInfo.address.country%}
+                      - type: Text
+                        contents:
+                          {%if partyInfo.address.city and partyInfo.address.pincode%}
+                          - value: '{{partyInfo.address.city}} - {{partyInfo.address.pincode}} '
+                          {%elif partyInfo.address.city%}
+                          - value: '{{partyInfo.address.city}}'
+                          {%elif partyInfo.address.pincode%}
+                          - value: '{{partyInfo.address.pincode}} '
+                          {%endif%} 
+                          {%if partyInfo.address.state and partyInfo.address.country%}
+                          - value: '{{partyInfo.address.state}} , {{partyInfo.address.country}}'
+                          {%elif partyInfo.address.state%}
+                          - value: '{{partyInfo.address.state}} '
+                          {%elif partyInfo.address.country%}
+                          - value: ' {{partyInfo.address.country}}'
+                          {%endif%}
+                      {% endif %}
+                      - type: TableLayout
+                        widths: [50,50]
+                        rows:
+                          - columns:
+                            - type: Text                    
+                              contents:
+                                - value: 'Mobile: ' 
+                                  style:
+                                    bold: true
+                                {%if partyInfo.mobileNos %}
+                                - value: '{{partyInfo.mobileNos | join(sep=", ")}}' 
+                                {%else%}
+                                - value: '' 
+                                {%endif%}
+                            - type: Text
+                              contents:
+                                - value: 'GSTIN: '
+                                  style:
+                                    bold: true
+                                - value: '{{partyInfo.gstNo}}'
+              {%else%}
+              - type: LinearLayout
+              {%endif%}
+              - type: TableLayout
+                widths: [35,65]
+                padding:
+                  horizontal: 2
+                  vertical: 1
+                rows:
+                  - columns:
+                    - type: Text
+                      padding:
+                        top: 1
+                      contents:
+                        - value: 'Bill No'
+                          style:
+                            bold: true
+                    - type: Text
+                      padding:
+                        top: 1
+                      contents:
+                        - value: ': {{voucherInfo.voucherNo}}'
+                  - columns:
+                    - type: Text
+                      padding:
+                        top: 1
+                      contents:
+                        - value: 'Bill Date'
+                          style:
+                            bold: true                        
+                    - type: Text
+                      padding:
+                        top: 1
+                      contents:
+                        - value: ': {{voucherInfo.date}}'
+                  - columns:
+                    - type: Text
+                      padding:
+                        top: 1
+                      contents:
+                        - value: 'Bill Time'
+                          style:
+                            bold: true                        
+                    - type: Text
+                      padding:
+                        top: 1
+                      contents:
+                        - value: ': {{voucherInfo.time}}'
+                  - columns:
+                    - type: Text
+                      padding:
+                        top: 1
+                      contents:
+                        - value: 'RefNo'
+                          style:
+                            bold: true                        
+                    - type: Text
+                      padding:
+                        top: 1
+                      contents:
+                        - value: ': '
+                        {%if voucherInfo.refNo%}
+                        - value: '{{voucherInfo.refNo}}'
+                        {%endif%}
+        - type: BlankLine
+        - type: TableLayout
+          widths: [6, 59, 12, 8, 6, 9, 11]
+          text_style:
+            font_size: 9
+            line_spacing: 1.2
+            bold: true
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+          rows:
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: 'SlNo'
+              - type: Text
+                padding: 1
+                contents:
+                  - value: 'PARTICULARS'
+              - type: Text
+                padding: 1
+                alignment: Center
+                contents:
+                  - value: 'EXPIRY'
+              - type: Text
+                padding: 1
+                alignment: Center
+                contents:
+                  - value: 'QTY'    
+              - type: Text
+                padding: 1
+                alignment: Center
+                contents:
+                  - value: 'UNIT'
+                    style:
+                      shrink: true
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  - value: 'MRP'
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  - value: 'AMOUNT'
+        - type: BlankLine
+        - type: TableLayout
+          widths: [6, 59, 12, 8, 6, 9, 11]
+          text_style:
+            font_size: 9
+            line_spacing: 1.2
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+            skip_horizontal: true
+          rows:
+            {% for item in items%}
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{loop.index}}'
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{item.name}}'   
+              - type: Text
+                padding: 1
+                alignment: Center
+                contents:
+                {% if item.expiry %}
+                  - value: '{{item.expiry | date(format="%d-%m-%Y")}}'
+                {% else %}
+                  - value: ''
+                {% endif %}                              
+                    style:
+                      shrink: true
+              - type: Text
+                padding: 1
+                alignment: Center
+                contents:
+                  - value: '{{item.qty | fixed(precision = item.precision)}}'
+              - type: Text
+                padding: 1
+                alignment: Center
+                contents:
+                  - value: '{{item.unit}}'
+              - type: Text
+                padding: 1
+                alignment: Right
+                contents:
+                  {% if item.mrp %}
+                  - value: '{{item.mrp |fixed}}'
+                  {%else%}
+                  - value: ''
+                  {%endif%}
+              {% set taxAmount = item.cgstAmount + item.sgstAmount + item.igstAmount + item.cessAmount%}
+              {% set rowAmount = item.taxableValue + taxAmount%}
+              - type: Text
+                padding: 1
+                alignment: Right
+                contents:
+                  - value: '{{rowAmount | fixed}}'
+                    style:
+                      shrink: true
+            {%endfor%}                     
+        {% set rowTotals = fold(items=items, keys=["taxableValue", "cgstAmount", "sgstAmount", "igstAmount","cessAmount"])%}
+        - type: BlankLine
+        {%set subTotal = rowTotals.taxableValue + rowTotals.cgstAmount + rowTotals.sgstAmount + rowTotals.igstAmount + rowTotals.cessAmount%}
+        - type: Text
+          alignment: Right
+          padding: 1
+          contents:
+            - value: 'Total  :  '
+              style:
+                font_size: 9
+            - value: '{{subTotal |fixed}} '
+              style:
+                font_size: 9
+        - type: BlankLine  
+footer:
+  height: 30
+  element:
+    type: LinearLayout
+    elements:
+      - type: BlankLine
+      - type: TableLayout
+        widths: [65, 35]
+        text_style:
+          font_size: 9
+        cell_decorator:
+          type: SimpleCellDecorator
+          inner: true
+          skip_horizontal: true
+        rows:
+          - columns:
+            - type: LinearLayout
+              elements:
+                - type: TableLayout
+                  widths: [16, 20, 16, 16, 16, 16]
+                  text_style:
+                    font_size: 9
+                    bold: true
+                  cell_decorator:
+                    type: SimpleCellDecorator
+                    inner: true
+                    skip_horizontal: true
+                  rows:
+                  - columns:
+                    - type: Text
+                      alignment: Center
+                      padding: 1
+                      contents:
+                        - value: 'GST%'
+                    - type: Text
+                      alignment: Center
+                      padding: 1
+                      contents:
+                        - value: 'Value'
+                    - type: Text
+                      alignment: Center
+                      padding: 1
+                      contents:
+                        - value: 'CGST'
+                    - type: Text
+                      alignment: Center
+                      padding: 1
+                      contents:
+                        - value: 'SGST'
+                    - type: Text
+                      alignment: Center
+                      padding: 1
+                      contents:
+                        - value: 'IGST'
+                    - type: Text
+                      alignment: Center
+                      padding: 1
+                      contents:
+                        - value: 'CESS'
+                - type: PaddedElement
+                  padding:
+                    top: 0.3
+                  element:
+                    type: BlankLine
+                - type: TableLayout
+                  widths: [16, 20, 16, 16, 16, 16]
+                  text_style:
+                    font_size: 9
+                    bold: true
+                  cell_decorator:
+                    type: SimpleCellDecorator
+                    inner: true
+                  rows:
+                  {%for tax in taxSummary%}
+                  - columns:
+                    - type: Text
+                      alignment: Center
+                      padding: 1
+                      contents:
+                        - value: '{{tax.ratio}} %'
+                    - type: Text
+                      alignment: Center
+                      padding: 1
+                      contents:
+                        - value: '{{tax.value |fixed}}'
+                    - type: Text
+                      alignment: Center
+                      padding: 1
+                      contents:
+                        - value: '{{tax.cgst |fixed}}'
+                    - type: Text
+                      alignment: Center
+                      padding: 1
+                      contents:
+                        - value: '{{tax.sgst |fixed}}'
+                    - type: Text
+                      alignment: Center
+                      padding: 1
+                      contents:
+                        - value: '{{tax.igst |fixed}}'
+                    - type: Text
+                      alignment: Center
+                      padding: 1
+                      contents:
+                        - value: '{{tax.cess |fixed}}'
+                  {%endfor%}
+                - type: PaddedElement
+                  padding:
+                    top: 0.3
+                  element:
+                    type: BlankLine
+            {% set summary = fold(items=taxSummary, keys=["value", "cgst", "sgst", "igst","cess"])%}
+            - type: TableLayout
+              widths: [55, 45]
+              text_style:
+                font_size: 10
+              padding: 1
+              rows:
+              {% if summary.value != 0 %}
+              - columns:
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: 'Taxable Amount  :'
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: '{{summary.value |fixed}}'
+              {%endif%}
+              {% if summary.cgst != 0 %}
+              - columns:
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: 'Total CGST  :'
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: '{{summary.cgst |fixed}}'
+              {%endif%}
+              {% if summary.sgst != 0 %}
+              - columns:
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: 'Total SGST  :'
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: '{{summary.sgst |fixed}}'
+              {%endif%}
+              {% if summary.igst != 0 %}
+              - columns:
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: 'Total IGST  :'
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: '{{summary.igst |fixed}}'
+              {%endif%}
+              {% if summary.cess != 0 %}
+              - columns:
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: 'Total CESS  :'
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: '{{summary.cess |fixed}}'
+              {%endif%}
+              {% if discount != 0 %}
+              - columns:
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: 'Bill Discount  :'
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: '{{discount |fixed}}'
+              {%endif%}
+              {% if accountAdjustment != 0 %}
+              - columns:
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: 'Adjustment  :'
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: '{{accountAdjustment |fixed}}'
+              {%endif%}
+              {% if rounded != 0 %}
+              - columns:
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: 'Rounded  :'
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: '{{rounded |fixed}}'
+              {%endif%}
+              {% if netAmount != 0 %}
+              - columns:
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: 'NET AMOUNT  :'
+                      style: 
+                        bold: true
+                - type: Text
+                  alignment: Right
+                  contents:
+                    - value: 'Rs.{{netAmount}}'
+                      style: 
+                        bold: true
+              {%endif%}
+      - type: BlankLine  
+

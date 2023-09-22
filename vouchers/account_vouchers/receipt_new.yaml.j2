@@ -1,0 +1,293 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 10
+    right: 10
+    bottom: 10
+    left: 10
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{orgInfo.name | replace(from="'", to="")}}'
+              style:
+                font_size: 15
+                bold: true
+        {% if branchInfo.address.address %}
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{branchInfo.address.address | replace(from="'", to="")}}'
+              style:
+                font_size: 10
+        {% endif %}
+        {% if branchInfo.address.city %}
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{branchInfo.address.city | replace(from="'", to="")}} - {{branchInfo.address.pincode | default(value = '1')}}'
+              style:
+                font_size: 10
+        {% endif %}
+        {%if branchInfo.phone%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'Phone: {{branchInfo.phone}}'
+              style:
+                font_size: 10
+        {%endif%}
+        {%if branchInfo.mobileNos and branchInfo.mobileNos | length > 0%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'Mobile: {{branchInfo.mobileNos | join(sep= ",")}}'
+              style:
+                font_size: 10
+        {%endif%}
+         {%if branchInfo.email%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'Email: {{branchInfo.email | replace(from="'", to="")}}'
+              style:
+                font_size: 10
+        {%endif%}
+        {%if branchInfo.gstNo%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'GSTIN: {{branchInfo.gstNo}}'
+              style:
+                font_size: 10
+        {%endif%}
+        {%if branchInfo.licNo%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'LIC.NO: {{branchInfo.licNo}}'
+              style:
+                font_size: 10
+        {%endif%}
+        - type: PaddedElement
+          padding:
+           vertical: 1
+           horizontal: 0
+          element:
+            type: BlankLine
+        - type: Text
+          padding:
+            top: 3
+          alignment: Center
+          contents:
+            - value: '{{voucherInfo.voucherName | replace(from="'", to= "")}}'
+              style:
+                bold: true
+                font_size: 10
+        - type: PaddedElement
+          padding:
+            left: 85
+            right: 85
+            bottom: 3
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [1,1]
+          text_style:
+            font_size: 10
+          padding: 1
+          rows:
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: 'Voucher No  : {{voucherInfo.voucherNo}}'
+              - type: Text
+                alignment: Right
+                contents:
+                 - value: 'Date : {{voucherInfo.date}}'
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: 'Description   : {{description | replace(from="'", to= "")}}'
+        - type: BlankLine
+        - type: TableLayout
+          widths: [80,20]
+          text_style:
+            font_size: 10
+          cell_decorator:
+            type: SimpleCellDecorator
+            line_style:
+              color:
+                greyscale: 127
+            inner: true
+          rows:
+            - columns:
+              - type: Text
+                padding: 2
+                contents:
+                  - value: 'Particulars'
+                    style:
+                      bold: true
+              - type: Text
+                padding: 2
+                alignment: Right
+                contents:
+                  - value: 'Amount'
+                    style:
+                      bold: true
+        - type: BlankLine
+        - type: TableLayout
+          widths: [80,20]
+          text_style:
+            font_size: 10
+          cell_decorator:
+            type: SimpleCellDecorator
+            line_style:
+              color:
+                greyscale: 127
+            inner: true
+            skip_horizontal: true
+          rows:
+            {% for crAc in creditAccount%}
+            - columns:
+              - type: Text
+                padding:
+                  left: 2
+                  right: 2
+                  top: 2
+                  bottom: 0.5
+                contents:
+                  - value: '{{crAc.account | replace(from="'", to="")}}'
+                    style:
+                      font_size: 11
+                      bold: true
+              - type: Text
+                alignment: Right
+                padding:
+                  top: 2
+                  bottom: 0.5
+                  right: 2
+                contents:
+                  {% if crAc.newRef %}
+                  - value: '{{crAc.newRef | fixed}} Cr'
+                  {% else %}
+                  - value: ''
+                  {% endif %}
+            {% if crAc.adjs %}
+            {% for adj in crAc.adjs %}
+            - columns:
+              - type: TableLayout
+                widths: [14,43,43]
+                text_style:
+                  font_size: 9
+                padding:
+                  left: 2
+                  right: 5
+                  bottom: 0.5
+                rows:
+                  - columns:
+                    - type: Text
+                      contents:
+                        - value: 'Agst Ref : '
+                    - type: Text
+                      contents:
+                        - value: '{{adj.date | date(format="%d-%m-%Y")}} / {{adj.voucherNo | default(value = '---')}}'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        {% if adj.principalAmount >= 0 %}
+                        - value: '{{adj.principalAmount | fixed}} Dr'
+                        {% else %}
+                        - value: '{{adj.principalAmount | fixed | trim_start_matches(pat="-")}} Cr'
+                        {% endif %}
+              - type: Text
+                alignment: Right
+                padding:
+                  bottom: 0.5
+                  right: 2
+                contents:
+                  {% if adj.paidAmount >= 0 %}
+                  - value: '{{adj.paidAmount | fixed}}'
+                  {% else %}
+                  - value: '{{adj.paidAmount | fixed | trim_start_matches(pat="-")}} Cr'
+                  {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+            - columns:
+              - type: Text
+                padding:
+                  top: 5
+                  bottom: 2
+                  left: 2
+                text_style:
+                  font_size: 10
+                contents:
+                  - value: 'Through :'
+                    style:
+                      font_size: 11
+                      italic: true
+                      bold: true
+            {% for drAc in debitAccount%}
+            - columns:
+              - type: TableLayout
+                widths: [1,1]
+                text_style:
+                  font_size: 10
+                padding:
+                  left: 8
+                  bottom: 1
+                rows:
+                  - columns:
+                    - type: Text
+                      contents:
+                        - value: '{{drAc.account | replace(from="'", to="")}}'
+                    - type: Text
+                      padding: 
+                        right: 5
+                      alignment: Right
+                      contents: 
+                        - value: '{{drAc.debit | fixed}} Dr'      
+            {% endfor %}
+        - type: PaddedElement
+          padding:
+            left: 1
+            bottom: 2
+          element:
+            type: BlankLine   
+        - type: LinearLayout
+          elements:
+            - type: Text
+              padding:
+                right: 2
+                bottom: 2
+              alignment: Right
+              contents: 
+               - value: 'Total Amount :  '
+                 style: 
+                  font_size: 10
+                  bold: true  
+               - value : '{{amount | fixed}} Cr' 
+                 style: 
+                  font_size: 10 
+        - type: BlankLine     

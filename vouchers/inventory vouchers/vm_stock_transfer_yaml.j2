@@ -1,0 +1,368 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 148
+  height: 105
+decorator:
+  type: SimplePageDecorator
+  border_style:
+    thickness: 0.1
+  margins:
+    top: 6
+    right: 6
+    bottom: 6
+    left: 6
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: TableLayout
+          widths: [69,31]
+          padding:
+            left: 1
+            right: 1
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+          rows:
+            - columns:
+              - type: TableLayout
+                widths: [55, 45]
+                rows:
+                   - columns:
+                     - type: TableLayout
+                       widths: [100]
+                       text_style:
+                        font_size: 8
+                       rows: 
+                          - columns:
+                            - type: Text
+                              padding:
+                                top: 1
+                              contents:
+                                - value: '{{orgInfo.name}}'
+                                  style:
+                                    font_size: 10
+                                    bold: true
+                          {% if branchInfo.address.address %}  
+                          - columns:
+                            - type: Text
+                              contents:
+                                - value: '{{branchInfo.address.address}}'
+                          {% endif %}
+                          {% if branchInfo.address.city %}
+                          - columns:
+                            - type: Text
+                              contents:
+                                - value: '{{branchInfo.address.city}} - {{branchInfo.address.pincode | default(value="1")}}'
+                          {% endif %}
+                          {% if branchInfo.phone or branchInfo.mobileNos or branchInfo.displayName %}
+                          - columns:
+                            - type: TableLayout
+                              widths: [20,3,77]
+                              padding: 
+                                bottom: 0.5
+                              text_style:
+                                font_size: 8
+                              rows:
+                                {% if branchInfo.phone or branchInfo.mobileNos %}
+                                - columns:
+                                  - type: Text
+                                    contents:
+                                      - value: 'Phone'
+                                        style:
+                                          bold: true
+                                  - type: Text
+                                    contents:
+                                      - value: ':'
+                                        style:
+                                          bold: true
+                                  {% if branchInfo.mobileNos and branchInfo.phone %} 
+                                  - type: Text
+                                    contents:
+                                      - value: '{{branchInfo.phone}},{{branchInfo.mobileNos[0]}}'
+                                  {% elif branchInfo.mobileNos and branchInfo.mobileNos | length > 0 %} 
+                                  - type: Text
+                                    contents:
+                                      - value: '{{branchInfo.mobileNos[0]}}'
+                                  {% elif branchInfo.phone %} 
+                                  - type: Text
+                                    contents:
+                                      - value: '{{branchInfo.phone}}'
+                                  {% endif %}
+                                {% endif %}
+                                {% if branchInfo.email %}
+                                - columns:
+                                  - type: Text
+                                    contents:
+                                      - value: 'Email'
+                                        style:
+                                          bold: true
+                                  - type: Text
+                                    contents:
+                                      - value: ':'
+                                        style:
+                                          bold: true
+                                  - type: Text
+                                    contents:
+                                      - value: '{{branchInfo.email}}'
+                                {% endif %}
+                                - columns:
+                                  - type: Text
+                                    contents:
+                                      - value: 'Branch'
+                                        style:
+                                          bold: true
+                                  - type: Text
+                                    contents:
+                                      - value: ':'
+                                        style:
+                                          bold: true
+                                  - type: Text
+                                    contents:
+                                      - value: '{{branchInfo.displayName}}'
+                          {% endif %}
+                     - type: TableLayout
+                       widths: [17, 3, 44]
+                       text_style:
+                        font_size: 8
+                       rows:
+                          {% if branchInfo.gstNo %}
+                          - columns:
+                            - type: Text
+                              padding:
+                                top: 1
+                              contents:
+                                - value: 'GSTIN'
+                                  style:
+                                    bold: true
+                            - type: Text
+                              padding:
+                                top: 1
+                              contents:
+                                - value: ':'
+                                  style:
+                                    bold: true
+                            - type: Text
+                              padding:
+                                top: 1
+                              contents:
+                                - value: '{{branchInfo.gstNo}}'
+                          {% endif %}
+                          {% if branchInfo.licNo %}
+                          - columns:
+                            - type: Text
+                              contents:
+                                - value: 'LIC.No'
+                                  style:
+                                    bold: true
+                            - type: Text
+                              contents:
+                                - value: ':'
+                                  style:
+                                    bold: true
+                            - type: Text
+                              contents:
+                                - value: '{{branchInfo.licNo}}'
+                          {% endif %}
+              - type: LinearLayout
+                elements:
+                  - type: Text
+                    padding:
+                      top: 2
+                      left: 6
+                    contents:
+                      - value: 'STOCK-TRANSFER'
+                        style:
+                          font_size: 8
+                          bold: true
+                  - type: PaddedElement
+                    padding:
+                      top: 0.5
+                      left: 6
+                      right: 8
+                    element:
+                      type: BlankLine 
+                  - type: TableLayout
+                    widths: [24, 3, 73]
+                    padding: 
+                      top: 2
+                      left: 1
+                      right: 1
+                      bottom: 1
+                    text_style:
+                      font_size: 8 
+                    rows:
+                        - columns:
+                          - type: Text
+                            contents:
+                              - value: 'Bill No'
+                                style:
+                                  bold: true
+                          - type: Text
+                            contents:
+                              - value: ':'
+                                style:
+                                  bold: true
+                          - type: Text
+                            contents:
+                              - value: '{{voucherInfo.voucherNo}}'
+                                style:
+                                  shrink: true
+                        - columns:
+                          - type: Text
+                            contents:
+                              - value: 'Date'
+                                style:
+                                  bold: true
+                          - type: Text
+                            contents:
+                              - value: ':'
+                                style:
+                                  bold: true
+                          - type: Text
+                            contents:
+                              - value: '{{voucherInfo.date}}'     
+                        - columns:
+                          - type: Text
+                            contents:
+                              - value: 'Time'
+                                style:
+                                  bold: true
+                          - type: Text
+                            contents:
+                              - value: ':'
+                                style:
+                                  bold: true
+                          - type: Text
+                            contents:
+                              - value: '{{voucherInfo.time | date(format="%I:%M %p", timezone="Asia/Kolkata")}}' 
+                        {% if voucherInfo.refNo %}   
+                        - columns:
+                          - type: Text
+                            contents:
+                              - value: 'Ref.No'
+                                style:
+                                  bold: true
+                          - type: Text
+                            contents:
+                              - value: ':'
+                                style:
+                                  bold: true
+                          - type: Text
+                            contents:
+                              - value: '{{voucherInfo.refNo}}'
+                                style:
+                                  shrink: true  
+                        {% endif %}          
+        - type: BlankLine
+        - type: TableLayout
+          widths: [7,3,90]   
+          padding: 1
+          text_style: 
+            font_size: 8
+          rows: 
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'To'
+                    style:
+                      bold: true
+              - type: Text
+                contents:
+                  - value: ':'
+                    style:
+                      bold: true
+              {% if altBranchInfo.displayName and altBranchInfo.phone %}
+              - type: Text
+                contents:
+                  - value: '{{altBranchInfo.displayName}} - {{altBranchInfo.phone}}'
+              {% else %}
+              - type: Text
+                contents:
+                  - value: '{{altBranchInfo.displayName}}'
+              {% endif %}
+        - type: BlankLine
+        - type: TableLayout
+          widths: [50,12,13,12,13]
+          text_style: 
+            font_size: 8
+            bold: true
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+          rows:
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: 'PARTICULARS'
+              - type: Text
+                padding: 1
+                alignment: Center
+                contents:
+                  - value: 'BATCH'
+              - type: Text
+                padding: 1
+                alignment: Center
+                contents:
+                  - value: 'EXPIRY'
+              - type: Text
+                padding: 1
+                alignment: Center
+                contents:
+                  - value: 'QTY'
+              - type: Text
+                padding: 1
+                alignment: Right
+                contents:
+                  - value: 'MRP'
+        - type: BlankLine
+        - type: TableLayout
+          widths: [50,12,13,12,13]
+          text_style: 
+            font_size: 8
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+            skip_horizontal: true
+          rows:
+          {% for item in items %}
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{item.name}}'
+              - type: Text
+                alignment: Center
+                padding: 1
+                contents:
+                  - value: '{{item.batchNo}}'
+              - type: Text
+                alignment: Center
+                padding: 1
+                contents:
+                {% if item.expiry %}
+                  - value: '{{item.expiry | date(format="%d-%m-%Y") }}'
+                {% else %}
+                  - value: ''
+                {% endif %}
+              - type: Text
+                alignment: Center
+                padding: 1
+                contents:
+                  - value: '{{item.qty | fixed(precision = item.precision)}}'
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  {% if item.mrp %}
+                  - value: '{{item.mrp |fixed}}'
+                  {%else%}
+                  - value: ''
+                  {%endif%}
+                    style:
+                      shrink: true
+          {% endfor %}
+        - type: BlankLine
+        

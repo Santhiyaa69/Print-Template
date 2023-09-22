@@ -1,0 +1,1063 @@
+title: 'POS TERMINAL SETTLEMENT'
+conformance: Minimal
+paper_size:
+  width: 78
+  height: 3500
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 4
+    right: 4
+    bottom: 4
+    left: 4
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: Text
+          alignment: Left
+          padding:
+            top: 1
+            bottom: 2
+            left: 1
+          contents:
+            - value: '{{orgInfo.name}}'
+              style:
+                font_size: 11
+                bold: true
+        {%if branchInfo.displayName%}
+        - type: Text
+          alignment: Left
+          padding:
+            top: 0.5
+            left: 1
+          contents:
+            - value: 'Branch : {{branchInfo.displayName}}'
+              style:
+                font_size: 9
+        {%endif%}
+        {%if branchInfo.address.address%}
+        - type: Text
+          alignment: Left
+          padding:
+            top: 0.5
+            left: 1
+          contents:
+            - value: '{{branchInfo.address.address}}'
+              style:
+                font_size: 9
+        {%endif%}
+        {%if branchInfo.address.city%}
+        - type: Text
+          alignment: Left
+          padding:
+            top: 0.5
+            left: 1
+          contents:
+            - value: '{{branchInfo.address.city}} - {{branchInfo.address.pincode | default(value="1")}}'
+              style:
+                font_size: 9
+        {%endif%}
+        {%if branchInfo.mobileNos and branchInfo.mobileNos | length > 0%}
+        - type: Text
+          alignment: Left
+          padding:
+            top: 0.5
+            left: 1
+          contents:
+            - value: 'Mobile : {{branchInfo.mobileNos | join(sep= ",")}}'
+              style:
+                font_size: 9
+        {%endif%}
+        {%if branchInfo.email%}
+        - type: Text
+          alignment: Left
+          padding:
+            top: 0.5
+            left: 1
+          contents:
+            - value: 'Email : {{branchInfo.email}}'
+              style:
+                font_size: 9
+        {%endif%}
+        {%if branchInfo.gstNo%}
+        - type: Text
+          alignment: Left
+          padding:
+            top: 0.5
+            left: 1
+          contents:
+            - value: 'GSTIN : {{branchInfo.gstNo}}'
+              style:
+                font_size: 9
+        {%endif%}
+        {%if branchInfo.licNo%}
+        - type: Text
+          alignment: Left
+          padding:
+            top: 0.5
+            left: 1
+            bottom: 0.5
+          contents:
+            - value: 'LIC.No : {{branchInfo.licNo}}'
+              style:
+                font_size: 9
+        {%endif%}
+        - type: Text
+          alignment: Left
+          padding:
+            top: 4
+            left: 1
+          contents:
+            - value: 'TERMINAL CLOSING STATEMENT FOR : {{posTerminalName}}'
+              style:
+                font_size: 9
+        - type: Text
+          alignment: Left
+          padding:
+            top: 0.5
+            left: 1
+            bottom: 1
+          contents:
+            - value: 'Printed On : {{printedOn}}'
+              style:
+                font_size: 9
+        - type: BlankLine
+        - type: TableLayout
+          widths: [45, 5, 50]
+          padding: 1
+          rows:
+            - columns:
+              - type: Text
+                alignment: Left
+                padding:
+                  top: 0.5
+                contents:
+                  - value: 'Terminal Closing On'
+                    style:
+                      font_size: 9
+              - type: Text
+                alignment: Left
+                padding:
+                  top: 0.5
+                contents:
+                  - value: ':'
+                    style:
+                      font_size: 9
+              - type: Text
+                alignment: Right
+                padding:
+                  top: 0.5
+                contents:
+                  - value: '{{endDateTime}}'
+                    style:
+                      font_size: 9
+            {# - columns:
+              - type: Text
+                alignment: Left
+                padding:
+                  top: 0.5
+                contents:
+                  - value: 'Start Bill No'
+                    style:
+                      font_size: 9
+              - type: Text
+                alignment: Left
+                padding:
+                  top: 0.5
+                contents:
+                  - value: ':'
+                    style:
+                      font_size: 9
+              - type: Text
+                alignment: Right
+                padding:
+                  top: 0.5
+                contents:
+                  - value: 'SSB222309'
+                    style:
+                      font_size: 9
+            - columns:
+              - type: Text
+                alignment: Left
+                padding:
+                  top: 0.5
+                contents:
+                  - value: 'End Bill No'
+                    style:
+                      font_size: 9
+              - type: Text
+                alignment: Left
+                padding:
+                  top: 0.5
+                contents:
+                  - value: ':'
+                    style:
+                      font_size: 9
+              - type: Text
+                alignment: Right
+                padding:
+                  top: 0.5
+                contents:
+                  - value: 'PYSB222305'
+                    style:
+                      font_size: 9 #}
+            - columns:
+              - type: Text
+                alignment: Left
+                padding:
+                  top: 0.5
+                contents:
+                  - value: 'Total No. of Bills'
+                    style:
+                      font_size: 9
+              - type: Text
+                alignment: Left
+                padding:
+                  top: 0.5
+                contents:
+                  - value: ':'
+                    style:
+                      font_size: 9
+              - type: Text
+                alignment: Right
+                padding:
+                  top: 0.5
+                contents:
+                  - value: '{{totalBillCount}}'
+                    style:
+                      font_size: 9
+            - columns:
+              - type: Text
+                alignment: Left
+                padding:
+                  top: 0.5
+                contents:
+                  - value: 'Total Bill Amount'
+                    style:
+                      font_size: 9
+              - type: Text
+                alignment: Left
+                padding:
+                  top: 0.5
+                contents:
+                  - value: ':'
+                    style:
+                      font_size: 9
+              - type: Text
+                alignment: Right
+                padding:
+                  top: 0.5
+                  bottom: 1
+                contents:
+                  - value: '{{totalBillAmount | fixed}}'
+                    style:
+                      font_size: 9
+        - type: BlankLine
+        {% for sessionTrns in sessionTransactions %}
+        {% set totalBillAmount = fold(items=sessionTrns.transactions, keys=["amount"]) %}
+        - type: Text
+          alignment: Left
+          padding:
+            top: 4
+            left: 1
+          contents:
+            - value: 'SESSION-{{loop.index}} ({{sessionTrns.title}})'
+              style:
+                font_size: 9
+                bold: true
+        - type: PaddedElement
+          padding:
+            top: 0.1
+            right: 52
+            bottom: 1
+            left: 1
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [45, 5, 40, 10]
+          padding:
+            top: 1
+            right: 1
+            bottom: 3
+            left: 1
+          text_style:
+            font_size: 9
+            bold: true
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'Total Bill Amount'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{totalBillAmount.amount | fixed}}'
+              - type: Text
+                alignment: Right
+                contents:
+                {% if totalBillAmount.amount < 0.0 %}
+                  - value: '[-]'
+                {% else %}
+                  - value: '[+]'
+                {% endif %}
+        {% for trns in sessionTrns.transactions %}
+        - type: TableLayout
+          widths: [45, 5, 40, 10]
+          padding:
+            vertical: 0
+            horizontal: 1
+          text_style:
+            font_size: 9
+          rows:
+          {% if trns.cashAmount %}
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{trns.voucherType | replace(from="_", to= " ") | capitalize}} - Cash'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{trns.cashAmount |fixed | trim_start_matches(pat="-")}}'
+              - type: Text
+                alignment: Right
+                contents:
+                {% if trns.cashAmount < 0.0 %}
+                  - value: '[-]'
+                {% else %}
+                  - value: '[+]'
+                {% endif %}
+            {% endif %}
+            {% if trns.creditAmount %}
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{trns.voucherType | replace(from="_", to= " ") | capitalize}} - Credit'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{trns.creditAmount |fixed | trim_start_matches(pat="-")}}'
+              - type: Text
+                alignment: Right
+                contents:
+                {% if trns.creditAmount < 0.0 %}
+                  - value: '[-]'
+                {% else %}
+                  - value: '[+]'
+                {% endif %}
+            {% endif %}
+            {% if trns.adjustedAmount %}
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{trns.voucherType | replace(from="_", to= " ") | capitalize}} - Adjusted'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{trns.adjustedAmount |fixed | trim_start_matches(pat="-")}}'
+              - type: Text
+                alignment: Right
+                contents:
+                {% if trns.adjustedAmount < 0.0 %}
+                  - value: '[-]'
+                {% else %}
+                  - value: '[+]'
+                {% endif %}
+            {% endif %}
+            {% if trns.bankAmount %}
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{trns.voucherType | replace(from="_", to= " ") | capitalize}} - Bank'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{trns.bankAmount |fixed | trim_start_matches(pat="-") | capitalize}}'
+              - type: Text
+                alignment: Right
+                contents:
+                {% if trns.bankAmount < 0.0 %}
+                  - value: '[-]'
+                {% else %}
+                  - value: '[+]'
+                {% endif %}
+            {% endif %}
+            {% if trns.eftAmount %}
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{trns.voucherType | replace(from="_", to= " ") | capitalize}} - Eft'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{trns.eftAmount |fixed | trim_start_matches(pat="-")}}'
+              - type: Text
+                alignment: Right
+                contents:
+                {% if trns.eftAmount < 0.0 %}
+                  - value: '[-]'
+                {% else %}
+                  - value: '[+]'
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        - type: PaddedElement
+          padding:
+            top: 1
+          element:
+            type: BlankLine
+        {% endfor %}
+        - type: BlankLine
+        - type: Text
+          alignment: Left
+          padding:
+            top: 4
+            left: 1
+          contents:
+            - value: 'ALL SESSIONS:- TOTAL'
+              style:
+                font_size: 9
+                bold: true
+        - type: PaddedElement
+          padding:
+            top: 0.1
+            right: 46
+            bottom: 1
+            left: 1
+          element:
+            type: BlankLine
+        {% for allSession in allSessionTransactions %}
+         {% set rowTotals = fold(items=allSession.transactions, keys=["cashAmount", "creditAmount", "bankAmount", "eftAmount", "adjustedAmount"])%}
+        - type: TableLayout
+          widths: [45, 5, 40, 10]
+          padding:
+            vertical: 0
+            horizontal: 1
+          text_style:
+            font_size: 9
+          rows:
+          {% if rowTotals.cashAmount %}
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{allSession.title | replace(from="_", to= " ") | capitalize}} - Cash'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{rowTotals.cashAmount |fixed | trim_start_matches(pat="-")}}'
+              - type: Text
+                alignment: Right
+                contents:
+                {% if rowTotals.cashAmount < 0.0 %}
+                  - value: '[-]'
+                {% else %}
+                  - value: '[+]'
+                {% endif %}
+            {% endif %}
+            {% if rowTotals.creditAmount %}
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{allSession.title | replace(from="_", to= " ") | capitalize}} - Credit'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{rowTotals.creditAmount |fixed | trim_start_matches(pat="-")}}'
+              - type: Text
+                alignment: Right
+                contents:
+                {% if rowTotals.creditAmount < 0.0 %}
+                  - value: '[-]'
+                {% else %}
+                  - value: '[+]'
+                {% endif %}
+            {% endif %}
+            {% if rowTotals.adjustedAmount %}
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{allSession.title | replace(from="_", to= " ") | capitalize}} - Adjusted'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{rowTotals.adjustedAmount |fixed | trim_start_matches(pat="-")}}'
+              - type: Text
+                alignment: Right
+                contents:
+                {% if rowTotals.adjustedAmount < 0.0 %}
+                  - value: '[-]'
+                {% else %}
+                  - value: '[+]'
+                {% endif %}
+            {% endif %}
+            {% if rowTotals.bankAmount %}
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{allSession.title | replace(from="_", to= " ") | capitalize}} - Bank'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{rowTotals.bankAmount |fixed | trim_start_matches(pat="-") | capitalize}}'
+              - type: Text
+                alignment: Right
+                contents:
+                {% if rowTotals.bankAmount < 0.0 %}
+                  - value: '[-]'
+                {% else %}
+                  - value: '[+]'
+                {% endif %}
+            {% endif %}
+            {% if rowTotals.eftAmount %}
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{allSession.title | replace(from="_", to= " ") | capitalize}} - Eft'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{rowTotals.eftAmount |fixed | trim_start_matches(pat="-")}}'
+              - type: Text
+                alignment: Right
+                contents:
+                {% if rowTotals.eftAmount < 0.0 %}
+                  - value: '[-]'
+                {% else %}
+                  - value: '[+]'
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        - type: Text
+          padding:
+            bottom: 1
+          contents:
+            - value: ''
+        {% for allSession in allSessionTransactions %}
+         {% set rowTotals = fold(items=allSession.transactions, keys=["amount"])%}
+        - type: TableLayout
+          widths: [45, 5, 40, 10]
+          padding:
+            horizontal: 1
+            vertical: 0.2
+          text_style:
+            font_size: 9
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{allSession.title | replace(from="_", to= " ") | capitalize}} Total'
+                    style:
+                      bold: true
+              - type: Text
+                contents:
+                  - value: ':'
+                    style:
+                      bold: true
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{rowTotals.amount |fixed | trim_start_matches(pat="-")}}'
+                    style:
+                      bold: true
+              - type: Text
+                alignment: Right
+                contents:
+                {% if rowTotals.amount < 0.0 %}
+                  - value: '[-]'
+                {% else %}
+                  - value: '[+]'
+                {% endif %}
+                    style:
+                      bold: true
+        {% endfor %}
+        - type: PaddedElement
+          padding:
+            top: 2
+          element:
+            type: BlankLine
+        - type: Text
+          alignment: Left
+          padding:
+            top: 4
+            left: 1
+          contents:
+            - value: 'Cash Details:'
+              style:
+                font_size: 9
+                bold: true
+        - type: PaddedElement
+          padding:
+            top: 0.1
+            right: 49
+            bottom: 2
+            left: 1
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [15, 10, 20, 5, 40, 10]
+          padding:
+            vertical: 0
+            horizontal: 1
+          text_style:
+            font_size: 9
+          rows:
+          {% if denomination.2000 %}
+            - columns:
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '2000'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '*'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{denomination.2000}}'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '='
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{2000 * denomination.2000 | fixed}}'
+            {% endif %}
+            {% if denomination.500 %}
+            - columns:
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '500'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '*'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{denomination.500}}'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '='
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{500 * denomination.500 | fixed}}'
+            {% endif %}
+            {% if denomination.200 %}
+            - columns:
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '200'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '*'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{denomination.200}}'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '='
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{200 * denomination.200 | fixed}}'
+            {% endif %}
+            {% if denomination.100 %}
+            - columns:
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '100'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '*'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{denomination.100}}'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '='
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{100 * denomination.100 | fixed}}'
+            {% endif %}
+            {% if denomination.50 %}
+            - columns:
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '50'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '*'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{denomination.50}}'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '='
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{50 * denomination.50 | fixed}}'
+            {% endif %}
+            {% if denomination.20 %}
+            - columns:
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '20'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '*'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{denomination.20}}'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '='
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{20 * denomination.20 | fixed}}'
+            {% endif %}
+            {% if denomination.10 %}
+            - columns:
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '10'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '*'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{denomination.10}}'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '='
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{10 * denomination.10 | fixed}}'
+            {% endif %}
+            {% if denomination.5 %}
+            - columns:
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '5'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '*'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{denomination.5}}'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '='
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{5 * denomination.5 | fixed}}'
+            {% endif %}
+            {% if denomination.2 %}
+            - columns:
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '2'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '*'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{denomination.2}}'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '='
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{2 * denomination.2 | fixed}}'
+            {% endif %}
+            {% if denomination.1 %}
+            - columns:
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '1'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '*'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{denomination.1}}'
+              - type: Text
+                alignment: Center
+                contents:
+                  - value: '='
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{1 * denomination.1 | fixed}}'
+            {% endif %}
+        - type: PaddedElement
+          padding:
+            top: 1
+            left: 40
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [50, 40, 10]
+          padding: 1
+          text_style:
+            font_size: 9
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'Cash In Hand'
+                    style:
+                      bold: true
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{denomination.total |fixed}}'
+                    style:
+                      bold: true
+        {% for allSession in allSessionTransactions %}
+         {% set rowTotals = fold(items=allSession.transactions, keys=["cashAmount"])%}
+        - type: TableLayout
+          widths: [50, 40, 10]
+          padding:
+            horizontal: 1
+            vertical: 0.2
+          text_style:
+            font_size: 9
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{allSession.title | replace(from="_", to= " ") | capitalize}}'
+                    style:
+                      bold: true
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{rowTotals.cashAmount |fixed | trim_start_matches(pat="-")}}'
+                    style:
+                      bold: true
+              - type: Text
+                alignment: Right
+                contents:
+                {% if rowTotals.cashAmount < 0.0 %}
+                  - value: '[-]'
+                {% else %}
+                  - value: '[+]'
+                {% endif %}
+                    style:
+                      bold: true
+        {% endfor %}
+        - type: PaddedElement
+          padding:
+            top: 2
+            left: 40
+            bottom: 1.5
+          element:
+            type: BlankLine
+        {% set cashTotal = denomination.total - totalCashAmount %}
+        - type: TableLayout
+          widths: [50, 40, 10]
+          padding:
+            horizontal: 1
+            vertical: 0.2
+          text_style:
+            font_size: 9
+          rows:
+            - columns:
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Difference'
+                    style:
+                      bold: true
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{cashTotal |fixed | trim_start_matches(pat="-")}}'
+                    style:
+                      bold: true
+              - type: Text
+                alignment: Right
+                contents:
+                {% if cashTotal > 0.0 %}
+                  - value: '[+]'
+                {% elif cashTotal == 0.0 %}
+                  - value: ''
+                {% else %}
+                  - value: '[-]'
+                {% endif %}
+                    style:
+                      bold: true
+        - type: PaddedElement
+          padding:
+            top: 1.5
+            left: 40
+          element:
+            type: BlankLine
+        - type: PaddedElement
+          padding:
+            top: 3
+          element:
+            type: BlankLine
+        - type: Text
+          alignment: Left
+          padding:
+            top: 4
+            left: 1
+          contents:
+            - value: 'Credit Details:'
+              style:
+                font_size: 9
+                bold: true
+        - type: PaddedElement
+          padding:
+            top: 0.1
+            right: 48
+            bottom: 2
+            left: 1
+          element:
+            type: BlankLine
+        - type: PaddedElement
+          padding:
+            top: 1
+            bottom: 2
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [30, 40, 30]
+          padding:
+            vertical: 0
+            horizontal: 1
+          text_style:
+            font_size: 9
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'Inv.No'
+              - type: Text
+                contents:
+                  - value: 'Customer Name'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Total'
+        - type: PaddedElement
+          padding:
+            top: 2
+            bottom: 1
+          element:
+            type: BlankLine
+        {% for creditTrns in creditTransactions.creditDetails %}
+        - type: TableLayout
+          widths: [30, 40, 30]
+          padding:
+            vertical: 0
+            horizontal: 1
+          text_style:
+            font_size: 9
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{creditTrns.voucherNo}}'
+              - type: Text
+                contents:
+                  - value: '{{creditTrns.contactName}}'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{creditTrns.creditAmount |fixed | trim_start_matches(pat="-")}}'
+          {% endfor %}
+        - type: PaddedElement
+          padding:
+            top: 1
+            bottom: 1
+          element:
+            type: BlankLine
+        - type: Text
+          alignment: Right
+          contents:
+            - value: 'Total : {{creditTransactions.total | fixed}}'
+              style:
+                font_size: 9
+                bold: true
+        - type: PaddedElement
+          padding:
+            top: 2
+          element:
+            type: BlankLine

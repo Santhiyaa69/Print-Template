@@ -1,0 +1,122 @@
+{
+  "title": "CREDIT-PURCHASE-INVOICE",
+  "orgInfo": {
+      "name":"VELAVAN MEDICAL"
+  },
+  "branchInfo": {
+      "gstNo": "BRANCHGSTNO1234",
+      "licNo": "LICNO12345",
+      "phone": "0461-2333725",
+      "mobileNos": ["9876543210", "9876543211"],
+      "email":"vmedical@gmail.com",
+      "address": {
+          "address": "115/8, DEVARPURAM ROAD",
+          "city": "THOOTHUKUDI",
+          "pincode": "654321",
+          "state": "Tamilnadu",
+          "country": "India"
+      }
+  },
+  "partyInfo": {
+    "name": "Raghu",
+    "address": {
+        "address": "SouthCotton Street",
+        "city": "Thoothukkudi",
+        "pincode": "628002",
+        "state": "TAMILNADU",
+        "country": "INDIA"
+    },
+    "gstNo": "33AAGFD1094B1Z0",
+    "mobileNos": [
+        "7894561234",
+        "7894561232"
+    ]
+},
+  "voucherInfo": {
+      "voucherNo": "AJ95701",
+      "voucherName": "Cash Purchase",
+      "date": "2022-01-01",
+      "refNo": "AJ104003",
+      "time": "2022-08-22T06:04:32.876+00:00"
+  },
+  "items": [
+    {
+        "name": "item1",
+        "qty": 1,
+        "precision": 1,
+        "free": null,
+        "batchNo": "B1",
+        "rack": "R1",
+        "hsnCode": null,
+        "expiry": "2022-08-12",
+        "mrp": 5.75,
+        "unit": "PCS",
+        "rate": 4.50,
+        "disc": {
+            "mode": "P",
+            "amount": 1.25
+        },
+        "dAmount": 2.50,
+        "taxableValue": 10000000000,
+        "taxRatio": 5,
+        "cgstAmount": 1,
+        "sgstAmount": 1,
+        "igstAmount": 0,
+        "cessAmount": 0
+    },
+    {
+        "name": "item2",
+        "qty": 2,
+        "precision": 3,
+        "free": 2,
+        "batchNo": "B2",
+        "rack": "R2",
+        "hsnCode": "1111",
+        "expiry": "2022-12-09",
+        "mrp": null,
+        "unit": "PCS",
+        "rate": 4.50,
+        "disc": {
+            "mode": "P",
+            "amount": 1
+        },
+        "dAmount": 2.50,
+        "taxableValue": 3.50,
+        "taxRatio": 5,
+        "cgstAmount": 2,
+        "sgstAmount": 2,
+        "igstAmount": 0,
+        "cessAmount": 0
+    }
+  ],
+  "taxSummary": [
+    {
+    "ratio": 5,
+    "value": 12.5,
+    "cgst": 5.5,
+    "sgst": 5.5,
+    "igst": 0.0,
+    "cess": 0.0
+  },
+  {
+    "ratio": 12,
+    "value": 12.5,
+    "cgst": 5.5,
+    "sgst": 5.5,
+    "igst": 0.0,
+    "cess": 0.0
+  },
+  {
+    "ratio": 7.5,
+    "value": 12.5,
+    "cgst": 5.5,
+    "sgst": 5.5,
+    "igst": 0.0,
+    "cess": 0.0
+  }],
+  "discount": 0.0,
+  "rounded": 0.0,
+  "accountAdjustment": 47,
+  "netAmount": 110.0,
+  "billedBy": "A.TonyJ"
+}

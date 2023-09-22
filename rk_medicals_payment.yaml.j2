@@ -1,0 +1,150 @@
+title: 'Auditplus'
+conformance: Minimal
+paper_size: 
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 10
+    right: 10
+    bottom: 10
+    left: 10
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: Text
+          alignment: Center
+          contents:
+            - value: 'RECEIPT'
+              style:
+                font_size: 12
+                bold: true
+        - type: PaddedElement
+          padding:
+            left: 84
+            right: 84
+            bottom: 3
+          element:
+            type: BlankLine
+        - type: Text
+          padding:
+            top: 1
+            bottom: 5
+          contents:
+            - value: 'We received payment for your Auditplus subscription. Thanks for doing business with us!'
+              style:
+                font_size: 12
+        - type: TableLayout
+          widths: [1,1]
+          padding:
+            vertical: 1
+            horizontal: 1
+          text_style:
+            font_size: 10
+          cell_decorator:
+            type: SimpleCellDecorator
+            line_style:
+              color:
+                greyscale: 127
+            inner: true
+            skip_vertical: true
+          rows:
+            - columns:
+              - type: Text
+                padding:
+                  top: 8
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'Date'
+              - type: Text
+                padding:
+                  top: 8
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: '{{payment.date | date(format="%d-%m-%Y")}}'
+                    style:
+                      bold: true
+            - columns:
+              - type: Text
+                padding:
+                  top: 8
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'Payment Mode'
+              - type: Text
+                padding:
+                  top: 8
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'RAZORPAY'
+                    style:
+                      bold: true
+            - columns:
+              - type: Text
+                padding:
+                  top: 8
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'Account Billed'
+              - type: Text
+                padding:
+                  top: 8
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: {{organizationInfo.fullName}}
+                    style:
+                      bold: true     
+            - columns:
+              - type: Text
+                padding:
+                  top: 8
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'Amount Received'
+              - type: Text
+                padding:
+                  top: 8
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: '{{payment.amount | fixed}} INR'
+                    style:
+                      bold: true     
+            - columns:
+              - type: Text
+                padding:
+                  top: 8
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'Reference Number'
+              - type: Text
+                padding:
+                  top: 8
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: '{{payment.rzpPaymentId}}'
+                    style:
+                      bold: true  
+            - columns:
+              

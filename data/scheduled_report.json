@@ -1,0 +1,99 @@
+{
+  "title": "Scheduled Drug Report",
+  "orgInfo":  {
+      "name": "VELAVAN MEDICAL"
+  },
+  "branchInfo":  {
+      "displayName": "DP ROAD BRANCH",
+      "gstNo": "33AANFV6837B1Z2",
+      "licNo": "DL NO :TNT/278/20,21",
+      "phone": "0461 2333725",
+      "address":  {
+          "address": "115/8, DEVARPURAM ROAD,",
+          "city": "THOOTHUKUDI",
+          "pincode": "628002",
+          "state": "TAMILNADU",
+          "country": ""
+      },
+      "mobileNos": [
+          "9150012970",
+          "7904376415"
+      ],
+      "email": "vmdproad@gmail.com"
+  },
+  "date": "2023-02-24",
+  "records": [
+       {
+          "id": "63f8596f3ad1292b0ce3f6b9",
+          "address":  {},
+          "patient": "sri",
+          "doctor":  {
+              "displayName": "Dr.Kannan"
+          },
+          "items":  [
+               {
+                  "inventoryInfo":  {
+                      "displayName": "dolo11",
+                      "manufacturerName": "TEST MANUFACTURER"
+                  },
+                  "batchInfo":  {
+                      "batchNo": "S1"
+                  },
+                  "qty": 2.0
+              },
+              {
+                "inventoryInfo":  {
+                    "displayName": "dolo11",
+                    "manufacturerName": "TEST MANUFACTURER"
+                },
+                "batchInfo":  {
+                    "batchNo": "S1"
+                },
+                "qty": 2.0
+            },
+            {
+                "inventoryInfo":  {
+                    "displayName": "dolo11",
+                    "manufacturerName": "TEST MANUFACTURER"
+                },
+                "batchInfo":  {
+                    "batchNo": "S1"
+                },
+                "qty": 2.0
+            }
+          ],
+          "voucherNo": "DP2223162299"
+      },
+      {
+        "id": "63f8596f3ad1292b0ce3f6b9",
+        "address":  {},
+        "patient": "sri",
+        "doctor":  {
+            "displayName": "Dr.Kannan"
+        },
+        "items":  [
+             {
+                "inventoryInfo":  {
+                    "displayName": "dolo11",
+                    "manufacturerName": "TEST MANUFACTURER"
+                },
+                "batchInfo":  {
+                    "batchNo": "S1"
+                },
+                "qty": 2.0
+            },
+            {
+              "inventoryInfo":  {
+                  "displayName": "dolo11",
+                  "manufacturerName": "TEST MANUFACTURER"
+              },
+              "batchInfo":  {
+                  "batchNo": "S1"
+              },
+              "qty": 2.0
+          }
+        ],
+        "voucherNo": "DP2223162299"
+    }
+  ]
+}

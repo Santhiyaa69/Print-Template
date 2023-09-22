@@ -1,0 +1,396 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 10
+    right: 10
+    bottom: 10
+    left: 10
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: Text
+          alignment: Center
+          contents:
+            - value: {{orgInfo.name}}
+              style:
+                font_size: 17
+                bold: true
+        {% if branchInfo.address.address %}
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{branchInfo.address.address}}'
+              style:
+                font_size: 12
+        {% endif %}
+        {% if branchInfo.address.city %}
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{branchInfo.address.city}} - {{branchInfo.address.pincode | default(value = '1')}}'
+              style:
+                font_size: 12
+        {% endif %}
+        {%if branchInfo.phone%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'Phone: {{branchInfo.phone}}'
+              style:
+                font_size: 12
+        {%endif%}
+        {%if branchInfo.mobileNos and branchInfo.mobileNos | length > 0%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'Mobile: {{branchInfo.mobileNos | join(sep= ",")}}'
+              style:
+                font_size: 12
+        {%endif%}
+         {%if branchInfo.email%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'Email: {{branchInfo.email}}'
+              style:
+                font_size: 12
+        {%endif%}
+        {%if branchInfo.gstNo%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'GSTIN: {{branchInfo.gstNo}}'
+              style:
+                font_size: 12
+        {%endif%}
+        {%if branchInfo.licNo%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'LIC.NO: {{branchInfo.licNo}}'
+              style:
+                font_size: 12
+        {%endif%}
+        - type: PaddedElement
+          padding:
+           vertical: 1
+           horizontal: 0
+          element:
+            type: BlankLine
+        - type: Text
+          padding:
+            top: 5
+          alignment: Center
+          contents:
+            - value: {{voucherInfo.voucherName}}
+              style:
+                bold: true
+                font_size: 13
+        - type: PaddedElement
+          padding:
+            left: 82
+            right: 82
+            bottom: 6
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [1,1]
+          padding:
+            vertical: 1
+            horizontal: 1
+          text_style:
+            font_size: 12
+          cell_decorator:
+            type: SimpleCellDecorator
+            line_style:
+              color:
+                greyscale: 127
+            inner: true
+            skip_vertical: true
+          rows:
+            - columns:
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'To'
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: {{toAccount}}
+                    style:
+                      bold: true
+            - columns:
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'Voucher Number'
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: '{{voucherInfo.voucherNo}}'
+                    style:
+                      bold: true
+            - columns:
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'Voucher Date'
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: '{{voucherInfo.date}}'
+                    style:
+                      bold: true
+            {%if effDate %}
+            - columns:
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'Effective Date'
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: '{{effDate}}'
+                    style:
+                      bold: true
+            {% endif %}
+            {%if voucherInfo.refNo %}
+            - columns:
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'Reference Number'
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: '{{voucherInfo.refNo}}'
+                    style:
+                      bold: true
+            {% endif %}
+            - columns:
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'Received Via'
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: {{receiveAccount}}
+                    style:
+                      bold: true
+            {% if description %}
+            - columns:
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'Description'
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: {{description}}
+                    style:
+                      bold: true
+            {% endif %}
+            - columns:
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'Amount'
+              - type: Text
+                padding:
+                  top: 7
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: 'Rs. {{amount | fixed}}'
+                    style:
+                      bold: true
+        - type: PaddedElement
+          padding:
+            left: 1
+            bottom: 5
+          element:
+            type: BlankLine
+            style:
+              color:
+                greyscale: 127
+        {% if adjs %}
+        - type: Text
+          padding:
+            vertical: 2
+            horizontal: 1
+          contents:
+            - value: "Payment Received for"
+              style:
+                font_size: 11
+                bold: true
+        - type: TableLayout
+          widths: [12,18,17,15,19,19]
+          padding: 1
+          text_style:
+            font_size: 10
+            bold: true
+          cell_decorator:
+            type: SimpleCellDecorator
+            outer: true
+            line_style:
+              color:
+                greyscale: 127
+          rows:
+            - columns:
+              - type: Text
+                padding: 2
+                contents:
+                  - value: "Bill Date"
+              - type: Text
+                padding: 2
+                contents:
+                  - value: "Voucher No"
+              - type: Text
+                padding: 2
+                contents:
+                  - value: "Ref.No"
+              - type: Text
+                padding: 2
+                contents:
+                  - value: "Voucher Type"
+              - type: Text
+                alignment: Right
+                padding: 2
+                contents:
+                  - value: "Principal Amount"
+              - type: Text
+                alignment: Right
+                padding: 2
+                contents:
+                  - value: "Paid Amount"
+        - type: TableLayout
+          widths: [12,18,17,15,19,19]
+          padding: 1
+          text_style:
+            font_size: 10
+          rows:
+          {% for adj in adjs %}
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: "{{adj.date}}"
+              - type: Text
+                padding: 1
+                contents:
+                  - value: "{{adj.voucherNo}}"
+              - type: Text
+                padding: 1
+                contents:
+                  - value: "{{adj.refNo}}"
+              - type: Text
+                padding: 1
+                contents:
+                  {% if adj.voucherType %}
+                  - value: "{{adj.voucherType}}"
+                  {% else %}
+                  - value: "OPENING"
+                  {% endif %}
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  {% if adj.opening >= 0 %}
+                  - value: "{{adj.opening | fixed}} Dr"
+                  {% else %}
+                  - value: "{{adj.opening | fixed | trim_start_matches(pat="-")}} Cr"
+                  {% endif %}
+                    style:
+                      shrink: true
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  {% if adj.paidAmount >= 0 %}
+                  - value: "{{adj.paidAmount | fixed}} Dr"
+                  {% else %}
+                  - value: "{{adj.paidAmount | fixed | trim_start_matches(pat="-")}} Cr"
+                    style:
+                      shrink: true
+                  {% endif %}
+          {% endfor %}
+        {% endif %}
+

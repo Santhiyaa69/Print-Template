@@ -1,0 +1,83 @@
+{
+    "title": "Sale Register",
+    "orgInfo": {
+        "name": "VELAVAN MEDICAL"
+    },
+    "branchInfo": {
+        "displayName": "DP ROAD  BRANCH",
+        "phone": "0461 2333725",
+        "gstNo": "33AANFV6837B1Z2",
+        "licNo": "DL NO:TNT",
+        "address": {
+            "address": "115/8, DEVARPURAM ROAD,THOOTHUKUDI",
+            "city": "DL NO :TNT/278/20,21",
+            "pincode": "632745",
+            "state": "TAMILNADU",
+            "country": ""
+        }, 
+        "mobileNos": [
+            "91500 12970",
+            "79043 76415"
+        ],
+        "email": "velavanpharmacy@gamil.com"
+    },
+    "branch": "DP ROAD  BRANCH",
+    "fromDate": "2021-01-01",
+    "toDate": "2021-01-02",
+    "paymentMode": "All",
+    "customer": "LAKSHMANAN D,VASIKARAN2,baby uma",
+    "paymentAccounts": "",
+    "records": [
+        {
+            "amount": 644,
+            "branchId": "5f21a97ac22242871ccdfdc7",
+            "branchName": "DP ROAD BRANCH",
+            "customer": "baby uma",
+            "date": "2021-12-01",
+            "voucherName": "Cash Sale",
+            "voucherType": "SALE",
+            "voucherNo": "DP132659",
+            "cashAmount": 644,
+            "bankAmount": 0,
+            "eftAmount": 0,
+            "creditAmount": 0
+        },
+        {
+            "amount": 832,
+            "branchId": "5f21a97ac22242871ccdfdc7",
+            "branchName": "DP ROAD BRANCH",
+            "customer": "LAKSHMANAN D",
+            "date": "2021-12-01",
+            "voucherName": "Cash Sale",
+            "voucherType": "SALE",
+            "voucherNo": "DP132612",
+            "cashAmount": 832,
+            "bankAmount": 0,
+            "eftAmount": 0,
+            "creditAmount": 0
+        },
+        {
+            "amount": 518,
+            "branchId": "5f21a97ac22242871ccdfdc7",
+            "branchName": "DP ROAD BRANCH",
+            "customer": "VASIKARAN2",
+            "date": "2021-12-02",
+            "voucherName": "Cash Sale",
+            "voucherType": "SALE",
+            "voucherNo": "DP133694",
+            "cashAmount": 518,
+            "bankAmount": 0,
+            "eftAmount": 0,
+            "creditAmount": 0
+        }
+       
+    ],
+   "balance": {
+    "billAmount": 1994.0,
+    "cashAmount": 1994.0,
+    "eftAmount": 0,
+    "bankAmount": 0,
+    "creditAmount": 0.0
+   },
+   "detailMode": true
+}

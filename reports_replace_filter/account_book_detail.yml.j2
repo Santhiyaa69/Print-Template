@@ -1,0 +1,284 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 10
+    right: 10
+    bottom: 10
+    left: 10
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{orgInfo.name | replace(from="'", to="")}}'
+              style:
+                font_size: 17
+                bold: true
+        {% if branchInfo.address.address %}
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{branchInfo.address.address | replace(from="'", to="")}}'
+              style:
+                font_size: 12
+        {% endif %}
+        {% if branchInfo.address.city %}
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{branchInfo.address.city | replace(from="'", to="")}} - {{branchInfo.address.pincode | default(value = '1')}}'
+              style:
+                font_size: 12
+        {% endif %}
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{title}}'
+              style:
+                font_size: 13
+                bold: true
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{fromDate | date(format="%d-%m-%Y")}} to {{toDate | date(format="%d-%m-%Y")}}'
+              style:
+                font_size: 11
+                bold: true
+        - type: PaddedElement
+          padding:
+            top: 1
+            bottom: 1
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [18,2,80]
+          padding:
+            top: 1
+            left: 1
+          text_style:
+            font_size: 11
+            bold: true
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'Branch'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: '{{branch | replace(from="'", to="")}}'
+            - columns:
+              - type: Text
+                padding:
+                  top: 1
+                contents:
+                  - value: 'Account'
+              - type: Text
+                padding:
+                  top: 1
+                contents:
+                  - value: ':'
+              - type: Text
+                padding:
+                  top: 1
+                contents:
+                  - value: '{{account | replace(from="'", to="")}}'
+        - type: TableLayout
+          widths: [18,2,38,17,2,23]
+          padding:
+            horizontal: 1
+            vertical: 1
+          text_style:
+            font_size: 11
+            bold: true
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'Opening Balance'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                {% if balance.opening >= 0 %}
+                  - value: '{{balance.opening | fixed }} Dr'
+                {% else %}
+                  - value: '{{balance.opening | fixed | trim_start_matches(pat="-")}} Cr'
+                {% endif %}
+              - type: Text
+                contents:
+                  - value: 'Closing Balance'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                alignment: Right
+                contents:
+                {% if balance.closing >= 0 %}
+                  - value: '{{balance.closing | fixed }} Dr'
+                {% else %}
+                  - value: '{{balance.closing | fixed | trim_start_matches(pat="-")}} Cr'
+                {% endif %}
+        - type: PaddedElement
+          padding:
+            horizontal: 0
+            vertical: 1
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [12,25,20,17,13,13]
+          padding:
+            vertical: 1
+            horizontal: 0
+          text_style:
+            font_size: 11
+            bold: true
+          rows:
+            - columns:
+              - type: Text
+                padding:
+                  left: 1
+                contents:
+                  - value: 'Date'
+              - type: Text
+                padding:
+                  left: 1
+                contents:
+                  - value: 'Particulars'
+              - type: Text
+                padding:
+                  left: 1
+                contents:
+                  - value: 'Voucher Type'
+              - type: Text
+                padding:
+                  left: 1
+                contents:
+                  - value: 'Ref.No'
+              - type: Text
+                padding:
+                  right: 1
+                alignment: Right
+                contents:
+                  - value: 'Debit'
+              - type: Text
+                padding:
+                  right: 1
+                alignment: Right
+                contents:
+                  - value: 'Credit'
+        - type: PaddedElement
+          padding:
+            horizontal: 0
+            vertical: 1
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [12,25,20,17,13,13]
+          text_style:
+            font_size: 11
+          padding:
+            horizontal: 0
+            vertical: 1
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+            outer: true
+          rows:
+            {% for record in records %}
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{record.date | date(format="%d-%m-%Y")}}'
+              - type: Text
+                padding: 1
+                contents:
+                  {% if record.particulars %}
+                  - value: '{{record.particulars | replace(from="'", to="")}}'
+                  {% else %}
+                  - value: ''
+                  {% endif %}
+              - type: Text
+                padding: 1
+                contents:
+                {% if record.voucherType %}
+                  - value: {{record.voucherType}}
+                {% else %}
+                  - value: ''
+                {% endif %}
+              - type: Text
+                padding: 1
+                contents:
+                {% if record.refNo %}
+                  - value: '{{record.voucherNo}}/{{record.refNo}}'
+                {%else %}
+                  - value: '{{record.voucherNo}}'
+                {% endif %}
+              - type: Text
+                padding: 1
+                alignment: Right
+                contents:
+                  - value: '{{record.debit | fixed}}'
+                    style:
+                      shrink: true
+              - type: Text
+                padding: 1
+                alignment: Right
+                contents:
+                  - value: '{{record.credit | fixed}}'
+                    style:
+                      shrink: true
+            {% endfor %}
+        - type: PaddedElement
+          padding:
+            horizontal: 0
+            vertical: 1
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [70,15,15]
+          padding: 1
+          text_style:
+            font_size: 11
+            bold: true
+          rows:
+            - columns:
+              - type: Text
+                alignment: Right
+                padding:
+                  left: 1
+                contents:
+                  - value: 'Total  :'
+              - type: Text
+                padding:
+                  right: 1
+                alignment: Right
+                contents:
+                  - value: '{{balance.debit | fixed | trim_start_matches(pat="-") }} Dr'
+                    style:
+                      shrink: true
+              - type: Text
+                padding:
+                  right: 1
+                alignment: Right
+                contents:
+                  - value: '{{balance.credit | fixed | trim_start_matches(pat="-") }} Cr'
+                    style: 
+                      shrink: true
+        - type: PaddedElement
+          padding:
+            horizontal: 0
+            vertical: 1  
+          element:
+            type: BlankLine

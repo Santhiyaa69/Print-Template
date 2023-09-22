@@ -1,0 +1,193 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 10
+    right: 10
+    bottom: 10
+    left: 10
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{orgInfo.name | replace(from="'", to="")}}'
+              style:
+                font_size: 17
+                bold: true
+        {%if branchInfo.address.address %}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: '{{branchInfo.address.address | replace(from="'", to="")}}'
+              style:
+                font_size: 12
+        {% endif %}
+        {% if branchInfo.address.city %}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: '{{branchInfo.address.city | replace(from="'", to="")}} - {{branchInfo.address.pincode | default(value="1")}}'
+              style:
+                font_size: 12
+        {% endif %}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: '{{title}}'
+              style:
+                font_size: 13
+                bold: true
+        - type: Text
+          alignment: Center
+          padding:
+            vertical: 0.5
+            horizontal: 0
+          contents:
+            - value: '{{fromDate | date(format="%d-%m-%Y")}} to {{toDate | date(format="%d-%m-%Y")}}'
+              style:
+                font_size: 11
+        - type: BlankLine
+        - type: TableLayout
+          widths: [16, 2, 82]
+          padding:
+            top: 1
+            left: 1
+          text_style:
+            bold: true
+            font_size: 12
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'Branch'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: '{{branch | replace(from="'", to="")}}'
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'Inventory'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: '{{inventory | replace(from="'", to="")}}'
+        - type: TableLayout
+          widths: [50,50]
+          padding:
+            vertical: 1
+            horizontal: 1
+          text_style:
+            bold: true
+            font_size: 12
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'Opening Stock: '
+                    style:
+                      shrink: true
+                  - value: '{{balance.opening}}'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Closing Stock: '
+                    style:
+                      shrink: true
+                  - value: '{{balance.closing}}'
+        - type: BlankLine
+        - type: TableLayout
+          widths: [60, 20, 20]
+          padding: 1
+          text_style:
+            bold: true
+            font_size: 12
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'Particulars'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Inward'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Outward'
+        - type: BlankLine
+        - type: TableLayout
+          widths: [60, 20, 20]
+          padding:
+            vertical: 2
+            horizontal: 1
+          text_style:
+            font_size: 11
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+            outer: true
+          rows:
+            {% for record in records%}
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                {% if viewType == 'monthly' %}
+                  - value: '{{record.particulars | date(format="%b/%Y")}}'
+                {% else %}
+                  - value: '{{record.particulars | date(format="%d-%m-%Y")}}'
+                {% endif %}
+              - type: Text
+                padding: 1
+                alignment: Right
+                contents:
+                  - value: '{{record.inward}}'
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  - value: '{{record.outward}}'
+                    style:
+                      shrink: true
+            {% endfor %}
+        - type: BlankLine
+        - type: TableLayout
+          widths: [50,50]
+          padding:
+            vertical: 1
+            horizontal: 1
+          text_style:
+            bold: true
+            font_size: 12
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'Total Inward:  {{balance.inward}}'
+                    style:
+                      shrink: true
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Total Outward:  {{balance.outward}}'
+                    style:
+                      shrink: true
+        - type: BlankLine

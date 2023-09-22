@@ -1,0 +1,55 @@
+{
+    "title": "Inventory Info",
+    "orgInfo": {
+        "name":"VELAVAN MEDICAL"
+    },
+    "branchInfo": {
+        "displayName": "Dp Road Branch",
+        "gstNo": "BRANCHGSTNO1234",
+        "licNo": "LICNO12345",
+        "phone": "0461-2333725",
+        "mobileNos": ["9876543210", "9876543211"],
+        "email":"vmedical@gmail.com",
+        "address": {
+            "address": "115/8, DEVARPURAM ROAD",
+            "city": "THOOTHUKUDI",
+            "pincode": "654321",
+            "state": "Tamilnadu",
+            "country": "India"
+        }
+    },
+    "inventory": "Mask",
+    "branches": "EP Road Branch",
+    "records": [
+      {
+        "batchNo": "ASaDNF0982DF21",
+        "expiry": "2021-02-01",
+        "closing": 1,
+        "pRate": 1.50,
+        "mrp": 2.50,
+        "sRate": 2.00,
+        "value": 22222.50
+      },
+      {
+        "batchNo": "1ASaDNF098234",
+        "expiry": "2021-04-12",
+        "closing": 1,
+        "pRate": 1.50,
+        "mrp": 2.50,
+        "sRate": 2.00,
+        "value": 22222.50
+      },
+      {
+         "batchNo": "",
+          "expiry": "2021-02-11",
+          "closing": null,
+          "pRate": 1.50,
+          "mrp": 2.50,
+          "sRate": 2.00,
+          "value": 22222.50
+      }],
+     "balance": {
+      "closing": 987,
+      "value": 339155555555.31
+     }
+  }

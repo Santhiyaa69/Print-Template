@@ -1,0 +1,59 @@
+{
+    "title": "Receipt",
+    "orgInfo": {
+        "name":"velavanmedical"
+    },
+    "branchInfo": {
+        "displayName": "DP ROAD BRANCH",
+        "gstNo": "33AANFV6837B1Z2",
+        "licNo": "DL NO :TNT/278/20,21",
+        "phone": "0461 2333725",
+        "mobileNos": ["9150012970",
+        "7904376415"],
+        "email":"vmdproad@gmail.com",
+        "address": {
+            "address": "115/8, DEVARPURAM ROAD",
+            "city": "THOOTHUKUDI",
+            "pincode": "654321",
+            "state": "Tamilnadu",
+            "country": ""
+        }
+    },
+    "voucherInfo": {
+        "voucherNo": "DP2223683",
+        "voucherName": "RECEIPT",
+        "voucherType": "RECEIPT",
+        "date": "2023-01-31",
+        "refNo": "Sr3",
+        "time": "2023-01-31T06:39:35.160+00:00"
+    },
+    "effDate": null,
+    "amount": 25.0,
+    "description": "Sr3",
+    "toAccount" : "Test Customer",
+    "receiveAccount" : "Cash",
+    "acTrns":[
+        {
+            "account":"Cust1",
+            "credit":100.0,
+            "debit":0.00,
+            "adjs" : [
+                {
+                    "closing": 0.0,
+                    "date": "2021-06-15",
+                    "opening": 0,
+                    "refNo": null,
+                    "voucherNo": "MAR2345678910000",
+                    "voucherType": "PAYMENT",
+                    "paidAmount": 50
+                }
+            ]
+        },
+        {
+            "account":"Cash",
+            "credit":0.00,
+            "debit":100.00
+        }
+        
+    ]
+}

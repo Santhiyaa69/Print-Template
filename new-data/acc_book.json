@@ -1,0 +1,31 @@
+{
+    "title": "Account Book Daily Report",
+    "viewType": "Daily",
+    "orgInfo": {
+        "name": "VELAVAN MEDICAL"
+    },
+    "branchInfo": {
+        "address": {
+            "address": "#115/8, DEVARPURAM ROAD",
+            "city": "THOOTHUKUDI",
+            "pincode": "628002"
+        }
+    },
+    "branch": "DP, ETP BRANCH",
+    "account": "acc pay",
+    "fromDate": "2022-01-01",
+    "toDate": "2022-02-03",
+    "records": [
+        {
+            "credit": 100,
+            "debit": 0,
+            "particulars": "2023-01-23"
+        }
+    ],
+    "balance": {
+        "opening": 477775005000.0,
+        "debit": 418973.9,
+        "credit": 418973.00,
+        "closing": -418973.95
+    }
+}

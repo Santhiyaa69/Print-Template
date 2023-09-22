@@ -1,0 +1,113 @@
+{
+    "title": "Receipt",
+    "orgInfo": {
+        "name":"vela/#$@!%&^*vanmedical"
+    },
+    "branchInfo": {
+        "displayName": "DP ROAD BRANCH",
+        "gstNo": "33AANFV6837B1Z2",
+        "licNo": "DL NO :TNT/278/20,21",
+        "phone": "0461 2333725",
+        "mobileNos": ["9150012970",
+        "7904376415"],
+        "email":"vmdproad@gmail.com",
+        "address": {
+            "address": "115/8, DEVARPURAM ROAD",
+            "city": "THOOTHUKUDI",
+            "pincode": "654321",
+            "state": "Tamilnadu",
+            "country": ""
+        }
+    },
+    "voucherInfo": {
+        "voucherNo": "DP2223684",
+        "voucherName": "RECEIPT",
+        "voucherType": "RECEIPT",
+        "date": "31-01-2023",
+        "refNo": "Dr1",
+        "time": "2023-01-31T11:19:08.653+00:00"
+    },
+    "effDate": "31-01-2023",
+    "amount": 151.0,
+    "description": "Dr1",
+    "creditAccount":[
+        {
+            "account":"cust3",
+            "credit": 20.0,
+            "debit": 0.00,
+            "newRef": 0.0,
+            "adjs" : [
+                {
+                    "date": "2023-01-27",
+                    "principalAmount": 10,
+                    "voucherNo": "DPJ271",
+                    "paidAmount": -10
+                },
+                {
+                    "date": "2023-01-27",
+                    "principalAmount": 21.0,
+                    
+                    "paidAmount": -10
+                }
+            ]
+        },
+        {
+            "account":"cust1",
+            "credit": 131.0,
+            "debit":0.00,
+            "newRef": 81.0,
+            "adjs" : [
+                {
+                    "date": "2023-01-27",
+                    "principalAmount": 88.0,
+                    "voucherNo": "DP2223162203",
+                    "paidAmount": -10.0
+                },
+                {
+                    "date": "2023-01-27",
+                    "principalAmount": 10.0,
+                    "voucherNo": "DPJ271",
+                    "paidAmount": -10.0
+                },
+                {
+                    "date": "2023-01-31",
+                    "principalAmount": 10.0,
+                    "voucherNo": "DPPAY22233",
+                    "paidAmount": -10.0
+                },
+                {
+                    "date": "2023-01-31",
+                    "principalAmount": 52.18,
+                    "voucherNo": "DP2223316",
+                    "paidAmount": -10.0
+                },
+                {
+                    "date": "2023-01-31",
+                    "principalAmount": 51.0,
+                    "voucherNo": "DP2223162217",
+                    "paidAmount": -10.0
+                }
+            ]
+        },
+        {
+            "account":"cust2",
+            "credit": 50.0,
+            "debit":0.00,
+            "newRef": 50,
+            "adjs":[]
+        }
+        
+    ],
+    "debitAccount": [ 
+        {
+            "account":"Cash",
+            "credit":0.00,
+            "debit": 100.00
+        },
+        {
+            "account":"Iob Acc",
+            "credit":0.00,
+            "debit": 51.00
+        }
+    ]
+}

@@ -1,0 +1,194 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 10
+    right: 10
+    bottom: 10
+    left: 10
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: Text
+          alignment: Center
+          contents:
+            - value: {{orgInfo.name}}
+              style:
+                font_size: 17
+                bold: true
+        {% if branchInfo.address.address %}
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{branchInfo.address.address}}'
+              style:
+                font_size: 12
+        {% endif %}
+        {% if branchInfo.address.city %}
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{branchInfo.address.city}} - {{branchInfo.address.pincode | default(value = '1')}}'
+              style:
+                font_size: 12
+        {% endif %}
+        - type: Text
+          alignment: Center
+          contents:
+            {% if viewType == "account" %}
+            - value: 'Account Day Book'
+            {% else %}
+            - value: 'Inventory Day Book'
+            {% endif %}
+              style:
+                font_size: 13
+                bold: true
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{fromDate | date(format="%d-%m-%Y")}} to {{toDate | date(format="%d-%m-%Y")}}'
+              style:
+                font_size: 11
+                bold: true
+        - type: PaddedElement
+          padding:
+           vertical: 1
+           horizontal: 0
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [18,2,80]
+          padding:
+            top: 1
+            left: 1
+          text_style:
+            font_size: 11
+            bold: true
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'Branch'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: {{branch}}
+        - type: PaddedElement
+          padding:
+           vertical: 1
+           horizontal: 0
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [12,20,19,17,16,16]
+          padding:
+            vertical: 1
+            horizontal: 1
+          text_style:
+            font_size: 11
+            bold: true
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'Date'
+              - type: Text
+                padding:
+                  left: 1
+                contents:
+                  - value: 'Particulars'
+              - type: Text
+                padding:
+                  left: 1
+                contents:
+                  - value: 'Voucher Name'
+              - type: Text
+                padding:
+                  left: 1
+                contents:
+                  - value: 'Ref.No'
+              {% if viewType == "account" %}
+              - type: Text
+                padding:
+                  right: 1
+                alignment: Right
+                contents:
+                  - value: 'Debit'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Credit'
+              {% else %}
+              - type: Text
+                padding:
+                  right: 1
+                alignment: Right
+                contents:
+                  - value: 'Inward'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Outward'
+              {% endif %}
+        - type: PaddedElement
+          padding:
+           vertical: 1
+           horizontal: 0
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [12,20,19,17,16,16]
+          text_style:
+            font_size: 11
+          padding:
+            horizontal: 0
+            vertical: 1
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+            outer: true
+          rows:
+            {% for record in records %}
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{record.date | date(format="%d-%m-%Y")}}'
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{record.particulars}}'
+              - type: Text
+                padding: 1
+                contents:
+                  - value: {{record.voucherName}}
+              - type: Text
+                padding: 1
+                contents:
+                {% if record.refNo %}
+                  - value: '{{record.voucherNo}}/{{record.refNo}}'
+                {%else %}
+                  - value: '{{record.voucherNo}}'
+                {% endif %}
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  - value: '{{record.debit}}'
+                    style:
+                      shrink: true
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  - value: '{{record.credit}}'
+                    style:
+                      shrink: true
+            {% endfor %}

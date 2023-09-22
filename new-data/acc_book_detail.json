@@ -1,0 +1,709 @@
+{
+    "title": "Account Book Detail Report",
+    "orgInfo": {
+        "name": "Test ORG"
+    },
+    "branchInfo": {
+        "address": {}
+    },
+    "branch": " MAIN BRANCH, dp",
+    "account": "Cash",
+    "fromDate": "2022-09-01",
+    "toDate": "2023-09-19",
+    "records": [
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232433",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232474",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232438",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232481",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232492",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232455",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232430",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232494",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232416",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232484",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232483",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232464",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232419",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232460",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232477",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232488",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232482",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232478",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232490",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232429",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232497",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232493",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232436",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232457",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232480",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232423",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232434",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232462",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232427",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232475",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232479",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232473",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232456",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232417",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232446",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232415",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232439",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232466",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232421",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232459",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232445",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232450",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232476",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232440",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232487",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232425",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232437",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232420",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232449",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232461",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232470",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232443",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232442",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232432",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232435",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232453",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232485",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232422",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232467",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232414",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232486",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232469",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232472",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232471",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232458",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232431",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232444",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232491",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232454",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232468",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232441",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232489",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232413",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232463",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232496",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232428",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232452",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232418",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232447",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232426",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232448",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232495",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232424",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232451",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232412",
+            "credit": 300,
+            "debit": 0
+        },
+        {
+            "date": "2023-09-16T00:00:00Z",
+            "voucherType": "Purchase",
+            "refNo": "ref1",
+            "voucherNo": "DP232465",
+            "credit": 300,
+            "debit": 0
+        }
+    ],
+    "balance": {
+        "opening": 0,
+        "credit": 25800,
+        "debit": 0,
+        "closing": -25800
+    }
+}

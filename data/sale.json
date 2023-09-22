@@ -1,0 +1,176 @@
+{
+  "title": "Sale",
+  "orgInfo": {
+    "name": "VELAVAN HYPERMARKET (P) LTD"
+  },
+  "branchInfo": {
+    "displayName": "DP ROAD  BRANCH",
+    "gstNo": "33AANFV6837B1Z2",
+    "licNo": "",
+    "phone": "0461 2333725",
+    "address": {
+      "address": "",
+      "city": "",
+      "pincode": "",
+      "state": "TAMILNADU",
+      "country": ""
+    },
+    "mobileNos": [
+      "96985 66223",
+      "79043 76415"
+    ],
+    "email": "velavanpharmacy@gamil.com"
+  },
+  "voucherInfo": {
+    "voucherNo": "DP2223115802",
+    "voucherName": "Cash Sale",
+    "voucherType": "Sale",
+    "date": "08-08-2022",
+    "refNo": "7643e8",
+    "time": "2022-07-21T11:06:56.627+0000"
+  },
+  "partyInfo": {
+    "name": "Raghu",
+    "address": {
+        "address": "SouthCotton Street",
+        "city": "Thoothukkudi",
+        "pincode": "628002",
+        "state": "TAMILNADU",
+        "country": "INDIA"
+    },
+    "gstNo": "33AAGFD1094B1Z0",
+    "mobileNos": [
+        "7894561234"
+    ]
+},
+  "patientName": "asdf",
+  "doctorName": "qwer",
+  "items": [
+    {
+      "name": "chocomilk",
+      "qty": 1,
+      "unit": "PCS",
+      "mrp": 10.00,
+      "rate": 32,
+      "batchNo": "D1",
+      "rack": "milky",
+      "expiry": null,
+      "hsnCode": "3453",
+      "taxableValue": 27.42,
+      "taxRatio": 5,
+      "cgstAmount": 0.69,
+      "sgstAmount": 0.69,
+      "igstAmount": 0,
+      "cessAmount": 0,
+      "disc": {
+        "mode": "P",
+        "amount": 10
+      },
+      "reduction": 0,
+      "dAmount": 3.20,
+      "salesManCode": null,
+      "salesManName": null,
+      "precision": 1
+    },
+    {
+      "name": "chocomilk",
+      "qty": 1,
+      "unit": "PCS",
+      "mrp": 10.00,
+      "rate": 32,
+      "batchNo": "D1",
+      "rack": "milky",
+      "expiry": null,
+      "hsnCode": "3453",
+      "taxableValue": 27.42,
+      "taxRatio": 5,
+      "cgstAmount": 0.69,
+      "sgstAmount": 0.69,
+      "igstAmount": 0,
+      "cessAmount": 0,
+      "disc": {
+        "mode": "P",
+        "amount": 10
+      },
+      "reduction": 0,
+      "dAmount": 3.20,
+      "salesManCode": null,
+      "salesManName": null,
+      "precision": 2
+    },
+    {
+      "name": "chocomilk",
+      "qty": 1,
+      "unit": "PCS",
+      "mrp": 10.00,
+      "rate": 32,
+      "batchNo": "D1",
+      "rack": "milky",
+      "expiry": "2022-08-22",
+      "hsnCode": "3453",
+      "taxableValue": 27.42,
+      "taxRatio": 5,
+      "cgstAmount": 0.69,
+      "sgstAmount": 0.69,
+      "igstAmount": 0,
+      "cessAmount": 0,
+      "disc": {
+        "mode": "P",
+        "amount": 10
+      },
+      "reduction": 0,
+      "dAmount": 3.20,
+      "salesManCode": null,
+      "salesManName": null,
+      "precision": 3
+    }
+  ],
+  "taxSummary": [
+    {
+      "ratio": 5,
+      "value": 27.42,
+      "sgst": 0.69,
+      "cgst": 0.69,
+      "igst": 0,
+      "cess": 0
+    },
+    {
+      "ratio": 5,
+      "value": 27.42,
+      "sgst": 0.69,
+      "cgst": 0.69,
+      "igst": 0,
+      "cess": 0
+    },
+    {
+      "ratio": 5,
+      "value": 27.42,
+      "sgst": 0.69,
+      "cgst": 0.69,
+      "igst": 0,
+      "cess": 0
+    },
+    {
+      "ratio": 5,
+      "value": 27.42,
+      "sgst": 0.69,
+      "cgst": 0.69,
+      "igst": 0,
+      "cess": 0
+    }
+  ],
+  "deliveryInfo": null,
+  "partyOutstanding": {
+    "previousBal": -10.00,
+    "totalOutstanding": 90
+  },
+  "discount": 0,
+  "rounded": 1,
+  "accountAdjustment": 0,
+  "shippingCharge": 1,
+  "netAmount": 117.2,
+  "lut": true,
+  "billedBy": "bala79adv",
+  "salesManName": "SalesMan",
+  "description": null
+}

@@ -1,0 +1,27 @@
+{
+    "title": "Inventory Book Detail Report",
+    "orgInfo": {
+        "name": "Test ORG"
+    },
+    "branchInfo": {
+        "address": {}
+    },
+    "branch": " MAIN BRANCH, NEW BRANCH",
+    "inventory": "CAMELIN PENCIL",
+    "fromDate": "2022-09-22",
+    "toDate": "2023-09-22",
+    "records": [
+        {
+            "date": "2023-03-31",
+            "voucherNo": "",
+            "outward": 0,
+            "inward": 10
+        }
+    ],
+    "balance": {
+        "opening": 0,
+        "inward": 10,
+        "outward": 0,
+        "closing": 10
+    }
+}

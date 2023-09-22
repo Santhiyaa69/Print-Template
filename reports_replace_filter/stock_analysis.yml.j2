@@ -1,0 +1,219 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 10
+    right: 10
+    bottom: 10
+    left: 10
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{orgInfo.name | replace(from="'", to="")}}'
+              style:
+                font_size: 17
+                bold: true
+        {%if branchInfo.address.address %}        
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: '{{branchInfo.address.address | replace(from="'", to="")}}'
+              style:
+                font_size: 12
+        {% endif %}
+        {% if branchInfo.address.city %}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: '{{branchInfo.address.city | replace(from="'", to="")}} - {{branchInfo.address.pincode | default(value="1")}}'
+              style:
+                font_size: 12
+        {% endif %}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: {{title}}
+              style:
+                font_size: 13
+                bold: true
+        - type: Text
+          alignment: Center
+          padding:
+            vertical: 0.5
+            horizontal: 0
+          contents:
+            - value: 'As On Date: {{asOnDate |date(format="%d-%m-%Y")}}'
+              style:
+                font_size: 11
+        - type: BlankLine
+        - type: TableLayout
+          widths: [28, 2, 70]
+          padding: 1
+          text_style: 
+            bold: true
+            font_size: 12
+          rows:
+            {% if branch %}
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Branch' 
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: '{{branch | replace(from="'", to="")}}'
+            {% endif %}
+            {% if inventory %}
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Inventory' 
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: '{{inventory | replace(from="'", to="")}}'
+            {% endif %}
+            {% if manufacturer %}
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Manufacturer' 
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: '{{manufacturer | replace(from="'", to="")}}'
+            {% endif %}
+            {% if section %}
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Section' 
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: '{{section | replace(from="'", to="")}}'
+            {% endif %}
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Groupby' 
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: '{{group | replace(from="'", to="")}}'
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Stock value calculated by' 
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: 'Average Cost'
+        - type: BlankLine
+        - type: TableLayout
+          widths: [10, 50, 20, 20]
+          padding: 1
+          text_style: 
+            bold: true
+            font_size: 12
+          rows:
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Sl.No' 
+              - type: Text
+                contents:
+                  - value: '{{group | replace(from="'", to="")}}'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Stock'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Value'
+        - type: BlankLine
+        - type: TableLayout
+          widths: [10, 50, 20, 20]
+          padding:
+            vertical: 2
+            horizontal: 1
+          text_style:
+            font_size: 11
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+            outer: true
+          rows:
+            {% for record in records%}
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{loop.index}}'
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{record.name | replace(from="'", to="")}}'
+              - type: Text
+                padding: 1
+                alignment: Right
+                contents:
+                  - value: '{{record.closing}}'
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  - value: '{{record.value | fixed}}'
+                    style: 
+                      shrink: true
+            {% endfor %}
+        - type: BlankLine
+        - type: TableLayout
+          widths: [50,50]
+          padding: 
+            vertical: 1
+            horizontal: 1
+          text_style: 
+            bold: true
+            font_size: 12
+          rows:
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Total Stock:  {{summary.closing}}' 
+                    style: 
+                      shrink: true
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Total Value:  Rs.{{summary.value | fixed}}' 
+                    style: 
+                      shrink: true
+        - type: BlankLine
