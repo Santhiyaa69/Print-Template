@@ -1,5 +1,5 @@
 {
-    "title": "Credit Purchase",
+    "title": "Cash Sale",
     "orgInfo": {
         "name": "Auditplus Technologies"
     },
@@ -42,6 +42,8 @@
             "9876543210"
         ]
     },
+    "patientName": "Chandru",
+    "doctorName": "Dr.JudeAntony",
     "taxSummary": [
         {
             "ratio": 5,
@@ -52,18 +54,29 @@
             "cess": 0
         }
     ],
-    "discount": 5.5,
+    "deliveryInfo": {
+        "date": "2022-01-02",
+        "transport": "Lorry"
+    },
+    "partyOutstanding": {
+        "previousBal": 1000,
+        "totalOutstanding": 1110
+    },
+    "discount": 5,
     "rounded": 0.5,
-    "accountAdjustment": 0,
-    "netAmount": 525,
+    "accountAdjustment": 1.5,
+    "shippingCharge": 5.4,
+    "netAmount": 25.52,
     "billedBy": "Arun Paul",
     "description": "##789",
+    "salesManName": "SalesMan",
+    "lut": false,
+    "qrCode": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkVEQzU3REUxMzU4QjMwMEJBOUY3OTM0MEE2Njk2ODMxRjNDODUwNDciLCJ0eXAiOiJKV1QiLCJ4NXQiOiI3Y1Y5NFRXTE1BdXA5NU5BcG1sb01mUElVRWMifQ.eyJkYXRhIjoie1wiU2VsbGVyR3N0aW5cIjpcIjI5QUFCQ1QxMzMyTDAwMFwiLFwiQnV5ZXJHc3RpblwiOlwiMzNHU1BUTjE4ODJHMVozXCIsXCJEb2NOb1wiOlwiQVVELzc2XCIsXCJEb2NUeXBcIjpcIklOVlwiLFwiRG9jRHRcIjpcIjE0LzEwLzIwMjJcIixcIlRvdEludlZhbFwiOjY0Ny4wLFwiSXRlbUNudFwiOjIsXCJNYWluSHNuQ29kZVwiOlwiMTAwM1wiLFwiSXJuXCI6XCJlMjhmNjY0ZWVlOWUzMDkzOWVkYTg4ODc3NGJmNzA5MTEzMjg4ZGQxNDBmMTM5MmNhMDA3OWE4MTJiZjE1MDE2XCIsXCJJcm5EdFwiOlwiMjAyMi0xMC0xNCAxMDoxODowMFwifSIsImlzcyI6Ik5JQyJ9.RBBMwn2Wv8ej_hTdTRA67CUHcaKQWxOECUE3NOdE50coesCWF5Z_L1qXGu4H-dUfeMxb4Yzw_RUGwLhB0JtKFqQAETe2Dc3pMB_uKAW5rmqe63An_DhsvUhDlDNdOLVkDsdmjE-Z9iih4IY0u3hfMVc4sPVwvfaw4zOBAGSV2LKQU7r-0J4HR7mdrURn-Fj8av2Hy6BWf1XSHQ7fVaqqFV1yNbBEOq-lyCET7OqTlpwdhx05bEBQZAXuQ0InoBeOAIgJApmXdRBIB_9yXVaQ9fGHy55BvoV0YHt-dBnE-RQjR4FzfZo5pxAfeK-g1EZkWTNYfGE6kJchwFcdv2Vbow",
     "items": [
         {
             "name": "Vicks Candy",
             "precision": 2,
             "qty": 25,
-            "free": 0,
             "unit": "PCS",
             "mrp": 2,
             "rate": 1.8,
@@ -81,7 +94,10 @@
                 "mode": "P",
                 "amount": 0
             },
-            "dAmount": 5
+            "dAmount": 5,
+            "reduction": 3,
+            "salesManCode": "VMDP1",
+            "salesManName": "Mani"
         }
     ]
 }

@@ -38,7 +38,7 @@ decorator:
           top: 3
           right: 6
         contents:
-          - value: '{{voucherInfo.voucherName |upper}} INVOICE'
+          - value: '{{voucherInfo.voucherName | replace(from="'", to= "")}} INVOICE'
 body:
   elements:
     - type: LinearLayout
@@ -250,7 +250,7 @@ body:
                       padding:
                         top: 1
                       contents:
-                        - value: ': {{voucherInfo.time}}'
+                        - value: ': {{voucherInfo.time |date(format="%I:%M %p", timezone="Asia/Kolkata")}}'
                   - columns:
                     - type: Text
                       padding:
@@ -339,13 +339,11 @@ body:
                 padding: 1
                 alignment: Center
                 contents:
-                {% if item.expiry %}
-                  - value: '{{item.expiry | date(format="%d-%m-%Y")}}'
-                {% else %}
+                  {% if item.expiry %}
+                  - value: '{{item.expiry | date(format="%d-%m-%Y")}}'   
+                  {%else%}
                   - value: ''
-                {% endif %}                              
-                    style:
-                      shrink: true
+                  {%endif%}   
               - type: Text
                 padding: 1
                 alignment: Center
@@ -468,7 +466,7 @@ footer:
                       alignment: Center
                       padding: 1
                       contents:
-                        - value: '{{tax.ratio}} %'
+                        - value: '{{tax.ratio |fixed}} %'
                     - type: Text
                       alignment: Center
                       padding: 1
@@ -606,9 +604,8 @@ footer:
                 - type: Text
                   alignment: Right
                   contents:
-                    - value: 'Rs.{{netAmount}}'
+                    - value: 'RS. {{netAmount}}'
                       style: 
                         bold: true
               {%endif%}
       - type: BlankLine  
-

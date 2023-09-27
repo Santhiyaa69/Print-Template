@@ -38,7 +38,7 @@ decorator:
           top: 4
           right: 6
         contents:
-          - value: '{{voucherInfo.voucherName}} INVOICE'
+          - value: '{{voucherInfo.voucherName | replace(from="'", to= "")}} INVOICE'
 body:
   elements:
     - type: LinearLayout
@@ -432,12 +432,16 @@ body:
               - type: Text
                 padding: 1
                 contents:
-                  - value: '{{item.name}}'
+                  - value: '{{item.name | replace(from="'", to= "")}}'
               - type: Text
                 padding: 1
                 alignment: Center
                 contents:
+                  {% if item.hsnCode %}
                   - value: '{{item.hsnCode}}'
+                  {%else%}
+                  - value: ''
+                  {%endif%}
               - type: Text
                 padding: 1
                 alignment: Center
@@ -486,9 +490,9 @@ body:
                 contents:
                   - value: '{{rowAmount | fixed}}'
                     style:
-                      shrink: true
+                      shrink: true 
             {%endfor%}
-        {% set rowTotals = fold(items=items, keys=["taxableValue", "cgstAmount", "sgstAmount", "igstAmount","cessAmount"])%}
+         {% set rowTotals = fold(items=items, keys=["taxableValue", "cgstAmount", "sgstAmount", "igstAmount","cessAmount"])%}
         - type: BlankLine
         {%set subTotal = rowTotals.taxableValue + rowTotals.cgstAmount + rowTotals.sgstAmount + rowTotals.igstAmount + rowTotals.cessAmount%}
         - type: Text
@@ -502,7 +506,7 @@ body:
             - value: '{{subTotal |fixed}} '
               style:
                 font_size: 9
-        - type: BlankLine
+        - type: BlankLine 
 footer:
   height: 90
   element:

@@ -1,0 +1,668 @@
+{
+    "title": "voucher_type:sale",
+    "orgInfo": {
+        "name": "Test ORG"
+    },
+    "branchInfo": {
+        "displayName": "dp",
+        "gstNo": "",
+        "address": {
+            "address": "",
+            "city": "",
+            "pincode": "",
+            "state": "",
+            "country": ""
+        },
+        "licNo": "",
+        "phone": "",
+        "email": "",
+        "mobileNos": [
+            null,
+            null
+        ]
+    },
+    "voucherInfo": {
+        "voucherNo": "DP23244",
+        "voucherName": "Sale",
+        "voucherType": "voucher_type:sale",
+        "date": "2023-09-26",
+        "refNo": "DP04",
+        "time": "2023-09-26T08:19:25.692492600Z"
+    },
+    "partyInfo": {
+        "name": "dia",
+        "gstNo": "",
+        "address": {
+            "address": "",
+            "city": "",
+            "pincode": "",
+            "state": "",
+            "country": ""
+        },
+        "mobileNos": [
+            null,
+            null
+        ]
+    },
+    "partyOutstanding": {
+        "previousBal": 0,
+        "totalOutstanding": 0
+    },
+    "patientName": "",
+    "doctorName": "",
+    "lut": false,
+    "billedBy": "",
+    "salesManName": "",
+    "description": "cash",
+    "items": [
+        {
+            "name": "inv1",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 50,
+            "rate": 45,
+            "batchNo": "DPINV001",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 44.56,
+            "taxRatio": 1,
+            "cgstAmount": 0.22,
+            "sgstAmount": 0.22,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 5,
+            "hsnCode": "123"
+        },
+        {
+            "name": "Sample",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 15,
+            "rate": 15,
+            "batchNo": "S1",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 13.399999999999999,
+            "taxRatio": 12,
+            "cgstAmount": 0.8,
+            "sgstAmount": 0.8,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "12345"
+        },
+        {
+            "name": "inv2",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 200,
+            "rate": 200,
+            "batchNo": "DPSAM01",
+            "rack": "",
+            "unit": "box",
+            "taxableValue": 169.5,
+            "taxRatio": 18,
+            "cgstAmount": 15.25,
+            "sgstAmount": 15.25,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        },
+        {
+            "name": "halls",
+            "precision": 0,
+            "qty": 1,
+            "mrp": 2,
+            "rate": 2,
+            "batchNo": "DPH01",
+            "rack": "",
+            "unit": "pcs",
+            "taxableValue": 1.98,
+            "taxRatio": 1,
+            "cgstAmount": 0.01,
+            "sgstAmount": 0.01,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 0,
+            "reduction": 0,
+            "hsnCode": "6998"
+        }
+    ],
+    "deliveryInfo": {
+        "date": "2023-09-26",
+        "transport": null
+    },
+    "taxSummary": [
+        {
+            "ratio": 1,
+            "value": 88.12000000000002,
+            "cgst": 0.44000000000000017,
+            "sgst": 0.44000000000000017,
+            "igst": 0,
+            "cess": 0
+        },
+        {
+            "ratio": 12,
+            "value": 13.399999999999999,
+            "cgst": 0.8,
+            "sgst": 0.8,
+            "igst": 0,
+            "cess": 0
+        },
+        {
+            "ratio": 18,
+            "value": 169.5,
+            "cgst": 15.25,
+            "sgst": 15.25,
+            "igst": 0,
+            "cess": 0
+        }
+    ],
+    "accountAdjustment": 0,
+    "discount": 0,
+    "rounded": 0,
+    "shippingCharge": 0,
+    "netAmount": 304
+}

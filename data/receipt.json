@@ -1,59 +1,67 @@
 {
     "title": "Receipt",
     "orgInfo": {
-        "name":"velavanmedical"
+        "name": "VELAVAN MEDICAL"
     },
     "branchInfo": {
         "displayName": "DP ROAD BRANCH",
         "gstNo": "33AANFV6837B1Z2",
         "licNo": "DL NO :TNT/278/20,21",
         "phone": "0461 2333725",
-        "mobileNos": ["9150012970",
-        "7904376415"],
-        "email":"vmdproad@gmail.com",
         "address": {
-            "address": "115/8, DEVARPURAM ROAD",
+            "address": "115/8, DEVARPURAM ROAD,",
             "city": "THOOTHUKUDI",
-            "pincode": "654321",
-            "state": "Tamilnadu",
+            "pincode": "628002",
+            "state": "TAMILNADU",
             "country": ""
-        }
+        },
+        "mobileNos": [
+            "9150012970",
+            "7904376415"
+        ],
+        "email": "vmdproad@gmail.com"
     },
     "voucherInfo": {
-        "voucherNo": "DP2223683",
+        "voucherNo": "DP2223684",
         "voucherName": "RECEIPT",
         "voucherType": "RECEIPT",
-        "date": "2023-01-31",
-        "refNo": "Sr3",
-        "time": "2023-01-31T06:39:35.160+00:00"
+        "date": "31-01-2023",
+        "refNo": "Dr1",
+        "time": "2023-02-01T10:27:34.073+00:00"
     },
-    "effDate": null,
-    "amount": 25.0,
-    "description": "Sr3",
-    "toAccount" : "Test Customer",
-    "receiveAccount" : "Cash",
-    "acTrns":[
+    "amount": 30.0,
+    "effDate": "31-01-2023",
+    "description": "Dr1",
+    "creditAccount": [
         {
-            "account":"Cust1",
-            "credit":100.0,
-            "debit":0.00,
-            "adjs" : [
+            "account": "cust3",
+            "credit": 20.0,
+            "debit": 0.0,
+            "adjs": [
                 {
-                    "closing": 0.0,
-                    "date": "2021-06-15",
-                    "opening": 0,
-                    "refNo": null,
-                    "voucherNo": "MAR2345678910000",
-                    "voucherType": "PAYMENT",
-                    "paidAmount": 50
+                    "principalAmount": 10.0,
+                    "date": "2023-01-27",
+                    "voucherNo": "DPJ271",
+                    "paidAmount": -10.0,
+                    "refType": "NEW"
+                },
+                {
+                    "principalAmount": 21.0,
+                    "date": "2023-01-31",
+                    "voucherNo": "DP2223162218",
+                    "paidAmount": -20.0,
+                    "refType": "ADJ"
                 }
-            ]
-        },
-        {
-            "account":"Cash",
-            "credit":0.00,
-            "debit":100.00
+            ],
+            "onAccount": -50.0
         }
-        
+    ],
+    "debitAccount": [
+        {
+            "account": "Cash",
+            "credit": 0.0,
+            "debit": 30.0,
+            "adjs": null
+        }
     ]
 }
