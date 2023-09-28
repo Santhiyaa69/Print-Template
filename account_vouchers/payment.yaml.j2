@@ -200,7 +200,7 @@ body:
                   right: 5
                   bottom: 0.5
                 rows:
-                {% if adj.refType == "ADJ" %}
+                {% if adj.refType == "adj" %}
                   - columns:
                     - type: Text
                       contents:
@@ -216,7 +216,7 @@ body:
                         {% else %}
                         - value: '{{adj.principalAmount | fixed | trim_start_matches(pat="-")}} Cr'
                         {% endif %}
-                {% elif adj.refType == "NEW" %}
+                {% elif adj.refType == "new" %}
                   - columns:
                     - type: Text
                       contents:

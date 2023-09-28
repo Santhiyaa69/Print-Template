@@ -1,58 +1,72 @@
 {
     "title": "Payment",
     "orgInfo": {
-        "name": "aplus"
+        "name": "Test ORG"
     },
     "branchInfo": {
-        "displayName": "DP MEDICAL",
-        "gstNo": "33APLUS0001AAZ6",
-        "licNo": "LICDPM",
-        "phone": "04612322708",
+        "displayName": "EP BRANCH",
+        "gstNo": "",
         "address": {
-            "address": "12/12 first street",
-            "city": "tuticorin",
-            "pincode": "628001",
-            "state": "TAMILNADU",
+            "address": "",
+            "city": "",
+            "pincode": "",
+            "state": "",
             "country": ""
         },
+        "licNo": "",
+        "phone": "",
+        "email": "",
         "mobileNos": [
-            "9488507981"
-        ],
-        "email": "aplustuty@gmail.com"
+            null,
+            null
+        ]
     },
     "voucherInfo": {
-        "voucherNo": "DPMPMT232449",
-        "voucherName": "PAYMENT",
-        "voucherType": "PAYMENT",
-        "date": "23-05-2023",
-        "refNo": "Dp1",
-        "time": "2023-05-23T05:57:04.302+00:00"
+        "voucherNo": "EPPY23244",
+        "voucherName": "pay",
+        "voucherType": "voucher_type:payment",
+        "date": "2023-09-27",
+        "refNo": "",
+        "time": "2023-09-28T07:00:28.002284600Z"
     },
-    "amount": 100.0,
-    "effDate": "23-05-2023",
-    "description": "",
+    "amount": 500,
+    "effDate": "2023-09-27",
+    "description": null,
     "creditAccount": [
         {
             "account": "Cash",
-            "credit": 100.0,
-            "debit": 0.0
+            "credit": 245,
+            "debit": 0,
+            "adjs": []
+        },
+        {
+            "account": "TMB",
+            "credit": 255,
+            "debit": 0,
+            "adjs": []
         }
     ],
     "debitAccount": [
         {
-            "account": "TEST VEND",
-            "credit": 0.0,
-            "debit": 100.0,
+            "account": "TEST VENDOR",
+            "credit": 0,
+            "debit": 500,
+            "onAccount": 55,
             "adjs": [
                 {
-                    "principalAmount": 100.0,
-                    "date": "2023-05-23",
-                    "voucherNo": "DPMPMT232449",
-                    "paidAmount": 100.0,
-                    "refType": "NEW"
+                    "date": "2023-09-27",
+                    "voucherNo": null,
+                    "paidAmount": 200,
+                    "refType": "new"
+                },
+                {
+                    "date": "2023-09-26",
+                    "voucherNo": "EP23241",
+                    "principalAmount": -245,
+                    "paidAmount": 245,
+                    "refType": "adj"
                 }
-            ],
-            "onAccount": 0.0
+            ]
         }
     ]
 }

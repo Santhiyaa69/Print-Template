@@ -50,7 +50,7 @@
                     "date": "2023-01-31",
                     "voucherNo": "DP2223162218",
                     "paidAmount": -20.0,
-                    "refType": "ADJ"
+                    "refType": "adj"
                 }
             ],
             "onAccount": -50.0
