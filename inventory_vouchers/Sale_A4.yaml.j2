@@ -262,7 +262,7 @@ body:
                       padding:
                         top: 0.5
                       contents:
-                        - value: '{{voucherInfo.date}}'
+                        - value: '{{voucherInfo.date | date(format="%d-%m-%Y")}}'
                   - columns:
                     - type: Text
                       padding:
