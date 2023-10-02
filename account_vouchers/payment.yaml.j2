@@ -123,7 +123,14 @@ body:
               - type: Text
                 alignment: Right
                 contents:
-                 - value: 'Date : {{voucherInfo.date}}'
+                 - value: 'Date : {{voucherInfo.date | date(format="%d-%m-%Y")}}'
+            {% if description %}
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: 'Description   : {{description | replace(from="'", to= "")}}'
+            {% endif %}
         - type: BlankLine
         - type: TableLayout
           widths: [80,20]
@@ -207,7 +214,11 @@ body:
                         - value: 'Agst Ref : '
                     - type: Text
                       contents:
+                        {% if adj.refNo %}
+                        - value: '{{adj.date | date(format="%d-%m-%Y")}} / {{adj.voucherNo | default(value = '---')}} / {{adj.refNo}}'
+                        {% else %}
                         - value: '{{adj.date | date(format="%d-%m-%Y")}} / {{adj.voucherNo | default(value = '---')}}'
+                        {% endif %}
                     - type: Text
                       alignment: Right
                       contents:
@@ -223,7 +234,11 @@ body:
                         - value: 'New Ref : '
                     - type: Text
                       contents:
+                        {% if adj.refNo %}
+                        - value: '{{adj.date | date(format="%d-%m-%Y")}} / {{adj.voucherNo | default(value = '---')}} / {{adj.refNo}}'
+                        {% else %}
                         - value: '{{adj.date | date(format="%d-%m-%Y")}} / {{adj.voucherNo | default(value = '---')}}'
+                        {% endif %}
                     - type: Text
                       alignment: Right
                       contents:

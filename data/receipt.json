@@ -25,12 +25,12 @@
         "voucherNo": "DP2223684",
         "voucherName": "RECEIPT",
         "voucherType": "RECEIPT",
-        "date": "31-01-2023",
+        "date": "2023-09-27",
         "refNo": "Dr1",
         "time": "2023-02-01T10:27:34.073+00:00"
     },
     "amount": 30.0,
-    "effDate": "31-01-2023",
+    "effDate": "2023-09-27",
     "description": "Dr1",
     "creditAccount": [
         {
@@ -43,7 +43,7 @@
                     "date": "2023-01-27",
                     "voucherNo": "DPJ271",
                     "paidAmount": -10.0,
-                    "refType": "NEW"
+                    "refType": "new"
                 },
                 {
                     "principalAmount": 21.0,
