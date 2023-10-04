@@ -40,7 +40,7 @@ body:
                               padding:
                                 top: 1
                               contents:
-                                - value: '{{orgInfo.name}}'
+                                - value: '{{orgInfo.name | replace(from="'", to="")}}'
                                   style:
                                     font_size: 10
                                     bold: true
@@ -48,13 +48,13 @@ body:
                           - columns:
                             - type: Text
                               contents:
-                                - value: '{{branchInfo.address.address}}'
+                                - value: '{{branchInfo.address.address | replace(from="'", to="")}}'
                           {% endif %}
                           {% if branchInfo.address.city %}
                           - columns:
                             - type: Text
                               contents:
-                                - value: '{{branchInfo.address.city}} - {{branchInfo.address.pincode | default(value="1")}}'
+                                - value: '{{branchInfo.address.city | replace(from="'", to="")}} - {{branchInfo.address.pincode | default(value="1")}}'
                           {% endif %}
                           {% if branchInfo.phone or branchInfo.mobileNos or branchInfo.displayName %}
                           - columns:
@@ -120,7 +120,7 @@ body:
                                           bold: true
                                   - type: Text
                                     contents:
-                                      - value: '{{branchInfo.displayName}}'
+                                      - value: '{{branchInfo.displayName | replace(from="'", to="")}}'
                           {% endif %}
                      - type: TableLayout
                        widths: [17, 3, 44]
@@ -276,11 +276,11 @@ body:
               {% if altBranchInfo.displayName and altBranchInfo.phone %}
               - type: Text
                 contents:
-                  - value: '{{altBranchInfo.displayName}} - {{altBranchInfo.phone}}'
+                  - value: '{{altBranchInfo.displayName | replace(from="'", to="")}} - {{altBranchInfo.phone}}'
               {% else %}
               - type: Text
                 contents:
-                  - value: '{{altBranchInfo.displayName}}'
+                  - value: '{{altBranchInfo.displayName | replace(from="'", to="")}}'
               {% endif %}
         - type: BlankLine
         - type: TableLayout
@@ -332,7 +332,7 @@ body:
               - type: Text
                 padding: 1
                 contents:
-                  - value: '{{item.name}}'
+                  - value: '{{item.name | replace(from="'", to="")}}'
               - type: Text
                 alignment: Center
                 padding: 1

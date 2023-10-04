@@ -48,7 +48,7 @@ body:
           padding:
             top: 1
           contents:
-            - value: '{{orgInfo.name}}'
+            - value: '{{orgInfo.name | replace(from="'", to="")}}'
               style:
                 font_size: 15
                 bold: true
@@ -58,7 +58,7 @@ body:
           padding:
             top: 0.5
           contents:
-            - value: '{{branchInfo.address.address}}'
+            - value: '{{branchInfo.address.address | replace(from="'", to="")}}'
               style:
                 font_size: 10
         {%endif%}
@@ -68,7 +68,7 @@ body:
           padding:
             top: 0.5
           contents:
-            - value: '{{branchInfo.address.city}} - {{branchInfo.address.pincode | default(value="1")}}'
+            - value: '{{branchInfo.address.city | replace(from="'", to="")}} - {{branchInfo.address.pincode | default(value="1")}}'
               style:
                 font_size: 10
         {%endif%}
@@ -159,19 +159,19 @@ body:
                               bold: true                            
                       - type: Text
                         contents: 
-                          - value: '{{partyInfo.name}}'
+                          - value: '{{partyInfo.name | replace(from="'", to="")}}'
                       {%if partyInfo.address.address%}
                       - type: Text
                         contents: 
-                          - value: '{{partyInfo.address.address}}'
+                          - value: '{{partyInfo.address.address | replace(from="'", to="")}}'
                       {%endif%}
                       {% if partyInfo.address.city or partyInfo.address.pincode or partyInfo.address.state or partyInfo.address.country%}
                       - type: Text
                         contents:
                           {%if partyInfo.address.city and partyInfo.address.pincode%}
-                          - value: '{{partyInfo.address.city}} - {{partyInfo.address.pincode}} '
+                          - value: '{{partyInfo.address.city | replace(from="'", to="")}} - {{partyInfo.address.pincode}} '
                           {%elif partyInfo.address.city%}
-                          - value: '{{partyInfo.address.city}}'
+                          - value: '{{partyInfo.address.city | replace(from="'", to="")}}'
                           {%elif partyInfo.address.pincode%}
                           - value: '{{partyInfo.address.pincode}} '
                           {%endif%} 
@@ -329,7 +329,7 @@ body:
               - type: Text
                 padding: 1
                 contents:
-                  - value: '{{item.name}}'   
+                  - value: '{{item.name | replace(from="'", to="")}}'   
               - type: Text
                 padding: 1
                 alignment: Center
@@ -727,7 +727,7 @@ footer:
                 style: 
                   font_size: 8
                   bold: true
-              - value: '{{billedBy}}'
+              - value: '{{billedBy | replace(from="'", to="")}}'
                 style: 
                   font_size: 8
           - type: Text
@@ -757,4 +757,3 @@ footer:
                 style:
                   font_size: 8                               
     - type: BlankLine 
-

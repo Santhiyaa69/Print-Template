@@ -48,7 +48,7 @@ body:
           padding:
             top: 1
           contents:
-            - value: '{{orgInfo.name}}'
+            - value: '{{orgInfo.name | replace(from="'", to="")}}'
               style:
                 font_size: 15
                 bold: true
@@ -58,7 +58,7 @@ body:
           padding:
             top: 0.5
           contents:
-            - value: '{{branchInfo.address.address}}'
+            - value: '{{branchInfo.address.address | replace(from="'", to="")}}'
               style:
                 font_size: 10
         {%endif%}
@@ -68,7 +68,7 @@ body:
           padding:
             top: 0.5
           contents:
-            - value: '{{branchInfo.address.city}} - {{branchInfo.address.pincode | default(value="1")}}'
+            - value: '{{branchInfo.address.city | replace(from="'", to="")}} - {{branchInfo.address.pincode | default(value="1")}}'
               style:
                 font_size: 10
         {%endif%}
@@ -158,7 +158,7 @@ body:
                           padding:
                             bottom: 0.3
                           contents:
-                            - value: '{{partyInfo.name}}'
+                            - value: '{{partyInfo.name | replace(from="'", to="")}}'
                         {%endif%}
                         {%if partyInfo.address.address%}
                         - type: Text
@@ -166,7 +166,7 @@ body:
                           padding:
                             bottom: 0.3
                           contents:
-                            - value: '{{partyInfo.address.address}}'
+                            - value: '{{partyInfo.address.address | replace(from="'", to="")}}'
                         {%endif%}
                         {% if partyInfo.address.city or partyInfo.address.pincode or partyInfo.address.state or partyInfo.address.country%}
                         - type: Text
@@ -174,9 +174,9 @@ body:
                             bottom: 0.5
                           contents:
                             {%if partyInfo.address.city and partyInfo.address.pincode%}
-                            - value: '{{partyInfo.address.city}} - {{partyInfo.address.pincode}} '
+                            - value: '{{partyInfo.address.city | replace(from="'", to="")}} - {{partyInfo.address.pincode}} '
                             {%elif partyInfo.address.city%}
-                            - value: '{{partyInfo.address.city}}'
+                            - value: '{{partyInfo.address.city | replace(from="'", to="")}}'
                             {%elif partyInfo.address.pincode%}
                             - value: '{{partyInfo.address.pincode}} '
                             {%endif%} 
@@ -327,7 +327,7 @@ body:
                       padding:
                         top: 0.5
                       contents:
-                        - value: '{{deliveryInfo.date}}'
+                        - value: '{{deliveryInfo.date | date(format="%d-%m-%Y")}}'
                   {%endif%}
                   {%if deliveryInfo.transport%}
                   - columns:
@@ -989,10 +989,10 @@ footer:
                   - value: ':' 
               - type: Text
                 contents:
-                  - value: '{{salesManName}}' 
+                  - value: '{{salesManName | replace(from="'", to="")}}' 
               {% endif %}
             - columns:
-              - type: Text
+              - type: Text 
                 padding:
                   top: 1
                 contents:
@@ -1008,7 +1008,7 @@ footer:
                 padding:
                   top: 1
                 contents:
-                  - value: '{{billedBy}}'
+                  - value: '{{billedBy | replace(from="'", to="")}}'
             - columns:
               - type: Text
                 padding:
@@ -1027,7 +1027,7 @@ footer:
                   top: 1
                 contents:
                   {%if partyInfo%}
-                  - value: '{{partyInfo.name}}'
+                  - value: '{{partyInfo.name | replace(from="'", to="")}}'
                   {%else%}
                   - value: 'Customer'
                   {%endif%}
@@ -1048,7 +1048,7 @@ footer:
                 padding:
                   top: 1
                 contents:
-                  - value: '{{description}}'
+                  - value: '{{description | replace(from="'", to="")}}'
       - type: BlankLine     
       - type: TableLayout
         widths: [35, 30, 35]
@@ -1197,7 +1197,7 @@ footer:
                 padding: 
                   right: 1
                 contents:
-                  - value: 'For {{orgInfo.name}}'
+                  - value: 'For {{orgInfo.name | replace(from="'", to="")}}'
             - columns:
               - type: Text
                 alignment: Right
