@@ -20,7 +20,6 @@ decorator:
     rows:
     - columns:
       - type: Text
-        alignment: Left
         padding:
           top: 3
           left: 6
@@ -38,7 +37,7 @@ decorator:
           top: 4
           right: 6
         contents:
-          - value: '{{voucherInfo.voucherName}} INVOICE'
+          - value: '{{voucherInfo.voucherName | replace(from="'", to="")}} INVOICE'
 body:
   elements:
     - type: LinearLayout
@@ -145,7 +144,6 @@ body:
                     - type: LinearLayout
                       elements:
                         - type: Text
-                          alignment: Left
                           padding:
                             bottom: 0.3
                           contents:
@@ -154,7 +152,6 @@ body:
                                 bold: true
                         {%if partyInfo.name%}
                         - type: Text
-                          alignment: Left
                           padding:
                             bottom: 0.3
                           contents:
@@ -162,7 +159,6 @@ body:
                         {%endif%}
                         {%if partyInfo.address.address%}
                         - type: Text
-                          alignment: Left
                           padding:
                             bottom: 0.3
                           contents:
@@ -437,7 +433,11 @@ body:
                 padding: 1
                 alignment: Center
                 contents:
+                  {% if item.hsnCode %}
                   - value: '{{item.hsnCode}}'
+                  {%else%}
+                  - value: ''
+                  {%endif%}
               - type: Text
                 padding: 1
                 alignment: Center
@@ -880,89 +880,74 @@ footer:
             rows:
             - columns:
               - type: Text
-                alignment: Left
                 contents:
                   - value: 'BankName'
               - type: Text
-                alignment: Left
                 contents:
                   - value: ':'
               - type: Text
-                alignment: Left
                 contents:
                   - value: 'HDFC BANK LTD'
             - columns:
               - type: Text
-                alignment: Left
                 padding:
                   top: 1
                 contents:
                   - value: 'A/C Name'
               - type: Text
-                alignment: Left
                 padding:
                   top: 1
                 contents:
                   - value: ':'
               - type: Text
-                alignment: Left
                 padding:
                   top: 1
                 contents:
                   - value: 'VELAVAN HYPERMARKET BOOKS & STATIONERY'
             - columns:
               - type: Text
-                alignment: Left
                 padding:
                   top: 1
                 contents:
                   - value: 'A/C No'
               - type: Text
-                alignment: Left
                 padding:
                   top: 1
                 contents:
                   - value: ':'
               - type: Text
-                alignment: Left
                 padding:
                   top: 1
                 contents:
                   - value: '50200071241571'
             - columns:
               - type: Text
-                alignment: Left
                 padding:
                   top: 1
                 contents:
                   - value: 'IFSC Code'
               - type: Text
-                alignment: Left
                 padding:
                   top: 1
                 contents:
                   - value: ':'
               - type: Text
-                alignment: Left
                 padding:
                   top: 1
                 contents:
                   - value: 'HDFC0001104'
             - columns:
               - type: Text
-                alignment: Left
                 padding:
                   top: 1
                 contents:
                   - value: 'PAN No'
               - type: Text
-                alignment: Left
                 padding:
                   top: 1
                 contents:
                   - value: ':'
               - type: Text
-                alignment: Left
                 padding:
                   top: 1
                 contents:
@@ -1084,7 +1069,6 @@ footer:
             rows:
             - columns:
               - type: Text
-                alignment: Left
                 padding: 
                   left: 2
                 contents:
@@ -1099,20 +1083,17 @@ footer:
                   type: BlankLine   
             - columns:
               - type: Text
-                alignment: Left
                 padding: 
                   top: 1
                   left: 2
                 contents:
                   - value: 'Previous Balance'
               - type: Text
-                alignment: Left
                 padding: 
                   top: 1
                 contents:
                   - value: ':'
               - type: Text
-                alignment: Left
                 padding: 
                   top: 1
                 contents:
@@ -1129,20 +1110,17 @@ footer:
                       shrink: true
             - columns:
               - type: Text
-                alignment: Left
                 padding:
                   top: 1 
                   left: 2
                 contents:
                   - value: 'Bill Amount'
               - type: Text
-                alignment: Left
                 padding: 
                   top: 1
                 contents:
                   - value: ':'
               - type: Text
-                alignment: Left
                 padding: 
                   top: 1
                 contents:
@@ -1151,20 +1129,17 @@ footer:
                       shrink: true
             - columns:
               - type: Text
-                alignment: Left
                 padding: 
                   left: 2
                   top: 1
                 contents:
                   - value: 'Total Outstanding'
               - type: Text
-                alignment: Left
                 padding: 
                   top: 1
                 contents:
                   - value: ':'
               - type: Text
-                alignment: Left
                 padding: 
                   top: 1
                 contents:
