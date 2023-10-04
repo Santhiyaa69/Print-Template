@@ -1,0 +1,93 @@
+{
+    "title": "Sale Quotation",
+    "orgInfo": {
+        "name": "Auditplus Technologies"
+    },
+    "branchInfo": {
+        "displayName": "West Branch",
+        "gstNo": "33ADZPM3072C1ZH",
+        "licNo": "LIC456",
+        "phone": "0461-3233704",
+        "address": {
+            "address": "123, 2nd Cross Street",
+            "city": "THOOTHUKUDI",
+            "pincode": "628001",
+            "state": "Tamilnadu",
+            "country": "India"
+        },
+        "mobileNos": [
+            "9988776655"
+        ],
+        "email": "support@auditplus.io"
+    },
+    "voucherInfo": {
+        "voucherNo": "ABC123",
+        "voucherName": "VoucherName",
+        "voucherType": "VoucherType",
+        "date": "2022-01-01",
+        "refNo": "#789",
+        "time": "2022-07-21T11:06:56.627+0000"
+    },
+    "partyInfo": {
+        "name": "ABC123",
+        "address": {
+            "address": "123, 2nd Cross Street",
+            "city": "THOOTHUKUDI",
+            "pincode": "628001",
+            "state": "Tamilnadu",
+            "country": "India"
+        },
+        "gstNo": "33AAGFD1094B1Z0",
+        "mobileNos": [
+            "9876543210"
+        ]
+    },
+    "taxSummary": [
+        {
+            "ratio": 5,
+            "value": 95.24,
+            "sgst": 2.38,
+            "cgst": 2.38,
+            "igst": 0,
+            "cess": 0
+        }
+    ],
+    "partyOutstanding": {
+        "previousBal": 1000,
+        "totalOutstanding": 1110
+    },
+    "discount": 5,
+    "rounded": 0.5,
+    "accountAdjustment": 1.5,
+    "shippingCharge": 5.4,
+    "netAmount": 25.52,
+    "billedBy": "Arun Paul",
+    "description": "##789",
+    "lut": false,
+    "items": [
+        {
+            "name": "Vicks Candy",
+            "precision": 2,
+            "qty": 25,
+            "unit": "PCS",
+            "mrp": 2,
+            "rate": 1.8,
+            "batchNo": "BAT654",
+            "rack": "A1",
+            "expiry": "2023-01-01",
+            "hsnCode": "8466",
+            "taxableValue": 1.6,
+            "taxRatio": 12,
+            "cgstAmount": 1.2,
+            "sgstAmount": 1.2,
+            "igstAmount": 0,
+            "cessAmount": 0,
+            "disc": {
+                "mode": "P",
+                "amount": 0
+            },
+            "dAmount": 5,
+            "reduction": 3
+        }
+    ]
+}
