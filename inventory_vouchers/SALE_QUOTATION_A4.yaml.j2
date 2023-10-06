@@ -390,7 +390,7 @@ body:
                 padding: 1
                 alignment: Center
                 contents:
-                  - value: '{{item.qty | fixed}}'
+                  - value: '{{item.qty | fixed(precision = item.precision)}}'
               - type: Text
                 padding: 1
                 alignment: Center
