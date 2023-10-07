@@ -1,0 +1,61 @@
+{
+    "title": "Expiry Analysis",
+    "orgInfo": {
+        "name": "Test ORG"
+    },
+    "branchInfo": {
+        "address": {}
+    },
+    "branch": " EP BRANCH, MAIN BRANCH",
+    "fromDate": null,
+    "toDate": "2028-10-01",
+    "records": [
+        {
+            "inventoryName": "munch",
+            "branchName": "MAIN BRANCH",
+            "expiry": "2025-10-01",
+            "unitName": "pcs",
+            "sectionName": "CANDY",
+            "closing": 37,
+            "assetValue": 148
+        },
+        {
+            "inventoryName": "newone",
+            "branchName": "MAIN BRANCH",
+            "expiry": "2025-10-02",
+            "unitName": "10S",
+            "closing": 59,
+            "assetValue": 44692.5
+        },
+        {
+            "inventoryName": "newone",
+            "branchName": "MAIN BRANCH",
+            "expiry": "2027-10-01",
+            "unitName": "10S",
+            "closing": 88,
+            "assetValue": 880
+        },
+        {
+            "inventoryName": "newone",
+            "branchName": "MAIN BRANCH",
+            "expiry": "2027-10-01",
+            "unitName": "10S",
+            "closing": 98,
+            "assetValue": 98000
+        },
+        {
+            "inventoryName": "CAMELIN PENCIL",
+            "branchName": "MAIN BRANCH",
+            "expiry": "2027-10-05",
+            "unitName": "pcs",
+            "sectionName": "STATIONERY",
+            "manufacturerName": "CAMELIN PVT LTD",
+            "closing": 10,
+            "assetValue": 100
+        }
+    ],
+    "summary": {
+        "closing": 292,
+        "assetValue": 143820.5
+    }
+}
