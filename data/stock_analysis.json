@@ -1,0 +1,68 @@
+{
+    "title": "Stock Analysis Report",
+    "orgInfo": {
+        "name": "VELAVAN MEDICAL"
+    },
+    "branchInfo": {
+        "displayName": "DP ROAD  BRANCH",
+        "gstNo": "33AANFV6837B1Z2",
+        "licNo": "",
+        "phone": "0461 2333725",
+        "address": {
+            "address": "14/a",
+            "city": "",
+            "pincode": "",
+            "state": "TAMILNADU",
+            "country": ""
+        },
+        "mobileNos": [
+            "96985 66223",
+            "79043 76415"
+        ],
+        "email": "velavanpharmacy@gamil.com"
+    },
+    "branch": "DP ROAD  BRANCH ,GF ROAD BRANCH ,PALAY MARKET BRANCH ,SN ROAD BRANCH ,TG ROAD BRANCH ,EP ROAD BRANCH ,TESTER ,Med Plus ,appllo ,star medical ,DD ,anna medical ,West branch ,East branch ,test branch1 ,Med Plus Medical ,SS branch ,test ,tu ,www123 ,salem branch ,test ,dsfd1212121 ,asf ,qq ,qq1 ,ww1 ,eee ,dz ,ttt ,ty ,uy ,po ,mk ,fghjkl ,north ,nr ,bbr ,ghkk ,wertyui ,ertyu ,sdfsd ,werwer ,ww branch ,qwer ,wq ,muy ,ddddd ,TVL Branch ,demobranch ,New Test Branch ,north branch ,tutywestbranch ,perl ,xdede ,d ,northeastbranch ,TEST BR ONE ,ER ROAD BRANCH ,QAC Branch ,Quality ,ef ,rs ,web branch ,TUTY BRANCH ,RS BRANCH ,northbranch ,SD Road Branch ,df branch ,CustedBranch ,wdcf ,branch2 ,jdc ,test789 ,RE Branch ,xyz ,new road ,temp road branch ,temp1branch ,Tally ,southeastbranch",
+    "records": [
+        {
+            "name": "Choco Drink",
+            "closing": 15.0,
+            "value": 217.9
+        },
+        {
+            "name": "Dolo 650",
+            "closing": 100.0,
+            "value": 1200.0
+        },
+        {
+            "name": "Ziten Tablet",
+            "closing": 100.0,
+            "value": 1000.0
+        },
+        {
+            "name": "crocin 500",
+            "closing": 2270.0,
+            "value": 17750.0
+        },
+        {
+            "name": "dolo 250mg",
+            "closing": 1000.0,
+            "value": 10000.0
+        },
+        {
+            "name": "dolo 750",
+            "closing": 35360.0,
+            "value": 37554.4
+        }
+    ],
+    "summary": {
+        "value": 67722.3,
+        "closing": 38845.0,
+        "createdAt": "2022-09-15T13:40:51.526Z"
+    },
+    "inventory": null,
+    "section": "tablets",
+    "manufacturer": null,
+    "basedOn": "Value",
+    "group": "Inventory",
+    "asOnDate": "2022-09-15"
+}
