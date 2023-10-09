@@ -1,27 +1,13 @@
 {
     "title": "Stock Analysis Report",
     "orgInfo": {
-        "name": "VELAVAN MEDICAL"
+        "name": "Test ORG"
     },
     "branchInfo": {
-        "displayName": "DP ROAD  BRANCH",
-        "gstNo": "33AANFV6837B1Z2",
-        "licNo": "",
-        "phone": "0461 2333725",
-        "address": {
-            "address": "14/a",
-            "city": "",
-            "pincode": "",
-            "state": "TAMILNADU",
-            "country": ""
-        },
-        "mobileNos": [
-            "96985 66223",
-            "79043 76415"
-        ],
-        "email": "velavanpharmacy@gamil.com"
+        "address": {}
     },
-    "branch": "DP ROAD  BRANCH ,GF ROAD BRANCH ,PALAY MARKET BRANCH ,SN ROAD BRANCH ,TG ROAD BRANCH ,EP ROAD BRANCH ,TESTER ,Med Plus ,appllo ,star medical ,DD ,anna medical ,West branch ,East branch ,test branch1 ,Med Plus Medical ,SS branch ,test ,tu ,www123 ,salem branch ,test ,dsfd1212121 ,asf ,qq ,qq1 ,ww1 ,eee ,dz ,ttt ,ty ,uy ,po ,mk ,fghjkl ,north ,nr ,bbr ,ghkk ,wertyui ,ertyu ,sdfsd ,werwer ,ww branch ,qwer ,wq ,muy ,ddddd ,TVL Branch ,demobranch ,New Test Branch ,north branch ,tutywestbranch ,perl ,xdede ,d ,northeastbranch ,TEST BR ONE ,ER ROAD BRANCH ,QAC Branch ,Quality ,ef ,rs ,web branch ,TUTY BRANCH ,RS BRANCH ,northbranch ,SD Road Branch ,df branch ,CustedBranch ,wdcf ,branch2 ,jdc ,test789 ,RE Branch ,xyz ,new road ,temp road branch ,temp1branch ,Tally ,southeastbranch",
+    "branch": " MAIN BRANCH",
+    "asOnDate": "2023-10-07",
     "records": [
         {
             "name": "Choco Drink",
@@ -63,6 +49,5 @@
     "section": "tablets",
     "manufacturer": null,
     "basedOn": "Value",
-    "group": "Inventory",
-    "asOnDate": "2022-09-15"
+    "group": "Inventory"
 }

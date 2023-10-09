@@ -1,0 +1,25 @@
+{
+  "title": "Product Wise Sales",
+  "orgInfo": {
+    "name": "Test ORG"
+  },
+  "branchInfo": {
+    "address": {}
+  },
+  "branch": "EP BRANCH",
+  "inventory": "ATENOL",
+  "records": [
+    {
+      "batchNo": "A1",
+      "value": 2020,
+      "closing": 101,
+      "pRate": 20,
+      "mrp": 21,
+      "sRate": 21
+    }
+  ],
+  "balance": {
+    "closing": 101,
+    "value": 2020
+  }
+}
