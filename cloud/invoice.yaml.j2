@@ -1,0 +1,442 @@
+title: "Auditplus Invoice"
+conformance: Minimal
+paper_size:
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 10
+    right: 10
+    bottom: 10
+    left: 10
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: Text
+          padding:
+            top: 1
+            bottom: 10
+            left: 1
+            right: 1
+          contents:
+            - value: 'Invoice for {{period_after | date(format="%d-%m-%Y") }} to {{period_till | date(format="%d-%m-%Y") }} billing period'
+              style:
+                font_size: 11
+                bold: true
+        - type: TableLayout
+          widths: [50, 50]
+          padding: 1
+          rows:
+            - columns:
+                - type: LinearLayout
+                  elements:
+                    - type: Text
+                      padding: 1
+                      contents:
+                        - value: From
+                          style:
+                            font_size: 10
+                            bold: true
+                    - type: Text
+                      padding:
+                        horizontal: 1
+                        vertical: 0.5
+                      contents:
+                        - value: Auditplus Technologies
+                          style:
+                            font_size: 10
+                    - type: Text
+                      padding:
+                        horizontal: 1
+                        vertical: 0.5
+                      contents:
+                        - value: 235/4 Palyamkottai Road
+                          style:
+                            font_size: 10
+                    - type: Text
+                      padding:
+                        horizontal: 1
+                        vertical: 0.5
+                      contents:
+                        - value: 2nd Floor, Jothi Towers
+                          style:
+                            font_size: 10
+                    - type: Text
+                      padding:
+                        horizontal: 1
+                        vertical: 0.5
+                      contents:
+                        - value: Thoothukudi-628002
+                          style:
+                            font_size: 10
+                    - type: Text
+                      padding:
+                        horizontal: 1
+                        vertical: 0.5
+                      contents:
+                        - value: "GSTIN: 33ABOFA5872B1ZJ"
+                          style:
+                            font_size: 10
+                - type: LinearLayout
+                  elements:
+                    - type: Text
+                      padding: 0.5
+                      contents:
+                        - value: "Details"
+                          style:
+                            font_size: 10
+                            bold: true
+                    - type: TableLayout
+                      widths: [45, 5, 50]
+                      padding: 0.5
+                      text_style:
+                        font_size: 10
+                      rows:
+                        - columns:
+                            - type: Text
+                              contents:
+                                - value: "Invoice Number"
+                            - type: Text
+                              contents:
+                                - value: ":"
+                            - type: Text
+                              contents:
+                                - value: "{{invoice_no}}"
+                        - columns:
+                            - type: Text
+                              contents:
+                                - value: "Date of issue"
+                            - type: Text
+                              contents:
+                                - value: ":"
+                            - type: Text
+                              contents:
+                                - value: '{{date | date(format="%d-%m-%Y")}}'
+        - type: TableLayout
+          widths: [100]
+          padding:
+            vertical: 5
+            horizontal: 1
+          text_style:
+            font_size: 10
+          rows:
+            - columns:
+              - type: LinearLayout
+                elements:
+                  - type: Text
+                    padding: 1
+                    contents:
+                      - value: For
+                        style:
+                          bold: true
+                  - type: Text
+                    padding:
+                      horizontal: 1
+                      vertical: 0.5
+                    contents:
+                      - value: '{{organization.full_name}}'
+                  {% if organization.billing_address.email %}
+                  - type: Text
+                    padding:
+                      horizontal: 1
+                      vertical: 0.5
+                    contents:
+                      - value: '{{organization.billing_address.email}}'
+                  {% endif %}
+                  {% if organization.billing_address.street %}
+                  - type: Text
+                    padding:
+                      horizontal: 1
+                      vertical: 0.5
+                    contents:
+                      - value: '{{organization.billing_address.street}}'
+                  {% endif %}
+                  {% if organization.billing_address.phone %}
+                  - type: Text
+                    padding:
+                      horizontal: 1
+                      vertical: 0.5
+                    contents:
+                      - value: '{{organization.billing_address.phone}}'
+                  {% endif %}
+                  {% if organization.billing_address.city or organization.billing_address.pincode %}
+                  - type: Text
+                    padding:
+                      horizontal: 1
+                      vertical: 0.5
+                    contents:
+                      {% if organization.billing_address.city and organization.billing_address.pincode %}
+                      - value: '{{organization.billing_address.city}} - {{organization.billing_address.pincode}}'
+                      {% elif organization.billing_address.city %}
+                      - value: '{{organization.billing_address.city}}'
+                      {% elif organization.billing_address.pincode %}
+                      - value: '{{organization.billing_address.pincode}}'
+                      {% endif %}
+                  {% endif %}
+                  {% if organization.billing_address.country %}
+                  - type: Text
+                    padding:
+                      horizontal: 1
+                      vertical: 0.5
+                    contents:
+                      - value: '{{organization.billing_address.country}}'
+                  {% endif %}
+                  - type: Text
+                    padding:
+                      horizontal: 1
+                      vertical: 0.5
+                    contents:
+                      - value: 'GSTIN : {{organization.gst_no}}'
+        - type: Text
+          padding: 1
+          contents:
+            - value: Summary
+              style:
+                bold: true
+                font_size: 12
+        - type: PaddedElement
+          padding:
+            top: 2
+            bottom: 2
+          element:
+            type: BlankLine
+            style:
+              color:
+                greyscale: 190
+        {% for data in usage %}
+        - type: TableLayout
+          widths: [50, 50]
+          padding: 0.5
+          text_style:
+            font_size: 10
+          rows:
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{data.plan | trim_start_matches(pat="pricing:") | upper}} Plan usage for {{data.period_after | date(format="%d-%m-%Y")}} to {{data.period_till | date(format="%d-%m-%Y")}} billing period '
+                    style:
+                      font_size: 10
+              - type: TableLayout
+                widths: [65, 5, 30]
+                padding:
+                  top: 5
+                text_style:
+                  font_size: 10  
+                rows:
+                  - columns:
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: 'Base Charges'
+                          style:
+                            bold: true
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: ':'
+                          style:
+                            bold: true
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: '{{data.base_charge |fixed}}'
+                          style:
+                            bold: true
+                  {% set extra_charge = data.extra_charge.branches + data.extra_charge.users  + data.extra_charge.vouchers + data.extra_charge.pos_terminals + data.extra_charge.warehouses %}
+                  - columns:
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: 'Additional Usage Charges'
+                          style:
+                            bold: true
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: ':'
+                          style:
+                            bold: true
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: '{{extra_charge |fixed}}'
+                          style:
+                            bold: true
+                  - columns:
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: 'Branch'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: ':'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: '{{data.extra_charge.branches |fixed}}'
+                  - columns:
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: 'User'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: ':'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: '{{data.extra_charge.users |fixed}}'
+                  - columns:
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: 'Voucher'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: ':'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: '{{data.extra_charge.vouchers |fixed}}'
+                  - columns:
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: 'Pos Terminal'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: ':'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: '{{data.extra_charge.pos_terminals |fixed}}'
+                  - columns:
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: 'Warehouse'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: ':'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: '{{data.extra_charge.warehouses |fixed}}'
+        - type: PaddedElement
+          padding:
+            top: 2
+            bottom: 2
+          element:
+            type: BlankLine
+            style:
+              color:
+                greyscale: 190
+        {% endfor %}
+        - type: TableLayout
+          widths: [50, 50]
+          padding: 0.5
+          text_style:
+            font_size: 10
+          rows:
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: ''
+              - type: TableLayout
+                widths: [65, 5, 30]
+                padding:
+                  top: 2
+                text_style:
+                  font_size: 10
+                rows:
+                  - columns:
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: 'Service value'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: ':'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: '{{service_value | fixed}}'
+                  - columns:
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: 'Tax Value( GST {{tax_ratio}} )'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: ':'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: '{{tax_value | fixed}}'
+        - type: PaddedElement
+          padding:
+            top: 2
+            bottom: 1
+          element:
+            type: BlankLine
+            style:
+              color:
+                greyscale: 190
+        - type: TableLayout
+          widths: [50, 50]
+          padding: 0.5
+          text_style:
+            font_size: 10
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: ''
+                    style:
+                      font_size: 10
+              - type: TableLayout
+                widths: [65, 5, 30]
+                text_style:
+                  font_size: 11
+                  bold: true
+                rows:
+                  - columns:
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: 'Total Value'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: ':'
+                    - type: Text
+                      alignment: Right
+                      contents:
+                        - value: 'Rs. {{total_value |fixed}}'
+        - type: PaddedElement
+          padding:
+            top: 1
+            bottom: 1
+          element:
+            type: BlankLine
+            style:
+              color:
+                greyscale: 190   
+        - type: Text
+          padding: 1
+          contents:
+            - value: '*This invoice will be charged automatically, if sufficient credit balance is available in your account'
+              style:
+                font_size: 10 
+         
