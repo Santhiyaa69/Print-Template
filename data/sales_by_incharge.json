@@ -30,26 +30,20 @@
         {
             "amount": 4170.24,
             "taxableAmount": 3987.5,
-            "salesIncharge": {
-                "code": "15",
-                "name": "Anitta"
-            }
+            "code": "15",
+            "name": "Anitta"
         },
         {
             "amount": 4170.24,
             "taxableAmount": 3987.5,
-            "salesIncharge": {
-                "code": "15",
-                "name": "Anitta"
-            }
+            "code": "15",
+            "name": "Anitta"
         },
         {
             "amount": 4170.24,
             "taxableAmount": 3987.5,
-            "salesIncharge": {
-                "code": "15",
-                "name": "Anitta"
-            }
+            "code": "15",
+            "name": "Anitta"
         }
     ],
     "summary": {
