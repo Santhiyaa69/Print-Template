@@ -1,0 +1,57 @@
+{
+    "title": "Customer Wise Sales",
+    "orgInfo": {
+        "name": "VELAVAN MEDICAL"
+    },
+    "branchInfo": {
+        "displayName": "DP",
+        "phone": "044-4555555X",
+        "gstNo": "33AANFV6837B1Z2w",
+        "licNo": "DLTN69201-20/21",
+        "address": {
+            "address": "115/8, DEVARPURAM ROAD",
+            "city": "THOOTHUKUDI",
+            "pincode": "628002%",
+            "state": "TN",
+            "country": "INDIA"
+        },
+        "mobileNos": [
+            "9988776655",
+            "7689012345"
+        ],
+        "email": "dpbranch@gmail.com"
+    },
+    "branch": "DP, ETP BRANCH",
+    "customer": null,
+    "fromDate": "2021-02-17",
+    "toDate": "2021-02-19",
+    "records": [
+        {
+            "date": "2023-01-21",
+            "branchName": "EP BRANCH",
+            "refNo": "CN1",
+            "amount": -5,
+            "voucherNo": "EP22231",
+            "voucherType": "CREDIT_NOTE"
+        },
+        {
+            "date": "2023-01-21",
+            "branchName": "EP BRANCH",
+            "refNo": "Sale1",
+            "amount": 5,
+            "voucherNo": "EPSL22231",
+            "voucherType": "SALE"
+        },
+        {
+            "date": "2023-01-21",
+            "branchName": "EP BRANCH",
+            "refNo": "sale2",
+            "amount": 55,
+            "voucherNo": "EPSL22232",
+            "voucherType": "SALE"
+        }
+    ],
+    "summary": {
+        "total": 55
+    }
+}
