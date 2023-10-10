@@ -1,0 +1,53 @@
+{
+    "title": "Scheduled Drug Report",
+    "orgInfo": {
+        "name": "VELAVAN MEDICAL"
+    },
+    "branchInfo": {
+        "displayName": "DP ROAD BRANCH",
+        "gstNo": "33AANFV6837B1Z2",
+        "licNo": "DL NO :TNT/278/20,21",
+        "phone": "0461 2333725",
+        "address": {
+            "address": "115/8, DEVARPURAM ROAD,",
+            "city": "THOOTHUKUDI",
+            "pincode": "628002",
+            "state": "TAMILNADU",
+            "country": ""
+        },
+        "mobileNos": [
+            "9150012970",
+            "7904376415"
+        ],
+        "email": "vmdproad@gmail.com"
+    },
+    "date": "2023-02-24",
+    "records": [
+        {
+            "voucherNo": "DP2223162299",
+            "address": {
+                "address": "115/8, DEVARPURAM ROAD,",
+                "city": "THOOTHUKUDI"
+            },
+            "patient": "sri",
+            "doctor": "Dr.Kannan",
+            "licenseNo": "123",
+            "items": [
+                {
+                    "inventory": "dolo11",
+                    "manufacturer": "TEST MANUFACTURER",
+                    "batchNo": "S1",
+                    "expiry": "2024-07-01",
+                    "qty": 2.0
+                },
+                {
+                    "inventory": "dolo11",
+                    "manufacturer": "TEST MANUFACTURER",
+                    "batchNo": "S1",
+                    "expiry": "2024-07-01",
+                    "qty": 2.0
+                }
+            ]
+        }
+    ]
+}
