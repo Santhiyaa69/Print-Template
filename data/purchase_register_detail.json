@@ -1,0 +1,99 @@
+{
+    "title": "Purchase Register",
+    "orgInfo": {
+        "name": "VELAVAN MEDICAL"
+    },
+    "branchInfo": {
+        "displayName": "DP",
+        "phone": "044-4555555X",
+        "gstNo": "33AANFV6837B1Z2w",
+        "licNo": "DLTN69201-20/21",
+        "address": {
+            "address": "#115/8, DEVARPURAM ROAD",
+            "city": "THOOTHUKUDI",
+            "pincode": "628002",
+            "state": "TN",
+            "country": "INDIA"
+        },
+        "mobileNos": [
+            "9988776655",
+            "7689012345"
+        ],
+        "email": "dpbranch@gmail.com"
+    },
+    "branch": "DP, ETP BRANCH",
+    "fromDate": "2022-01-01",
+    "toDate": "2022-02-03",
+    "vendor": "ADANI PORTS",
+    "paymentMode": "credit",
+    "paymentAccounts": "ADANI PORTS",
+    "records": [
+        {
+            "amount": 6795,
+            "branchName": "DP ROAD BRANCH",
+            "vendor": "Thambi Medicals Global Drug House",
+            "date": "2021-12-01",
+            "voucherName": "Credit Purchase",
+            "voucherNo": "DP4884",
+            "refNo": "O01018834",
+            "cashAmount": 0,
+            "bankAmount": 0,
+            "creditAmount": 6795
+        },
+        {
+            "amount": 16185,
+            "branchName": "DP ROAD BRANCH",
+            "vendor": "Nivas Enterprises",
+            "date": "2021-12-01",
+            "voucherName": "Credit Purchase",
+            "voucherNo": "DP4882",
+            "refNo": "NE15850",
+            "cashAmount": 0,
+            "bankAmount": 0,
+            "creditAmount": 16185
+        },
+        {
+            "amount": 3900,
+            "branchName": "DP ROAD BRANCH",
+            "vendor": "Dhanush Syndicate",
+            "date": "2021-12-01",
+            "voucherName": "Credit Purchase",
+            "voucherNo": "DP4883",
+            "refNo": "P301510160",
+            "cashAmount": 0,
+            "bankAmount": 0,
+            "creditAmount": 3900
+        },
+        {
+            "amount": 353,
+            "branchName": "DP ROAD BRANCH",
+            "vendor": "Velavan sweets",
+            "date": "2021-12-01",
+            "voucherName": "Cash Purchase",
+            "voucherNo": "DP4885",
+            "refNo": "11924",
+            "cashAmount": 353,
+            "bankAmount": 0,
+            "creditAmount": 0
+        },
+        {
+            "amount": 470,
+            "branchName": "DP ROAD BRANCH",
+            "vendor": "Velavan sweets",
+            "date": "2021-12-02",
+            "voucherName": "Cash Purchase",
+            "voucherNo": "DP4886",
+            "refNo": "11927",
+            "cashAmount": 470,
+            "bankAmount": 0,
+            "creditAmount": 0
+        }
+    ],
+    "balance": {
+        "billAmount": 27703.0,
+        "cashAmount": 823.0,
+        "bankAmount": 0.0,
+        "creditAmount": 26880.0
+    },
+    "detailMode": true
+}
