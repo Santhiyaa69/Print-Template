@@ -188,17 +188,11 @@ body:
                           right: 1
                           bottom: 0.5
                         contents:
-                          - value: '{{record.address.address | replace(from="'", to="")}}'
+                          - value: '{{record.address.address | replace(from="'", to="")}}, '
                       {% endif %}
-                      {%if record.address.city%}
-                      - type: Text
-                        padding:
-                          left: 1
-                          right: 1
-                          bottom: 0.5
-                        contents:
+                          {%if record.address.city%}
                           - value: '{{record.address.city | replace(from="'", to="")}}'
-                      {% endif %}
+                          {% endif %}
                   - type: Text
                     padding: 1
                     contents:
