@@ -1,40 +1,83 @@
 {
     "title": "Account Outstanding Report",
+    "viewType": [
+        "account"
+    ],
     "orgInfo": {
-        "name": "VELAVAN MEDICAL"
+        "name": "Test ORG"
     },
-    "asOnDate": "2023-02-10",
-    "printedOn": "2023-02-01T12:47:41.426+00:00",
+    "branchInfo": {
+        "address": {}
+    },
+    "branch": "",
+    "account": "",
+    "asOnDate": "2023-10-12",
+    "sort": "account",
     "group": [
         "account"
     ],
-    "sort": "account",
-    "account": "Vijay Pharmaceuticals ,Sri Balaje Pharmaceuticals",
+    "printedOn": "2023-10-12T18:43:42+05:30",
     "records": {
-        "": [
+        "TEST VENDOR": [
             {
-                "accountName": "A.JOHNSON",
-                "debit": 1621.0,
-                "credit": 0,
-                "closing": 1621.0
-            },
+                "accountName": "TEST VENDOR",
+                "debit": 0,
+                "credit": 60.3,
+                "closing": -60.3
+            }
+        ],
+        "THIYA": [
             {
-                "accountName": "A.P.C MAHALAXMI COLLEGE FOR WOMEN",
-                "debit": 6742.0,
+                "accountName": "THIYA",
+                "debit": 756,
                 "credit": 0,
-                "closing": 6742.0
-            },
+                "closing": 756
+            }
+        ],
+        "customer1": [
             {
-                "accountName": "AATHI SAKTHI XEROX",
-                "debit": 1650.0,
+                "accountName": "customer1",
+                "debit": 378,
+                "credit": 1013,
+                "closing": -635
+            }
+        ],
+        "dia": [
+            {
+                "accountName": "dia",
+                "debit": 1796,
                 "credit": 0,
-                "closing": 1650.0
+                "closing": 1796
+            }
+        ],
+        "eco-cust": [
+            {
+                "accountName": "eco-cust",
+                "debit": 5,
+                "credit": 0,
+                "closing": 5
+            }
+        ],
+        "vendor": [
+            {
+                "accountName": "vendor",
+                "debit": 100,
+                "credit": 500,
+                "closing": -400
+            }
+        ],
+        "vendor1": [
+            {
+                "accountName": "vendor1",
+                "debit": 1427,
+                "credit": 2570,
+                "closing": -1143
             }
         ]
     },
     "summary": {
-        "debit": 12457459.4,
-        "credit": 16013450.02,
-        "closing": -3555990.62
+        "credit": 4143.3,
+        "debit": 4462,
+        "closing": 318.70000000000005
     }
 }

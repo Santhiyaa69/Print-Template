@@ -219,6 +219,7 @@ body:
         {% endfor %}
         {% else %}
         {% for key, value in records %}
+        {% if sort != "days" %}
         - type: TableLayout
           widths: [100]
           padding: 1
@@ -230,6 +231,7 @@ body:
               - type: Text
                 contents:
                   - value: '{{key | replace(from="'", to= "")}}'
+        {% endif %}
         - type: TableLayout
           widths: [22, 12, 16, 15, 14, 14, 7]
           padding:
