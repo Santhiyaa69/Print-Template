@@ -1,0 +1,113 @@
+{
+    "title": "Account Outstanding Report",
+    "viewType": [
+        "account",
+        "branch"
+    ],
+    "orgInfo": {
+        "name": "Test ORG"
+    },
+    "branchInfo": {
+        "address": {}
+    },
+    "branch": "",
+    "account": "",
+    "asOnDate": "2023-10-12",
+    "printedOn": "2023-01-21T05:31:04.634+00:00",
+    "sort": "account",
+    "group": [
+        "account",
+        "branch"
+    ],
+    "records": {
+        "TEST VENDOR": [
+            {
+                "accountName": "TEST VENDOR",
+                "branchName": "EP BRANCH",
+                "debit": 0,
+                "credit": 60.3,
+                "closing": -60.3
+            }
+        ],
+        "THIYA": [
+            {
+                "accountName": "THIYA",
+                "branchName": "MAIN BRANCH",
+                "debit": 756,
+                "credit": 0,
+                "closing": 756
+            }
+        ],
+        "customer1": [
+            {
+                "accountName": "customer1",
+                "branchName": "TEST BRANCH",
+                "debit": 205,
+                "credit": 1013,
+                "closing": -808
+            },
+            {
+                "accountName": "customer1",
+                "branchName": "EP BRANCH",
+                "debit": 173,
+                "credit": 0,
+                "closing": 173
+            }
+        ],
+        "dia": [
+            {
+                "accountName": "dia",
+                "branchName": "TEST BRANCH",
+                "debit": 155,
+                "credit": 0,
+                "closing": 155
+            },
+            {
+                "accountName": "dia",
+                "branchName": "EP BRANCH",
+                "debit": 1641,
+                "credit": 0,
+                "closing": 1641
+            }
+        ],
+        "eco-cust": [
+            {
+                "accountName": "eco-cust",
+                "branchName": "EP BRANCH",
+                "debit": 5,
+                "credit": 0,
+                "closing": 5
+            }
+        ],
+        "vendor": [
+            {
+                "accountName": "vendor",
+                "branchName": "TEST BRANCH",
+                "debit": 100,
+                "credit": 0,
+                "closing": 100
+            },
+            {
+                "accountName": "vendor",
+                "branchName": "MAIN BRANCH",
+                "debit": 0,
+                "credit": 500,
+                "closing": -500
+            }
+        ],
+        "vendor1": [
+            {
+                "accountName": "vendor1",
+                "branchName": "TEST BRANCH",
+                "debit": 500,
+                "credit": 1643,
+                "closing": -1143
+            }
+        ]
+    },
+    "summary": {
+        "credit": 3216.3,
+        "debit": 3535,
+        "closing": 318.70000000000005
+    }
+}

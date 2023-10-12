@@ -1,0 +1,43 @@
+{
+    "title": "Account Outstanding Report",
+    "orgInfo": {
+        "name": "VELAVAN MEDICAL"
+    },
+    "branch": null,
+    "account": null,
+    "records": {
+        "MILLAI XEROX": [
+            {
+                "effDate": "2022-03-05",
+                "accountName": "MILLAI XEROX",
+                "branchName": "MARKET BRANCH FANCY",
+                "voucherType": "OPENING",
+                "principalAmount": 3120.0,
+                "closing": 3120.0,
+                "days": 334.0
+            }
+        ],
+        "MUTHUKUMARAN AGENCIES": [
+            {
+                "effDate": "2022-10-11",
+                "refNo": "170283323002279",
+                "voucherNo": "MF222329",
+                "accountName": "MUTHUKUMARAN AGENCIES",
+                "branchName": "MARKET BRANCH FANCY",
+                "voucherType": "PURCHASE",
+                "principalAmount": -873,
+                "closing": -873.0,
+                "days": 114.0
+            }
+        ]
+    },
+    "summary": {
+        "debit": 1000.0,
+        "credit": 200.0,
+        "closing": 800.0
+    },
+    "asOnDate": "2023-01-21",
+    "printedOn": "2023-01-21T05:31:04.634+00:00",
+    "sort": "days",
+    "group": []
+}

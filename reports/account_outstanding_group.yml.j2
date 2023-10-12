@@ -1,0 +1,312 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 10
+    right: 10
+    bottom: 10
+    left: 10
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: Text
+          alignment: Center
+          contents:
+            - value: '{{orgInfo.name | replace(from="'", to= "")}}'
+              style:
+                font_size: 17
+                bold: true
+        - type: Text
+          alignment: Center
+          padding: 
+            vertical: 1
+            horizontal: 0
+          contents:
+            - value: '{{title}}'
+              style:
+                font_size: 13
+                bold: true
+        - type: BlankLine
+        - type: TableLayout
+          widths: [18, 2, 80]
+          padding: 1
+          text_style: 
+            bold: true
+            font_size: 12
+          rows:
+            {% if account %}
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Account' 
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: '{{account | replace(from="'", to= "")}}'
+            {% endif %}
+            {% if branches %}
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Branch' 
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: '{{branch | replace(from="'", to= "")}}'
+            {% endif %}
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'As On Date' 
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: '{{asOnDate |date(format="%d-%m-%Y")}}'
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Printed On'
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  - value: '{{printedOn| date(format="%d-%m-%Y %I:%M %p", timezone="Asia/Kolkata")}}'
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Closing Balance' 
+              - type: Text
+                contents:
+                  - value: ':'
+              - type: Text
+                contents:
+                  {% if summary.closing >= 0 %}
+                  - value: '{{summary.closing |fixed}} Dr'
+                  {% elif summary.closing < 0 %}
+                  - value: '{{summary.closing |fixed | trim_start_matches(pat="-")}} Cr'
+                  {% endif %}
+        - type: BlankLine
+        - type: TableLayout
+          widths: [46, 18, 18, 18]
+          padding: 1
+          text_style: 
+            bold: true
+            font_size: 12
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'Particulars'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Debit'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Credit'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Balance'
+        - type: BlankLine
+        {% if group | length == 2 %}
+        {% if sort == "account" %}
+        {% for key, value in records %}
+        - type: TableLayout
+          widths: [100]
+          padding: 1
+          text_style:
+            font_size: 11
+            bold: true
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{key | replace(from="'", to= "")}}'
+        - type: TableLayout
+          widths: [46, 18, 18, 18]
+          padding:
+            vertical: 1
+            horizontal: 1
+          text_style:
+            font_size: 11
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+            outer: true
+          rows:
+            {% for record in value %}
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{record.branchName |replace(from ="'", to = "")}}'
+              - type: Text
+                padding: 1
+                alignment: Right
+                contents:
+                  - value: '{{record.debit | fixed}}' 
+                    style: 
+                      shrink: true
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  - value: '{{record.credit | fixed}}'
+                    style: 
+                      shrink: true
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  {% if record.closing >= 0 %}
+                  - value: '{{record.closing |fixed}} Dr'
+                  {% elif record.closing < 0 %}
+                  - value: '{{record.closing |fixed | trim_start_matches(pat="-")}} Cr'
+                  {% endif %}
+            {% endfor %}
+        {% endfor %}
+        {% else %}
+        {% for key, value in records %}
+        - type: TableLayout
+          widths: [100]
+          padding: 1
+          text_style:
+            font_size: 11
+            bold: true
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: '{{key | replace(from="'", to= "")}}'
+        - type: TableLayout
+          widths: [46, 18, 18, 18]
+          padding:
+            vertical: 1
+            horizontal: 1
+          text_style:
+            font_size: 11
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+            outer: true
+          rows:
+            {% for record in value %}
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{record.accountName | replace(from="'", to= "")}}'
+              - type: Text
+                padding: 1
+                alignment: Right
+                contents:
+                  - value: '{{record.debit |fixed}}'
+                    style: 
+                      shrink: true
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  - value: '{{record.credit | fixed}}'
+                    style: 
+                      shrink: true
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  {% if record.closing >= 0 %}
+                  - value: '{{record.closing |fixed}} Dr'
+                  {% elif record.closing < 0 %}
+                  - value: '{{record.closing |fixed | trim_start_matches(pat="-")}} Cr'
+                  {% endif %}
+            {% endfor %}
+        {% endfor %}
+        {% endif %}
+        {% endif %}
+        {% if group | length == 1 %}
+        {% for key, value in records %}
+        - type: TableLayout
+          widths: [46, 18, 18, 18]
+          padding:
+            vertical: 1
+            horizontal: 1
+          text_style:
+            font_size: 11
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+            outer: true
+          rows:
+            {% for record in value %}
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  {% if record.branchName %}
+                  - value: '{{record.branchName | replace(from="'", to= "")}}'
+                  {% else %}
+                  - value: '{{record.accountName | replace(from="'", to= "")}}'
+                  {% endif %}
+              - type: Text
+                padding: 1
+                alignment: Right
+                contents:
+                  - value: '{{record.debit | fixed}}' 
+                    style: 
+                      shrink: true
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  - value: '{{record.credit | fixed}}'
+                    style: 
+                      shrink: true
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  {% if record.closing >= 0 %}
+                  - value: '{{record.closing |fixed}} Dr'
+                  {% elif record.closing < 0 %}
+                  - value: '{{record.closing |fixed | trim_start_matches(pat="-")}} Cr'
+                  {% endif %}
+            {% endfor %}
+        {% endfor %}
+        {% endif %}
+        - type: BlankLine
+        - type: TableLayout
+          widths: [50,50]
+          padding: 
+            vertical: 1
+            horizontal: 1
+          text_style: 
+            bold: true
+            font_size: 12
+          rows:
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Total Debit:  {{summary.debit | fixed}} Dr'
+                    style: 
+                      shrink: true
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Total Credit:  {{summary.credit | fixed}} Cr' 
+                    style: 
+                      shrink: true
+        - type: BlankLine  

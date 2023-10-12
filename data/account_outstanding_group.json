@@ -1,0 +1,40 @@
+{
+    "title": "Account Outstanding Report",
+    "orgInfo": {
+        "name": "VELAVAN MEDICAL"
+    },
+    "asOnDate": "2023-02-10",
+    "printedOn": "2023-02-01T12:47:41.426+00:00",
+    "group": [
+        "account"
+    ],
+    "sort": "account",
+    "account": "Vijay Pharmaceuticals ,Sri Balaje Pharmaceuticals",
+    "records": {
+        "": [
+            {
+                "accountName": "A.JOHNSON",
+                "debit": 1621.0,
+                "credit": 0,
+                "closing": 1621.0
+            },
+            {
+                "accountName": "A.P.C MAHALAXMI COLLEGE FOR WOMEN",
+                "debit": 6742.0,
+                "credit": 0,
+                "closing": 6742.0
+            },
+            {
+                "accountName": "AATHI SAKTHI XEROX",
+                "debit": 1650.0,
+                "credit": 0,
+                "closing": 1650.0
+            }
+        ]
+    },
+    "summary": {
+        "debit": 12457459.4,
+        "credit": 16013450.02,
+        "closing": -3555990.62
+    }
+}

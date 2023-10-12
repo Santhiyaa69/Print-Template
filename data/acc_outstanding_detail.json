@@ -1,0 +1,83 @@
+{
+    "title": "Account Outstanding Report",
+    "viewType": [],
+    "orgInfo": {
+        "name": "Test ORG"
+    },
+    "branchInfo": {
+        "address": {
+            "city": "TUTY"
+        }
+    },
+    "branch": " TEST BRANCH",
+    "account": "",
+    "asOnDate": "2023-10-12",
+    "printedOn": "2023-01-21T05:31:04.634+00:00",
+    "sort": "days",
+    "group": [],
+    "records": {
+        "2": [
+            {
+                "effDate": "2023-10-10",
+                "accountName": "dia",
+                "branchName": "TEST BRANCH",
+                "voucherType": "Sale",
+                "principalAmount": 155,
+                "closing": 155,
+                "days": 2
+            },
+            {
+                "effDate": "2023-10-10",
+                "accountName": "customer1",
+                "branchName": "TEST BRANCH",
+                "voucherType": "Sale",
+                "principalAmount": 205,
+                "closing": 205,
+                "days": 2
+            },
+            {
+                "effDate": "2023-10-10",
+                "accountName": "vendor",
+                "branchName": "TEST BRANCH",
+                "voucherType": "Purchase",
+                "principalAmount": 100,
+                "closing": 100,
+                "days": 2
+            },
+            {
+                "effDate": "2023-10-10",
+                "accountName": "vendor1",
+                "branchName": "TEST BRANCH",
+                "voucherType": "Purchase",
+                "principalAmount": -630,
+                "closing": -630,
+                "days": 2
+            },
+            {
+                "effDate": "2023-10-10",
+                "accountName": "customer1",
+                "branchName": "TEST BRANCH",
+                "voucherType": "Purchase",
+                "principalAmount": -1013,
+                "closing": -1013,
+                "days": 2
+            }
+        ],
+        "3": [
+            {
+                "effDate": "2023-10-09",
+                "accountName": "vendor1",
+                "branchName": "TEST BRANCH",
+                "voucherType": "Purchase",
+                "principalAmount": -1013,
+                "closing": -513,
+                "days": 3
+            }
+        ]
+    },
+    "summary": {
+        "credit": 0,
+        "debit": 0,
+        "closing": -1696
+    }
+}
