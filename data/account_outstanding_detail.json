@@ -1,43 +1,207 @@
 {
     "title": "Account Outstanding Report",
+    "viewType": [],
     "orgInfo": {
-        "name": "VELAVAN MEDICAL"
+        "name": "Test ORG"
     },
-    "branch": null,
-    "account": null,
+    "branchInfo": {
+        "address": {}
+    },
+    "branch": " EP BRANCH",
+    "account": "",
+    "asOnDate": "2023-10-13",
+    "sort": "days",
+    "group": [],
+    "printedOn": "2023-10-13T11:19:08+05:30",
     "records": {
-        "MILLAI XEROX": [
+        "1": [
             {
-                "effDate": "2022-03-05",
-                "accountName": "MILLAI XEROX",
-                "branchName": "MARKET BRANCH FANCY",
-                "voucherType": "OPENING",
-                "principalAmount": 3120.0,
-                "closing": 3120.0,
-                "days": 334.0
+                "effDate": "2023-10-12",
+                "accountName": "TEST VENDOR",
+                "branchName": "EP BRANCH",
+                "voucherType": "Purchase",
+                "voucherNo": "EP232414",
+                "principalAmount": -67,
+                "closing": -60.3,
+                "days": 1
             }
         ],
-        "MUTHUKUMARAN AGENCIES": [
+        "2": [
             {
-                "effDate": "2022-10-11",
-                "refNo": "170283323002279",
-                "voucherNo": "MF222329",
-                "accountName": "MUTHUKUMARAN AGENCIES",
-                "branchName": "MARKET BRANCH FANCY",
-                "voucherType": "PURCHASE",
-                "principalAmount": -873,
-                "closing": -873.0,
-                "days": 114.0
+                "effDate": "2023-10-11",
+                "accountName": "customer1",
+                "branchName": "EP BRANCH",
+                "voucherType": "B2B",
+                "voucherNo": "EP23241",
+                "refNo": "B2BSL1",
+                "principalAmount": -173,
+                "closing": -173,
+                "days": 2
+            },
+            {
+                "effDate": "2023-10-11",
+                "accountName": "dia",
+                "branchName": "EP BRANCH",
+                "voucherType": "Sale",
+                "voucherNo": "EP232430",
+                "refNo": "SL30",
+                "principalAmount": 1641,
+                "closing": 1641,
+                "days": 2
+            }
+        ],
+        "4": [
+            {
+                "effDate": "2023-10-09",
+                "accountName": "eco-cust",
+                "branchName": "EP BRANCH",
+                "voucherType": "Sale",
+                "voucherNo": "EP232423",
+                "principalAmount": 5,
+                "closing": 5,
+                "days": 4
+            }
+        ],
+        "8": [
+            {
+                "effDate": "2023-10-05",
+                "accountName": "vendor1",
+                "branchName": "EP BRANCH",
+                "voucherType": "Payment",
+                "voucherNo": "EP23244",
+                "principalAmount": 100,
+                "closing": 100,
+                "days": 8
+            },
+            {
+                "effDate": "2023-10-05",
+                "accountName": "vendor1",
+                "branchName": "EP BRANCH",
+                "voucherType": "Purchase",
+                "voucherNo": "EP23246",
+                "refNo": "vendor1/2",
+                "principalAmount": -396,
+                "closing": -396,
+                "days": 8
+            },
+            {
+                "effDate": "2023-10-05",
+                "accountName": "cust1",
+                "branchName": "EP BRANCH",
+                "voucherType": "Receipt",
+                "voucherNo": "EPRCP23245",
+                "principalAmount": -100,
+                "closing": -100,
+                "days": 8
+            }
+        ],
+        "13": [
+            {
+                "effDate": "2023-09-30",
+                "accountName": "Consumer",
+                "branchName": "EP BRANCH",
+                "voucherType": "Payment",
+                "voucherNo": "EP23242",
+                "principalAmount": 50,
+                "closing": 50,
+                "days": 13
+            },
+            {
+                "effDate": "2023-09-30",
+                "accountName": "TEST VENDOR",
+                "branchName": "EP BRANCH",
+                "voucherType": "Rcpt",
+                "voucherNo": "EP23245",
+                "principalAmount": -41,
+                "closing": -41,
+                "days": 13
+            },
+            {
+                "effDate": "2023-09-30",
+                "accountName": "aditi",
+                "branchName": "EP BRANCH",
+                "voucherType": "Sale",
+                "voucherNo": "EP23247",
+                "principalAmount": -210,
+                "closing": -420,
+                "days": 13
+            }
+        ],
+        "15": [
+            {
+                "effDate": "2023-09-28",
+                "accountName": "aplus",
+                "branchName": "EP BRANCH",
+                "voucherType": "Rcpt",
+                "voucherNo": "EP23244",
+                "refNo": "1",
+                "principalAmount": -10,
+                "closing": -10,
+                "days": 15
+            }
+        ],
+        "16": [
+            {
+                "effDate": "2023-09-27",
+                "accountName": "aplus",
+                "branchName": "EP BRANCH",
+                "voucherType": "Credit Note",
+                "voucherNo": "EP23243",
+                "refNo": "CN3",
+                "principalAmount": 100,
+                "closing": 100,
+                "days": 16
+            },
+            {
+                "effDate": "2023-09-27",
+                "accountName": "TEST VENDOR",
+                "branchName": "EP BRANCH",
+                "voucherType": "pay",
+                "voucherNo": "EPPY23244",
+                "refNo": "1",
+                "principalAmount": 200,
+                "closing": 200,
+                "days": 16
+            },
+            {
+                "effDate": "2023-09-27",
+                "accountName": "aplus",
+                "branchName": "EP BRANCH",
+                "voucherType": "Receipt",
+                "voucherNo": "EPRCP23241",
+                "refNo": "CN3",
+                "principalAmount": -50,
+                "closing": -50,
+                "days": 16
+            }
+        ],
+        "17": [
+            {
+                "effDate": "2023-09-26",
+                "accountName": "aditi",
+                "branchName": "EP BRANCH",
+                "voucherType": "Journal",
+                "voucherNo": "EP23241",
+                "principalAmount": -10000,
+                "closing": -9500,
+                "days": 17
+            }
+        ],
+        "196": [
+            {
+                "effDate": "2023-03-31",
+                "accountName": "TEST VENDOR",
+                "branchName": "EP BRANCH",
+                "refNo": "OPENING",
+                "principalAmount": 100,
+                "closing": 100,
+                "days": 196
             }
         ]
     },
     "summary": {
-        "debit": 1000.0,
-        "credit": 200.0,
-        "closing": 800.0
-    },
-    "asOnDate": "2023-01-21",
-    "printedOn": "2023-01-21T05:31:04.634+00:00",
-    "sort": "days",
-    "group": []
+        "credit": 10750.3,
+        "debit": 2196,
+        "closing": -8554.3
+    }
 }
