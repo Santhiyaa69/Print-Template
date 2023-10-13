@@ -223,115 +223,42 @@ body:
           element:
             type: BlankLine
         - type: TableLayout
-          widths: [74, 13,13]
+          widths: [50,50]
+          padding:
+            horizontal: 1
+            vertical: 0.5
           text_style:
             font_size: 10
             bold: true
           rows:
             - columns:
+              - type: LinearLayout
+                elements:
+                  - type: Text
+                    contents:
+                    {% if summary.balanceAsPerCompanyBook >= 0 %}
+                      - value: 'Balance As Per Company Book: {{summary.balanceAsPerCompanyBook | fixed }} Dr'
+                    {% else %}
+                      - value: 'Balance AsPer Company Book: {{summary.balanceAsPerCompanyBook | fixed | trim_start_matches(pat="-")}} Cr'
+                    {% endif %}
+                  - type: Text
+                    contents:
+                    {% if summary.amountNotReflectedInBank >= 0 %}
+                      - value: 'Amount Not Reflected In Bank: {{summary.amountNotReflectedInBank | fixed }} Dr'
+                    {% else %}
+                      - value: 'Amount Not Reflected In Bank: {{summary.amountNotReflectedInBank | fixed | trim_start_matches(pat="-")}} Cr'
+                    {% endif %} 
               - type: Text
-                padding: 1
                 alignment: Right
                 contents:
-                  - value: 'Balance As Per Company Book  : '
-              - type: Text
-                padding: 1
-                alignment: Right
-                contents:
-                  {% if summary.balanceAsPerCompanyBook >= 0 %}
-                  - value: '{{summary.balanceAsPerCompanyBook | fixed }}'
-                    style:
-                        shrink: true
-                  {% else %}
-                  - value: ''
-                  {% endif %}
-              - type: Text
-                padding: 1
-                alignment: Right
-                contents:
-                  {% if summary.balanceAsPerCompanyBook <= 0 %}
-                  - value: '{{summary.balanceAsPerCompanyBook | fixed | trim_start_matches(pat="-")}}'
-                    style:
-                        shrink: true
-                  {% else %}
-                  - value: ''
-                  {% endif %}
-            - columns:
-              - type: Text
-                padding: 1
-                alignment: Right
-                contents:
-                  - value: 'Amount Not Reflected In Bank  : '
-              - type: Text
-                padding: 1
-                alignment: Right
-                contents:
-                  {% if summary.amountNotReflectedInBank >= 0 %}
-                  - value: ' {{summary.amountNotReflectedInBank | fixed }}'
-                    style:
-                      shrink: true
-                  {% else %}
-                  - value: ''
-                  {% endif %}
-              - type: Text
-                padding: 1
-                alignment: Right
-                contents:
-                  {% if summary.amountNotReflectedInBank <= 0 %}
-                  - value: '{{summary.amountNotReflectedInBank | fixed | trim_start_matches(pat="-")}}'
-                    style:
-                      shrink: true
-                  {% else %}
-                  - value: ''
-                  {% endif %}
+                {% if summary.balanceAsPerBank >= 0 %}
+                  - value: 'Balance As Per Bank: {{summary.balanceAsPerBank | fixed }} Dr'
+                {% else %}
+                  - value: 'Balance As Per Bank: {{summary.balanceAsPerBank | fixed | trim_start_matches(pat="-")}} Cr'
+                {% endif %} 
         - type: PaddedElement
           padding:
             horizontal: 0
             vertical: 0.5
           element:
             type: BlankLine
-            style:
-              color:
-                greyscale: 128
-        - type: TableLayout
-          widths: [74, 13,13]
-          padding: 1
-          text_style:
-            font_size: 10
-            bold: true
-          rows:
-            - columns:
-                - type: Text
-                  padding: 1
-                  alignment: Right
-                  contents:
-                    - value: 'Balance As Per Bank  : '
-                - type: Text
-                  padding: 1
-                  alignment: Right
-                  contents:
-                    {% if summary.balanceAsPerBank >= 0 %}
-                    - value: '{{summary.balanceAsPerBank | fixed }}'
-                      style:
-                        shrink: true
-                    {% else %}
-                    - value: ''
-                    {% endif %}
-                - type: Text
-                  padding: 1
-                  alignment: Right
-                  contents:
-                    {% if summary.balanceAsPerBank <= 0 %}
-                    - value: '{{summary.balanceAsPerBank | fixed | trim_start_matches(pat="-")}}'
-                      style:
-                        shrink: true
-                    {% else %}
-                    - value: ''
-                    {% endif %}  
-        - type: PaddedElement
-          padding:
-            horizontal: 0
-            vertical: 0.5
-          element:
-            type: BlankLine  
-            
