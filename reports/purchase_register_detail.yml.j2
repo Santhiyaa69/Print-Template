@@ -359,7 +359,11 @@ body:
               - type: Text
                 padding: 1
                 contents:
+                {% if record.vendor %}
                   - value: '{{record.vendor | replace(from="'", to="")}}'
+                {% else %}
+                 - value: ''
+                {% endif %}
               - type: Text
                 padding: 1
                 contents:
