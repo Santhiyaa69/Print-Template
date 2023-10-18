@@ -268,7 +268,7 @@ body:
                         {%endif%}
         - type: BlankLine
         - type: TableLayout
-          widths: [6, 59, 12, 8, 6, 9, 11]
+          widths: [6, 51, 12, 8, 8, 6, 9, 11]
           text_style:
             font_size: 9
             line_spacing: 1.2
@@ -295,7 +295,12 @@ body:
                 padding: 1
                 alignment: Center
                 contents:
-                  - value: 'QTY'    
+                  - value: 'QTY'  
+              - type: Text
+                padding: 1
+                alignment: Center
+                contents:
+                  - value: 'FREE'   
               - type: Text
                 padding: 1
                 alignment: Center
@@ -315,7 +320,7 @@ body:
                   - value: 'AMOUNT'
         - type: BlankLine
         - type: TableLayout
-          widths: [6, 59, 12, 8, 6, 9, 11]
+          widths: [6, 51, 12, 8, 8, 6, 9, 11]
           text_style:
             font_size: 9
             line_spacing: 1.2
@@ -348,6 +353,11 @@ body:
                 alignment: Center
                 contents:
                   - value: '{{item.qty | fixed(precision = item.precision)}}'
+              - type: Text
+                padding: 1
+                alignment: Center
+                contents:
+                  - value: '{{item.free | fixed(precision = item.precision)}}'
               - type: Text
                 padding: 1
                 alignment: Center
