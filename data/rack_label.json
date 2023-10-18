@@ -1,0 +1,83 @@
+{
+    "title": "Rack Label",
+    "records": [
+        {
+            "inventories": [
+                "choco",
+                "munch"
+            ],
+            "rackName": "candy rack"
+        },
+        {
+            "inventories": [],
+            "rackName": "TABLETS & CAPSULES"
+        },
+        {
+            "inventories": [
+                "PARACIP 650MG TABLET"
+            ],
+            "rackName": "GEN1"
+        },
+        {
+            "inventories": [
+                "OTRINOZ PEDIATRIC NASAL 10ML DROPS 10ML DROPS",
+                "FIRST AID KIT TYPE 1",
+                "WHISKAS CATFOOD OF 1.2KG",
+                "PRO PL 500GM VANILLA",
+                "FEM HAIR REMOVAR DRY SKIN",
+                "HIMALAYA CUCUMBER COCONUT 125GM SOAP",
+                "NUTRICOAT ADVANCE 200ML",
+                "MELALITE 15 50GM CREAM",
+                "MULMIN 200ML SYRUP",
+                "WAX",
+                "HB RED SYRUP 150ML",
+                "NOVOPEN 4 DEVICE",
+                "MEDIMIX TRANSPARENT 125GM SOAP"
+            ],
+            "rackName": "GEN"
+        },
+        {
+            "inventories": [
+                "OTRINOZ PEDIATRIC NASAL 10ML DROPS 10ML DROPS' 10ML DROPS",
+                "FIRST AID KIT TYPE 1",
+                "WHISKAS CATFOOD OF 1.2KG",
+                "PRO PL' 500GM VANILLA",
+                "FEM HAIR REMOVAR DRY SKIN",
+                "HIMALAYA CUCUMBER COCONUT 125GM SOAP",
+                "NUTRICOAT ADVANCE 200ML",
+                "MELALITE 15' 50GM CREAM",
+                "MULMIN 200ML' SYRUP",
+                "MEDIMIX TRANSPARENT 125GM SOAP",
+                "WAX"
+            ],
+            "rackName": "GEN1'"
+        },
+        {
+            "inventories": [
+                "CHOCOPIE",
+                "VICKS"
+            ],
+            "rackName": "candy"
+        },
+        {
+            "inventories": [
+                "OTRINOZ PEDIATRIC NASAL 10ML DROPS",
+                "FIRST AID KIT TYPE 1",
+                "WHISKAS CATFOOD OF 1.2KG",
+                "PRO PL 500GM VANILLA",
+                "FEM HAIR REMOVAR DRY SKIN",
+                "HIMALAYA CUCUMBER COCONUT 125GM SOAP",
+                "NUTRICOAT ADVANCE 200ML",
+                "MELALITE 15 50GM CREAM"
+            ],
+            "rackName": "GEN1"
+        },
+        {
+            "inventories": [
+                "CHOCOPIE",
+                "VICKS"
+            ],
+            "rackName": "candy"
+        }
+    ]
+}

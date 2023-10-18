@@ -1,0 +1,56 @@
+title: '{{title}}'
+conformance: 'Minimal'
+paper_size:
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 8
+    right: 8
+    bottom: 8
+    left: 8
+body:
+  elements:
+    - type: TableLayout
+      widths: [52,48]
+      rows:
+      {% set labels = split_array(items=records, range=2)%}
+      {% for rows in labels %}
+      - columns:
+          {% for record in rows %}
+          - type: LinearLayout
+            elements:
+              - type: Text
+                padding: 1
+                alignment: Center
+                contents:
+                  - value: '{{record.rackName | replace(from="'", to= "")}}'
+                    style:
+                      font_size: 18
+                      bold: true
+            {% for inv in record.inventories | slice(end=9) %}
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{inv | replace(from="'", to= "") | truncate(length=40)}}'
+                    style:
+                      font_size: 10
+                      bold: true
+            {% endfor %}
+            {% set items = record.inventories | slice(end=9) | length %}
+              {% set nos = 10 - items %}
+              {% for i in range(end=nos)%}
+              - type: Text
+                padding: 
+                  top: 1.4
+                  bottom: 1
+                  left: 1
+                  right: 1
+                contents:
+                  - value: ''
+                    style:
+                      font_size: 10 
+              {% endfor %}
+          {% endfor %}
+      {% endfor %}

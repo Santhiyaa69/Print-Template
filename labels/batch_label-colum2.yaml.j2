@@ -1,0 +1,114 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 105
+  height: 30
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 1
+    right: 1
+    bottom: 1
+    left: 1
+body:
+  elements:
+    - type: TableLayout
+      widths: [50, 50]
+      padding: 
+        vertical: 0
+        horizontal: 1
+      text_style: 
+        bold: true
+        font_size: 6
+      rows:
+      {% set labels = split_array(items=items, range=2) %}
+       {% for records in labels %}
+        - columns:
+        {% for record in records %}
+          - type: LinearLayout
+            elements:
+              - type: Text
+                padding: 
+                  vertical: 0
+                  horizontal: 1
+                alignment: Left
+                contents:
+                  - value: '{{record.inventoryName | truncate(length = 35)}}'
+                    style:
+                      font_size: 6
+                      bold: true
+              - type: TableLayout
+                widths: [60, 40]
+                padding: 
+                  vertical: 0
+                  horizontal: 1
+                text_style: 
+                  bold: true
+                  font_size: 6
+                rows:
+                  - columns:
+                    - type: LinearLayout
+                      elements:
+                        - type: Text 
+                          padding:
+                            top: 4                   
+                          contents:
+                            - value: 'Rs.'
+                          {% if record.mrp %}
+                            - value: '{{record.mrp | fixed}} / {{record.newRefUnitName}}' 
+                          {% else %}
+                            - value: ''
+                          {% endif %}
+                        {% if record.mrp %}
+                        - type: PaddedElement
+                          padding:
+                            top: -1
+                            right: 12
+                          element:
+                            type: BlankLine   
+                        {% endif %}
+                        - type: Text  
+                          padding:
+                            top: 4                 
+                          contents:
+                            - value: 'Rs.'
+                            - value: '{{record.rate | fixed}} / {{record.newRefUnitName}}'
+                    - type: QrCode
+                      data: {{record.barcode}}
+                      settings:
+                        alignment: Right
+                        scale:
+                          x: 0.9
+                          y: 0.9
+              - type: TableLayout
+                widths: [50, 50 ]
+                text_style: 
+                  bold: true
+                  font_size: 5
+                padding: 
+                  vertical: 0
+                  horizontal: 1
+                rows:
+                  - columns:
+                    - type: Text      
+                      padding:
+                        top: 2        
+                      contents:
+                        - value: 'Mfg.Dt: '
+                      {% if record.manufactureDate %}
+                        - value: '{{record.manufactureDate | date(format="%d/%m/%Y")}}'
+                      {% else %}
+                        - value: ''
+                      {% endif %}
+                    - type: Text      
+                      padding:
+                        top: 2        
+                      contents:
+                        - value: 'Exp.Dt: '
+                      {% if record.expiry %}
+                        - value: '{{record.expiry | date(format="%d/%m/%Y")}}'
+                      {% else %}
+                        - value: ''
+                      {% endif %}
+            {% endfor %}
+        {% endfor %}
