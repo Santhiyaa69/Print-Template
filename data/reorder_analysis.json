@@ -1,0 +1,40 @@
+{
+    "title": "Stock Analysis Report",
+    "orgInfo": {
+        "name": "Test ORG"
+    },
+    "branchInfo": {
+        "address": {}
+    },
+    "branch": "as",
+    "group": "vendor",
+    "records": {
+        "Not Available": [
+            {
+                "inventoryName": "0.7MM LEAD PENCIL",
+                "orderLevel": 4,
+                "orderQty": 1,
+                "stock": 3,
+                "unitName": "pcs"
+            },
+            {
+                "inventoryName": "SCISSORS",
+                "orderLevel": 4,
+                "orderQty": 1,
+                "stock": 3,
+                "unitName": "pcs",
+                "manufacturerName": "test"
+            }
+        ],
+        "Rishi Trades": [
+            {
+                "inventoryName": "NATARAJ SHARPNER",
+                "orderLevel": 8,
+                "orderQty": 4,
+                "stock": 4,
+                "unitName": "pcs",
+                "vendorName": "Rishi Trades"
+            }
+        ]
+    }
+}
