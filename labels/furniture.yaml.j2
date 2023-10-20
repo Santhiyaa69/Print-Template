@@ -1,0 +1,91 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 105
+  height: 30
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 1
+    right: 1
+    bottom: 1
+    left: 1
+body:
+  elements:
+    - type: TableLayout
+      widths: [50, 50]
+      padding: 
+        left: 2   
+      rows:
+      {% set labels = split_array(items=items, range=2) %}
+       {% for records in labels %}
+        - columns:
+        {% for record in records %}
+          - type: LinearLayout
+            elements:
+              - type: Text
+                padding: 
+                  top: 2
+                  left: 3   
+                alignment: Left
+                contents:
+                  - value: '{{record.inventoryName | truncate(length = 60)}}'
+                    style:
+                      font_size: 8
+                      bold: true
+              - type: TableLayout
+                widths: [60, 40]
+                padding: 
+                  top: 1
+                  left: 3     
+                rows:
+                  - columns:
+                    - type: LinearLayout
+                      elements:
+                        - type: Text 
+                          padding:
+                            top: 4
+                            left: 3                     
+                          contents:
+                          {% if record.mrp %}
+                            - value: 'Rs.'
+                              style: 
+                                bold: true
+                                font_size: 10 
+                            - value: '{{record.mrp | fixed}}'
+                              style: 
+                                bold: true
+                                font_size: 10 
+                          {% else %}
+                            - value: ''
+                          {% endif %}
+                        {% if record.mrp %}
+                        - type: PaddedElement
+                          padding:
+                            top: -2
+                            right: 12
+                          element:
+                            type: BlankLine   
+                        {% endif %}
+                        - type: Text  
+                          padding:
+                            top: 4
+                            left: 3                   
+                          contents:
+                            - value: 'Rs.'
+                              style: 
+                                bold: true
+                                font_size: 10 
+                            - value: '{{record.rate | fixed}}'
+                              style: 
+                                bold: true
+                                font_size: 10 
+                    - type: QrCode
+                      data: 'l{{record.barcode}}'
+                      settings:
+                        alignment: Right
+                        scale:
+                          x: 0.9
+                          y: 0.9
+            {% endfor %}
+        {% endfor %}

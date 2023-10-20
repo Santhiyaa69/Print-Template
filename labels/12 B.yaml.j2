@@ -1,0 +1,118 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 105
+  height: 25
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 2
+    right: 1
+    bottom: 1
+    left: 1
+body:
+  elements:
+    - type: TableLayout
+      widths: [50, 50]
+      padding: 
+        left: 2
+        right: 2   
+      rows:
+      {% set labels = split_array(items=items, range=2) %}
+       {% for records in labels %}
+        - columns:
+        {% for record in records %}
+          - type: LinearLayout
+            elements:
+              - type: Text
+                padding: 
+                  left: 2   
+                alignment: Left
+                contents:
+                  - value: 'Manufactured by: 12Baskets'
+                    style:
+                      font_size: 7
+                      bold: true
+              - type: Text
+                padding: 
+                  top: 1
+                  left: 2   
+                alignment: Left
+                contents:
+                  - value: '{{record.inventoryName | truncate(length = 26)}}'
+                    style:
+                      font_size: 8
+                      bold: true                    
+              - type: TableLayout
+                widths: [67, 33]
+                padding: 
+                  left: 1
+                  bottom: 1     
+                rows:
+                  - columns:
+                    - type: LinearLayout
+                      elements:
+                        - type: Text 
+                          padding:
+                            left: 1                     
+                          contents:
+                          {% if record.manufactureDate %}
+                            - value: 'Packed on:'
+                              style: 
+                                bold: true
+                                font_size: 7
+                            - value: '{{record.manufactureDate}}'
+                              style: 
+                                bold: true
+                                font_size: 8
+                          {% else %}
+                            - value: ''
+                          {% endif %}
+                          {% if record.batch %}
+                            - value: 'Batch No:'
+                              style: 
+                                bold: true
+                                font_size: 7
+                            - value: '{{record.batch}}'
+                              style: 
+                                bold: true
+                                font_size: 8
+                          {% else %}
+                            - value: ''
+                          {% endif %}
+                          {% if record.inventoryDescription %}
+                        - type: Text  
+                          padding:
+                            left: 1                   
+                          contents:
+                            - value: 'Net (Quantity):'
+                              style: 
+                                bold: true
+                                font_size: 7
+                            - value: '{{record.inventoryDescription}}'
+                              style:
+                                bold: true
+                                font_size: 8
+                          {% else %}
+                            - value: ''
+                          {% endif %}
+                        - type: Text  
+                          padding:
+                            left: 1                   
+                          contents:
+                            - value: 'MRP:'
+                              style: 
+                                bold: true
+                                font_size: 8
+                            - value: '{{record.mrp | fixed}}'
+                              style:
+                                bold: true
+                                font_size: 10
+                    - type: QrCode
+                      data: 'l{{record.barcode}}'
+                      settings:
+                        scale:
+                          x: 0.7
+                          y: 0.7
+            {% endfor %}
+        {% endfor %}
