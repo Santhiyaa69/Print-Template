@@ -200,7 +200,11 @@ body:
                 - type: Text
                   padding: 0.5
                   contents:
-                    - value: '{{record.vendor | replace(from="'", to="")}}'
+                    {% if record.vendor %}
+                      - value: '{{record.vendor | replace(from="'", to="")}}'
+                    {% else %}
+                    - value: ''
+                    {% endif %}
                 - type: Text
                   padding: 1
                   contents:
