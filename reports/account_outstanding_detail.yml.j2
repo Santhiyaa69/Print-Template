@@ -173,7 +173,11 @@ body:
               - type: Text
                 padding: 1
                 contents:
+                  {% if record.voucherType %}
                   - value: '{{record.voucherType}}'
+                  {% else %}
+                  - value: ''
+                  {% endif %}
               - type: Text
                 padding: 1
                 contents:
