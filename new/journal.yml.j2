@@ -1,0 +1,290 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 5
+    right: 5
+    bottom: 5
+    left: 5
+body:
+  elements:
+    - type: LinearLayout
+      elements:
+        - type: Text
+          alignment: Center
+          padding:
+            top: 1
+          contents:
+            - value: '{{orgInfo.name}}'
+              style:
+                font_size: 16
+                bold: true
+        {%if branchInfo.address.address%}        
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: '{{branchInfo.address.address}}'
+              style:
+                font_size: 10
+        {%endif%}
+        {%if branchInfo.address.city%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: '{{branchInfo.address.city}} - {{branchInfo.address.pincode | default(value="1")}}'
+              style:
+                font_size: 10
+        {%endif%}
+        {%if branchInfo.phone%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'Phone: {{branchInfo.phone}}'
+              style:
+                font_size: 10        
+        {%endif%}
+        {%if branchInfo.mobileNos and branchInfo.mobileNos | length > 0%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'Mobile: {{branchInfo.mobileNos | join(sep= ",")}}'
+              style:
+                font_size: 10
+        {%endif%}
+        {%if branchInfo.email%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'Email:{{branchInfo.email}}'
+              style:
+                font_size: 10
+        {%endif%}
+        {%if branchInfo.gstNo%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'GSTIN: {{branchInfo.gstNo}}'
+              style:
+                font_size: 10
+        {%endif%}                
+        {%if branchInfo.licNo%}
+        - type: Text
+          alignment: Center
+          padding:
+            top: 0.5
+          contents:
+            - value: 'LIC.NO: {{branchInfo.licNo}}'
+              style:
+                font_size: 10
+        {%endif%}                
+        - type: PaddedElement
+          padding:
+            vertical: 2
+            horizontal: 0
+          element:
+            type: BlankLine 
+        - type: Text
+          alignment: Center
+          contents:
+            - value: {{voucherInfo.voucherType}}
+              style:
+                font_size: 13
+                bold: true
+        - type: PaddedElement
+          padding:
+            vertical: 0
+            horizontal: 88
+          element:
+            type: BlankLine 
+        - type: TableLayout
+          widths: [18, 2, 80]
+          padding: 
+            vertical: 1
+            horizontal: 0
+          text_style: 
+            bold: true
+            font_size: 12
+          rows:
+            - columns:
+              - type: Text
+                padding:
+                  bottom: 1
+                contents:
+                  - value: 'Date' 
+              - type: Text
+                padding:
+                  bottom: 1
+                contents:
+                  - value: ':'
+              - type: Text
+                padding:
+                  bottom: 1
+                contents:
+                  - value: {{voucherInfo.date}}
+            {% if effDate %}
+            - columns:
+              - type: Text
+                padding:
+                  bottom: 1
+                contents:
+                  - value: 'Effective Date'
+              - type: Text
+                padding:
+                  bottom: 1
+                contents:
+                  - value: ':'
+              - type: Text
+                padding:
+                  bottom: 1
+                contents:
+                  - value: {{effDate}}
+            {% endif %}
+            - columns:
+              - type: Text
+                padding:
+                  bottom: 1                    
+                contents:
+                  - value: 'Voucher No' 
+              - type: Text
+                padding:
+                  bottom: 1
+                contents:
+                  - value: ':'
+              - type: Text
+                padding:
+                  bottom: 1
+                contents:
+                  - value: {{voucherInfo.voucherNo}}
+            {% if voucherInfo.refNo %}
+            - columns:
+              - type: Text
+                padding:
+                  bottom: 1                    
+                contents:
+                  - value: 'Reference No' 
+              - type: Text
+                padding:
+                  bottom: 1
+                contents:
+                  - value: ':'
+              - type: Text
+                padding:
+                  bottom: 1
+                contents:
+                  - value: {{voucherInfo.refNo}}
+            {% endif %}
+            {% if description %}
+            - columns:
+              - type: Text
+                padding:
+                  bottom: 1                    
+                contents:
+                  - value: 'Description' 
+              - type: Text
+                padding:
+                  bottom: 1
+                contents:
+                  - value: ':'
+              - type: Text
+                padding:
+                  bottom: 1
+                contents:
+                  - value: {{description}}
+            {% endif %}
+        - type: BlankLine
+        - type: TableLayout
+          widths: [50, 25, 25]
+          padding: 
+            vertical: 2
+            horizontal: 1
+          text_style: 
+            bold: true
+            font_size: 11
+          rows:
+            - columns:
+              - type: Text                    
+                contents:
+                  - value: 'Account' 
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Credit'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: 'Debit'
+        - type: BlankLine
+        - type: TableLayout
+          widths: [50, 25, 25]
+          padding:
+            vertical: 2
+            horizontal: 1
+          text_style:
+            font_size: 11
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+            outer: true
+          rows:
+            {% for trn in acTrns %}
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: {{trn.account}}
+              - type: Text
+                padding: 1
+                alignment: Right
+                contents:
+                  - value: '{{trn.credit | fixed}}'
+              - type: Text
+                padding: 1
+                alignment: Right
+                contents:
+                  - value: '{{trn.debit | fixed}}' 
+            {% endfor %}
+        - type: BlankLine
+        - type: TableLayout
+          widths: [50, 25, 25]
+          padding: 
+            vertical: 2
+            horizontal: 1
+          text_style: 
+            bold: true
+            font_size: 11
+          rows:
+            - columns:
+              - type: Text   
+                alignment: Right                 
+                contents:
+                  - value: 'Total :' 
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{amount | fixed}}'
+              - type: Text
+                alignment: Right
+                contents:
+                  - value: '{{amount | fixed}}'
+        - type: PaddedElement
+          padding:
+            vertical: 2
+            horizontal: 1
+          element:
+            type: BlankLine 

@@ -1,0 +1,18 @@
+{
+    "title": "Cheque Template",
+    "records": [{
+    "payee": "Tmb Account",
+    "amount": 2050,
+    "date": "11102022"
+    },
+    {
+        "payee": "ICICI Account",
+        "amount": 2000,
+        "date": "11102022"
+    },
+    {
+        "payee": "SBI Account",
+        "amount": 2000,
+        "date": "11102022"
+    }]
+}

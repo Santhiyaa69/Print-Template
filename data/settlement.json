@@ -1,0 +1,71 @@
+{
+    "title": "CASH REGISTER BOOK",
+    "orgInfo": {
+      "name": "VELAVAN MEDICAL"
+    },
+    "date": "03-12-2022",
+    "cashRegisterName": "RS CASH BOX",
+    "opening": 1247.0,
+    "closing": 1259.0,
+    "printedOn": "03-12-2022 12:31 AM",
+    "summary": {
+      "cashIn": [
+          {
+            "voucherType": "SALE",
+            "amount": 7.0
+          },
+          {
+            "voucherType": "JOURNAL",
+            "amount": 5.0
+          }
+      ],
+      
+      "cashOut" : []
+    },
+    "transactions": [
+      {
+        "title": "SALE",
+        "total" : 7.0,
+        "records": [
+          {
+            "date": "01-12-2022",
+            "voucherNo": "EP222393605",
+            "description": "sale",
+            "voucherType": "SALE",
+            "approvedBy": "divya divi",
+            "amount" : 5.0
+          },
+          {
+            "date": "01-12-2022",
+            "particulars": "test",
+            "voucherNo": "EP222393606",
+            "voucherType": "SALE",
+            "approvedBy": "divya divi",
+            "amount" : 2.0
+          }
+        ]
+      },
+      {
+        "title": "JOURNAL",
+        "total" : 5.0,
+        "records": [
+          {
+            "date": "01-12-2022",
+            "particulars": "cashff",
+            "description": "",
+            "voucherType": "JOURNAL",
+            "approvedBy": "divya divi",
+            "amount" : 5.0
+          }
+        ]
+      }
+    ],
+    "denominationRequired": true,
+    "denomination": {
+      "2": 1.0,
+      "2000": 6.0,
+      "10": 1.0,
+      "500": 1.0,
+      "100": 1.0
+    }
+  }

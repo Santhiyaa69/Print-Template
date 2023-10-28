@@ -1,0 +1,97 @@
+title: '{{title}}'
+conformance: Minimal
+paper_size:
+  width: 210
+  height: 297
+decorator:
+  type: SimplePageDecorator
+  margins:
+    top: 5
+    right: 5
+    bottom: 5
+    left: 5
+body:
+  elements:
+    - type: TableLayout
+      widths: [50, 50]
+      padding: 1
+      rows:
+      {% for rec in records %}
+        - columns:
+          - type: LinearLayout
+            elements:
+              - type: PaddedElement
+                padding:
+                  right: 33
+                  left: 43
+                element:
+                  type: BlankLine 
+              - type: Text
+                alignment: Center
+                padding: 
+                  right: 1
+                  left: 10
+                contents:
+                  - value: AC PAYEE
+                    style:
+                      font_size: 12
+                      bold: true
+              - type: PaddedElement
+                padding:
+                  right: 33
+                  left: 43
+                element:
+                  type: BlankLine 
+              - type: Text
+                padding: 
+                  top: 10
+                  right: 1
+                  left: 10
+                contents:
+                  - value: '{{rec.payee}}'
+                    style:
+                      font_size: 10
+                      bold: true
+              - type: Text
+                padding: 
+                  top: 4
+                  right: 1
+                  left: 25
+                contents:
+                  - value: 'Two Thousand Only/-'
+                    style:
+                      font_size: 10
+                      bold: true
+          - type: LinearLayout
+            elements:
+              - type: Text
+                alignment: Center
+                padding: 
+                  top: 1
+                  right: 1
+                contents:
+                  - value: '{{rec.date}}'
+                    style:
+                      font_size: 12
+                      bold: true
+              - type: Text
+                alignment: Center
+                padding: 
+                  top: 25
+                  right: 1
+                contents:
+                  - value: '{{rec.amount}}/-'
+                    style:
+                      font_size: 10
+                      bold: true
+        - columns:
+          - type: LinearLayout
+            elements:
+              - type: Text
+                alignment: Center
+                padding: 
+                  top: 246.3
+                contents:
+                  - value: ''
+      {% endfor %}
+
