@@ -24,6 +24,7 @@
     "branch": "DP, ETP BRANCH",
     "fromDate": "2022-01-01",
     "toDate": "2022-02-03",
+    "enableProfit": true,
     "records": [
         {
             "inventory": "DOLO550MG",

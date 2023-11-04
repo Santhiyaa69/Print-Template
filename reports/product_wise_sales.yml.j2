@@ -80,6 +80,7 @@ body:
            horizontal: 0
           element:
             type: BlankLine
+        {% if enableProfit %}
         - type: TableLayout
           widths: [8,30,14,10,14,14,10]
           padding:
@@ -196,6 +197,92 @@ body:
                   {% endif %}
                       shrink: true
             {% endfor %}
+        {% else %}
+        - type: TableLayout
+          widths: [8,32,20,20,20]
+          padding:
+           vertical: 1
+           horizontal: 1
+          text_style:
+            font_size: 11
+            bold: true
+          rows:
+            - columns:
+              - type: Text
+                contents:
+                  - value: 'SI.No'
+              - type: Text
+                padding:
+                  left: 1
+                contents:
+                  - value: 'Inventory'
+              - type: Text
+                padding:
+                  right: 1
+                alignment: Right
+                contents:
+                  - value: 'Asset Value'
+              - type: Text
+                padding:
+                  right: 1
+                alignment: Right
+                contents:
+                  - value: 'Sold'
+              - type: Text
+                padding:
+                  right: 1
+                alignment: Right
+                contents:
+                  - value: 'Sale Value'
+        - type: PaddedElement
+          padding:
+           vertical: 1
+           horizontal: 0
+          element:
+            type: BlankLine
+        - type: TableLayout
+          widths: [8,32,20,20,20]
+          text_style:
+            font_size: 11
+          padding:
+            horizontal: 0
+            vertical: 1
+          cell_decorator:
+            type: SimpleCellDecorator
+            inner: true
+            outer: true
+          rows:
+            {% for record in records %}
+            - columns:
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{loop.index}}'
+              - type: Text
+                padding: 1
+                contents:
+                  - value: '{{record.inventory | replace(from="'", to="")}}'
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  - value: '{{record.assetValue | fixed}}'
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  - value: '{{record.sold}}'
+                    style: 
+                      shrink: true
+              - type: Text
+                alignment: Right
+                padding: 1
+                contents:
+                  - value: '{{record.saleValue | fixed}}'
+                    style: 
+                      shrink: true
+            {% endfor %}
+        {% endif %}
         - type: PaddedElement
           padding:
            vertical: 1
@@ -237,6 +324,7 @@ body:
                 padding: 1
                 contents:
                   - value: 'Rs. {{summary.assetValue | fixed}}'
+            {% if enableProfit %}
             - columns:
               - type: Text
                 padding: 1
@@ -272,6 +360,7 @@ body:
                       color:
                         rgb: [191,0,0]
                   {% endif %}
+            {% endif %}
             - columns:
               - type: Text
                 padding: 1
